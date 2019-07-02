@@ -1,0 +1,69 @@
+\documentclass[jou]{apa6} %apacite
+
+\usepackage[style=authoryear,sorting=nyt,backend=bibtex]{biblatex}
+\usepackage{csquotes}
+\addbibresource{lit.bib}
+
+\title{ASRAEL - Acquisition of Semantic RelAtions bEtween Latin nouns}
+\shorttitle{APA style}
+
+\author{Konstantin Schulz}
+\affiliation{Humboldt-Universität zu Berlin}
+
+\abstract{XXXabstractXXX}
+
+\rightheader{ASRAEL}
+\leftheader{Konstantin Schulz}
+
+\begin{document}
+\maketitle    
+                        
+\section{Introduction}
+
+This dissertation deals with different ways of detecting semantic relations in text corpora. As such, its focus is more on methodology than on analytical results. However, it is still important to consider the various implications of, e.g., the precise research question, which necessitates some important restrictions. Since the question of semantic relations in language cannot be exhaustively treated here, I will concentrate only on a subset of all the existing phenomena: polysemy and disambiguation, synonymy and antonymy, hypernymy and hyponymy, homonymy. This choice is motivated by the objective of utilizing the obtained insights for language learning, e.g. as the basis for pedagogical exercises. Thus, the detection of said relations is not an end in itself, but embedded into the context of how humans acquire language. 
+Specifically, I hope that an improved integration of polysemy into the learning process can lead to a higher level of language skills: 
+ \blockquote[{\cite[p.~5]{nerlichPolysemyFlexibilityIntroduction2003}}]{In cognitive linguistics, the word itself with its network of polysemous senses came to be regarded as a category in which the senses of the word (i.e. the members of the category) are related to each other by means of general cognitive principles such as metaphor, metonymy, generalization, specialization, and image-schema transformations.}
+If there is a parallel between polysemy and the way that humans think, it seems reasonable to exploit that connection for learning purposes. Unfortunately, this still leaves us with the lack of a clearly defined research object:
+\blockquote[{\cite[p.~4]{nerlichPolysemyFlexibilityIntroduction2003}}]{Another problem arising from polysemy and homonymy is lexical ambiguity, and the precise relationship between polysemy, homonymy, ambiguity and vagueness is still an unresolved issue in lexical semantics.}
+It is therefore important to define the various semantic relations and distinguish between them as clearly as possible. In the case of, e.g., synonymy, a good operationalization is needed to retrieve the relevant instances from a corpus of text data:
+\blockquote[{\cite[p.~274]{divjakCorpusbasedCognitiveSemantics2009}}]{Polysemy requires the researcher to determine whether two usage events are identical or sufficiently similar to be considered a single sense, what the degree of similarity is between different senses, where to connect a sense to others in the network, and which sense(s) to recognize as prototypical one(s). [...] in addition, [linguists] have to decide what the differences are between the near-synonyms as well as what the relation is between semantically similar words in a domain.}
+In my study, I will follow the approach of distributional semantics, describing specific semantic relations between words in terms of their co-occurrences and typical contexts in a corpus. Previous research has been carried out using, e.g., association measures to detect synonymy:
+\blockquote[{\cite[p.~566]{hagiwaraSupervisedSynonymAcquisition2009}}]{The value of distributional features \( f_j^D (x, z) \) is determined so that it represents the degree of commonality of context \( c_j \) shared by the word pair (x, z). [...] The advantage of this feature construction is that, given the independence assumption between word x and z , the feature value is easily calculated as the simple sum of two corresponding pointwise mutual information weights as: \( f_j^D (x, z) = PMI(x, c_j) + PMI(z, c_j) \) [...].}
+One of the critical parts in that view is the term "word pair", which introduces the linguistically ill-defined concept of word into an otherwise seemingly precise mathematical formula. Thus, the usage of bare token-based PMI (Pointwise Mutual Information) for distributional questions may lead to severely skewed results:
+\blockquote[{\cite[p.~444]{herbelotMeasuringSemanticContent2013}}]{[...] strong collocation effects can influence the measurement of information negatively: it is an open question which phrases should be considered ‘words-with-spaces’ when building distributions.}
+Therefore, corpora may have to be tokenized and segmented using more complex separator rules than "whitespace and punctuation" before they can serve as a basis for distributional analyses. Besides, polysemy itself may also become a problem for resolving other issues like synonymy, e.g. if two words are synonymous only in one of their possibly numerous senses:
+\blockquote[{\cite[p.~444]{herbelotMeasuringSemanticContent2013}}]{Some of the errors we observe may also be related to word senses. For instance, the word medium, to be found in the pair magazine – medium, can be synonymous with middle, clairvoyant or again mode of communication. In the sense of clairvoyant, it is clearly more specific than in the sense intended in the test pair. As distributions do not distinguish between senses, this will have an effect on our results.}
+Since the solution to this problem may be to disambiguate word senses for every single token in a corpus, polysemy will be treated in this study not just as one of the analytical targets, but also as a methodological aspect that needs to be addressed before other kinds of analyses can be performed. Finally, some of the second-tier relations may have to be redefined when looked at from a distributional perspective, e.g. hypernymy:
+\blockquote[{\cite[p.~443]{herbelotMeasuringSemanticContent2013}}]{Although beverage is an umbrella word for many various types of drinks, speakers of English use it in very particular contexts. So, distributionally, it is not a ‘general word’.}
+In this view, other existing taxonomies that may have acted as models of hypernymy need to be replaced by a definition that reflects how actual usage contexts can limit our selection of possible candidates for hypernymy:
+\blockquote[{\cite[p.~443]{rollerInclusiveSelectiveSupervised2014}}]{[The Distributional Inclusion Hypothesis] states that more specific terms appear in a subset of the distributional contexts in which more general terms appear. So, animal can occur in all the contexts in which dog can occur, plus some contexts in which dog cannot – for instance, rights can be a typical cooccurrence for animal (e.g. “animal rights”), but not so much for dog (e.g. \#“dog rights”).}
+...
+
+
+\printbibliography
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

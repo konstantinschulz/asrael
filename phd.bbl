@@ -1,0 +1,313 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nyt/global//global/global}
+  \entry{divjakCorpusbasedCognitiveSemantics2009}{article}{}
+    \name{author}{2}{}{%
+      {{hash=DD}{%
+         family={Divjak},
+         familyi={D\bibinitperiod},
+         given={Dagmar},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=GST}{%
+         family={Gries},
+         familyi={G\bibinitperiod},
+         given={Stefan\bibnamedelima Th},
+         giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DDGST1}
+    \strng{fullhash}{DDGST1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{pages}{273\bibrangedash 296}
+    \field{shorttitle}{Corpus-based cognitive semantics}
+    \field{title}{Corpus-based cognitive semantics: {A} contrastive study of
+  phasal verbs in {English} and {Russian}}
+    \verb{url}
+    \verb https://www.researchgate.net/profile/Stefan_Gries/publication/2882650
+    \verb 35_Corpus-based_cognitive_semantics_A_contrastive_study_of_phasal_ver
+    \verb bs_in_English_and_Russian/links/599bd49845851574f4ac7a63/Corpus-based
+    \verb -cognitive-semantics-A-contrastive-study-of-phasal-verbs-in-English-a
+    \verb nd-Russian.pdf
+    \endverb
+    \verb{file}
+    \verb Full Text:/Users/Konstantin/Zotero/storage/574YI3WY/Divjak and Gries
+    \verb - 2009 - Corpus-based cognitive semantics A contrastive st.pdf:applic
+    \verb ation/pdf
+    \endverb
+    \field{journaltitle}{Studies in cognitive corpus linguistics}
+    \field{annotation}{%
+    274: Probleme bei der Erforschung von Synonymie: "Polysemy requires the
+  researcher to determine whether two usage events are identical or
+  sufficiently similar to be considered a single sense, what the degree of
+  similarity is between different senses, where to connect a sense to others in
+  the network, and which sense(s) to recognize as prototypical one(s). [...] in
+  addition, [linguists] have to decide what the differences are between the
+  near-synonyms as well as what the relation is between semantically similar
+  words in a domain."%
+    }
+    \field{year}{2009}
+  \endentry
+
+  \entry{hagiwaraSupervisedSynonymAcquisition2009}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HM}{%
+         family={Hagiwara},
+         familyi={H\bibinitperiod},
+         given={Masato},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=OY}{%
+         family={Ogawa},
+         familyi={O\bibinitperiod},
+         given={Yasuhiro},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Toyama},
+         familyi={T\bibinitperiod},
+         given={Katsuhiko},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HMOYTK1}
+    \strng{fullhash}{HMOYTK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{number}{2}
+    \field{pages}{558\bibrangedash 582}
+    \field{title}{Supervised synonym acquisition using distributional features
+  and syntactic patterns}
+    \verb{url}
+    \verb https://www.jstage.jst.go.jp/article/imt/4/2/4_2_558/_pdf
+    \endverb
+    \field{volume}{4}
+    \verb{file}
+    \verb Full Text:/Users/Konstantin/Zotero/storage/EAC7LMV9/Hagiwara et al. -
+    \verb  2009 - Supervised synonym acquisition using distributiona.pdf:applic
+    \verb ation/pdf;Snapshot:/Users/Konstantin/Zotero/storage/B2DHR6NQ/ja.html:
+    \verb text/html
+    \endverb
+    \field{journaltitle}{Information and Media Technologies}
+    \field{annotation}{%
+    566: Modellierung von Synonymie als Pointwise Mutual Information der beiden
+  Wortkandidaten in Bezug auf den gemeinsamen Kontext: "The value of
+  distributional features fjD (x, z) is determined so that it represents the
+  degree of commonality of context cj shared by the word pair (x, z). [...] The
+  advantage of this feature construction is that, given the independence
+  assumption between word x and z , the feature value is easily calculated as
+  the simple sum of two corresponding pointwise mutual information weights as:
+  fjD (x, z) = PMI(x, cj) + PMI(z, cj) [...]"%
+    }
+    \field{year}{2009}
+  \endentry
+
+  \entry{herbelotMeasuringSemanticContent2013}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=HA}{%
+         family={Herbelot},
+         familyi={H\bibinitperiod},
+         given={Aurélie},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Ganesalingam},
+         familyi={G\bibinitperiod},
+         given={Mohan},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAGM1}
+    \strng{fullhash}{HAGM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the 51st {Annual} {Meeting} of the
+  {Association} for {Computational} {Linguistics} ({Volume} 2: {Short}
+  {Papers})}
+    \field{pages}{440\bibrangedash 445}
+    \field{title}{Measuring semantic content in distributional vectors}
+    \verb{url}
+    \verb https://www.aclweb.org/anthology/P13-2078
+    \endverb
+    \field{volume}{2}
+    \verb{file}
+    \verb Full Text:/Users/Konstantin/Zotero/storage/X7YJ3IHE/Herbelot and Gane
+    \verb salingam - 2013 - Measuring semantic content in distributional vecto.
+    \verb pdf:application/pdf
+    \endverb
+    \field{annotation}{%
+    443: Hypernyme sind nicht notwendigerweise allgemeinere Wörter im
+  distributionellen Sinne, sie können trotzdem sehr spezifische Kontexte
+  aufweisen (große Extension, aber kleine Intension): "Although beverage is an
+  umbrella word for many various types of drinks, speakers of English use it in
+  very particular contexts. So, distributionally, it is not a ‘general
+  word’."%
+    }
+    \field{year}{2013}
+  \endentry
+
+  \entry{nerlichPolysemyFlexibilityIntroduction2003}{incollection}{}
+    \name{author}{2}{}{%
+      {{hash=NB}{%
+         family={Nerlich},
+         familyi={N\bibinitperiod},
+         given={Brigitte},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=CDD}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={David\bibnamedelima D.},
+         giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \name{editor}{4}{}{%
+      {{hash=NB}{%
+         family={Nerlich},
+         familyi={N\bibinitperiod},
+         given={Brigitte},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=TZ}{%
+         family={Todd},
+         familyi={T\bibinitperiod},
+         given={Zazie},
+         giveni={Z\bibinitperiod},
+      }}%
+      {{hash=HV}{%
+         family={Herman},
+         familyi={H\bibinitperiod},
+         given={Vimala},
+         giveni={V\bibinitperiod},
+      }}%
+      {{hash=CDD}{%
+         family={Clarke},
+         familyi={C\bibinitperiod},
+         given={David\bibnamedelima D.},
+         giveni={D\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {Mouton de Gruyter}%
+    }
+    \strng{namehash}{NBCDD1}
+    \strng{fullhash}{NBCDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2003}
+    \field{labeldatesource}{year}
+    \field{sortinit}{N}
+    \field{sortinithash}{N}
+    \field{booktitle}{Polysemy. {Flexible} {Patterns} of {Meaning} in {Mind}
+  and {Language}}
+    \field{pages}{3\bibrangedash 30}
+    \field{shorttitle}{Polysemy and flexibility}
+    \field{title}{Polysemy and flexibility: introduction and overview}
+    \verb{url}
+    \verb https://books.google.de/books?hl=de&lr=&id=iiP2Clf0i1UC
+    \endverb
+    \list{location}{1}{%
+      {Berlin}%
+    }
+    \verb{file}
+    \verb Snapshot:/Users/Konstantin/Zotero/storage/FU82SJXC/books.html:text/ht
+    \verb ml
+    \endverb
+    \field{annotation}{%
+    4: Polysemie vs. Homonymie vs. Ambiguität vs. Vagheit: "To give a
+  relatively clear-cut example, the homonyms (river) bank and (financial) bank
+  wouldbe accommodated in two entries, the meanings of the polysemous word nose
+  ('facial organ', 'sense of smell' and 'attribute of a wine') would be
+  accommodatedin one. But not all cases are so clear-cut. Another problem
+  arising from polysemy and homonymy is lexical ambiguity, and the precise
+  relationship between polysemy, homonymy, ambiguity and vagueness is still an
+  unresolved issue in lexical semantics."%
+    }
+    \field{year}{2003}
+  \endentry
+
+  \entry{rollerInclusiveSelectiveSupervised2014}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=RS}{%
+         family={Roller},
+         familyi={R\bibinitperiod},
+         given={Stephen},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=EK}{%
+         family={Erk},
+         familyi={E\bibinitperiod},
+         given={Katrin},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=BG}{%
+         family={Boleda},
+         familyi={B\bibinitperiod},
+         given={Gemma},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RSEKBG1}
+    \strng{fullhash}{RSEKBG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{booktitle}{Proceedings of {COLING} 2014, the 25th {International}
+  {Conference} on {Computational} {Linguistics}: {Technical} {Papers}}
+    \field{pages}{1025\bibrangedash 1036}
+    \field{shorttitle}{Inclusive yet selective}
+    \field{title}{Inclusive yet selective: {Supervised} distributional
+  hypernymy detection}
+    \verb{url}
+    \verb https://www.aclweb.org/anthology/C14-1097
+    \endverb
+    \verb{file}
+    \verb Full Text:/Users/Konstantin/Zotero/storage/T8VLJX3A/Roller et al. - 2
+    \verb 014 - Inclusive yet selective Supervised distributional.pdf:applicati
+    \verb on/pdf
+    \endverb
+    \field{annotation}{%
+    1025: Definition Distributional Inclusion Hypothesis: "[The Distributional
+  Inclusion Hypothesis] states that more specific terms appear in a subset of
+  the distributional contexts in which more general terms appear. So, animal
+  can occur in all the contexts in which dog can occur, plus some contexts in
+  which dog cannot – for instance, rights can be a typical cooccurrence for
+  animal (e.g. “animal rights”), but not so much for dog (e.g. \#“dog
+  rights”)."%
+    }
+    \field{year}{2014}
+  \endentry
+\enddatalist
+\endinput
