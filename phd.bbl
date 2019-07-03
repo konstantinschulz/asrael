@@ -41,20 +41,12 @@
     \field{sortinit}{D}
     \field{sortinithash}{D}
     \field{pages}{273\bibrangedash 296}
-    \field{shorttitle}{Corpus-based cognitive semantics}
-    \field{title}{Corpus-based cognitive semantics: {A} contrastive study of
-  phasal verbs in {English} and {Russian}}
-    \verb{url}
-    \verb https://www.researchgate.net/profile/Stefan_Gries/publication/2882650
-    \verb 35_Corpus-based_cognitive_semantics_A_contrastive_study_of_phasal_ver
-    \verb bs_in_English_and_Russian/links/599bd49845851574f4ac7a63/Corpus-based
-    \verb -cognitive-semantics-A-contrastive-study-of-phasal-verbs-in-English-a
-    \verb nd-Russian.pdf
-    \endverb
+    \field{shorttitle}{Corpus-Based Cognitive Semantics}
+    \field{title}{Corpus-Based Cognitive Semantics: {{A}} Contrastive Study of
+  Phasal Verbs in {{English}} and {{Russian}}}
     \verb{file}
-    \verb Full Text:/Users/Konstantin/Zotero/storage/574YI3WY/Divjak and Gries
-    \verb - 2009 - Corpus-based cognitive semantics A contrastive st.pdf:applic
-    \verb ation/pdf
+    \verb /Users/Konstantin/Zotero/storage/574YI3WY/Divjak and Gries - 2009 - C
+    \verb orpus-based cognitive semantics A contrastive st.pdf
     \endverb
     \field{journaltitle}{Studies in cognitive corpus linguistics}
     \field{annotation}{%
@@ -68,6 +60,157 @@
   words in a domain."%
     }
     \field{year}{2009}
+  \endentry
+
+  \entry{fowlerAgileManifesto2001}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FM}{%
+         family={Fowler},
+         familyi={F\bibinitperiod},
+         given={Martin},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=HJ}{%
+         family={Highsmith},
+         familyi={H\bibinitperiod},
+         given={Jim},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FMHJ1}
+    \strng{fullhash}{FMHJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2001}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{number}{8}
+    \field{pages}{28\bibrangedash 35}
+    \field{title}{The Agile Manifesto}
+    \field{volume}{9}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/NE9U5PM5/Fowler and Highsmith - 2001
+    \verb  - The agile manifesto.pdf
+    \endverb
+    \field{journaltitle}{Software Development}
+    \field{annotation}{%
+    32: st{\"a}ndige/iterative Anpassung der Anforderungen und des Designs:
+  "[...] agile processes assume and encourage the alteration of requirements
+  while the code is being written. As such, design cannot be a purely up-front
+  activity to be completed before construction. Instead, design is a continuous
+  activity that's performed throughout the project."%
+    }
+    \field{year}{2001}
+  \endentry
+
+  \entry{garcia-penalvoOpenKnowledgeManagement2010}{article}{}
+    \name{author}{3}{}{%
+      {{hash=GFJ}{%
+         family={{Garc{\'i}a-Penalvo}},
+         familyi={G\bibinitperiod},
+         given={Francisco\bibnamedelima J.},
+         giveni={F\bibinitperiod\bibinitdelim J\bibinitperiod},
+      }}%
+      {{hash=GC}{%
+         family={{Garc{\'i}a de Figuerola}},
+         familyi={G\bibinitperiod},
+         given={Carlos},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MJA}{%
+         family={Merlo},
+         familyi={M\bibinitperiod},
+         given={Jose\bibnamedelima A.},
+         giveni={J\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GFJGCMJA1}
+    \strng{fullhash}{GFJGCMJA1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{number}{4}
+    \field{pages}{517\bibrangedash 519}
+    \field{title}{Open Knowledge Management in Higher Education}
+    \field{volume}{34}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/TSKVH6Y2/García-Penalvo Carlos Garc
+    \verb ía de Figuerola Jose A. Merlo - 2010 - Open knowledge management in
+    \verb higher education.pdf;/Users/Konstantin/Zotero/storage/B46WJT8U/oir.20
+    \verb 10.26434daa.html
+    \endverb
+    \field{journaltitle}{Online Information Review}
+    \field{annotation}{%
+    518: Offenes Wissen als gemeinsame Grundlage von offener Software und
+  offener Wissenschaft etc.: "We think that Open Knowledge comprises Open
+  Software, Open Content, Open Science and Open Innovation. [...] Open Software
+  owes its deepest roots to Open Access; Open Contents are related to open
+  access to the educative, cultural or divulgative contents that are published
+  under a non restrictive license that allows copy and distribution, but also
+  the right to modify works. Open Science is devoted to the open access to
+  scientific contents, while Open Innovation transfers the Open Access
+  principles to the enterprise production world, which is actually
+  indispensable for the enhancement of University-Enterprises relationships."%
+    }
+    \field{year}{2010}
+  \endentry
+
+  \entry{gyllenstenRgramsUnsupervisedLearning2019}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=GAC}{%
+         family={Gyllensten},
+         familyi={G\bibinitperiod},
+         given={Amaru\bibnamedelima Cuba},
+         giveni={A\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=EA}{%
+         family={Ekgren},
+         familyi={E\bibinitperiod},
+         given={Ariel},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=SM}{%
+         family={Sahlgren},
+         familyi={S\bibinitperiod},
+         given={Magnus},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en-us}%
+    }
+    \strng{namehash}{GACEASM1}
+    \strng{fullhash}{GACEASM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2019}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{booktitle}{Proceedings of the 13th {{International Conference}} on
+  {{Computational Semantics}} - {{Student Papers}}}
+    \field{pages}{52\bibrangedash 62}
+    \field{shorttitle}{R-Grams}
+    \field{title}{R-Grams: {{Unsupervised Learning}} of {{Semantic Units}} in
+  {{Natural Language}}}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/HMWS97VS/Gyllensten et al. - 2019 -
+    \verb R-grams Unsupervised Learning of Semantic Units i.pdf;/Users/Konstant
+    \verb in/Zotero/storage/Z9EN8SK6/W19-0607.html
+    \endverb
+    \field{annotation}{%
+    56f.: word2vec nutzt preprocessing, um die Wortverteilungen f{\"u}r die
+  Analyse zu gl{\"a}tten: "It is worth noting that the skipgram model uses
+  subsampling of common words, which is an optimization introduced to
+  compensate for the power law distribution in common vocabularies. Also, the
+  skipgram model controls for collocations by dampening the impact of frequent
+  collocations."%
+    }
+    \field{year}{2019}
   \endentry
 
   \entry{hagiwaraSupervisedSynonymAcquisition2009}{article}{}
@@ -101,28 +244,26 @@
     \field{sortinithash}{H}
     \field{number}{2}
     \field{pages}{558\bibrangedash 582}
-    \field{title}{Supervised synonym acquisition using distributional features
-  and syntactic patterns}
-    \verb{url}
-    \verb https://www.jstage.jst.go.jp/article/imt/4/2/4_2_558/_pdf
-    \endverb
+    \field{title}{Supervised Synonym Acquisition Using Distributional Features
+  and Syntactic Patterns}
     \field{volume}{4}
     \verb{file}
-    \verb Full Text:/Users/Konstantin/Zotero/storage/EAC7LMV9/Hagiwara et al. -
-    \verb  2009 - Supervised synonym acquisition using distributiona.pdf:applic
-    \verb ation/pdf;Snapshot:/Users/Konstantin/Zotero/storage/B2DHR6NQ/ja.html:
-    \verb text/html
+    \verb /Users/Konstantin/Zotero/storage/EAC7LMV9/Hagiwara et al. - 2009 - Su
+    \verb pervised synonym acquisition using distributiona.pdf;/Users/Konstanti
+    \verb n/Zotero/storage/B2DHR6NQ/ja.html
     \endverb
     \field{journaltitle}{Information and Media Technologies}
     \field{annotation}{%
     566: Modellierung von Synonymie als Pointwise Mutual Information der beiden
   Wortkandidaten in Bezug auf den gemeinsamen Kontext: "The value of
-  distributional features fjD (x, z) is determined so that it represents the
-  degree of commonality of context cj shared by the word pair (x, z). [...] The
-  advantage of this feature construction is that, given the independence
-  assumption between word x and z , the feature value is easily calculated as
-  the simple sum of two corresponding pointwise mutual information weights as:
-  fjD (x, z) = PMI(x, cj) + PMI(z, cj) [...]"%
+  distributional features f\textsubscript{j}\textsuperscript{D} (x, z) is
+  determined so that it represents the degree of commonality of context
+  c\textsubscript{j} shared by the word pair (x, z). [...] The advantage of
+  this feature construction is that, given the independence assumption between
+  word x and z , the feature value is easily calculated as the simple sum of
+  two corresponding pointwise mutual information weights as:
+  f\textsubscript{j}\textsuperscript{D} (x, z) = PMI(x, c\textsubscript{j}) +
+  PMI(z, c\textsubscript{j}) [...]"%
     }
     \field{year}{2009}
   \endentry
@@ -132,7 +273,7 @@
       {{hash=HA}{%
          family={Herbelot},
          familyi={H\bibinitperiod},
-         given={Aurélie},
+         given={Aur{\'e}lie},
          giveni={A\bibinitperiod},
       }}%
       {{hash=GM}{%
@@ -150,27 +291,33 @@
     \field{labeldatesource}{year}
     \field{sortinit}{H}
     \field{sortinithash}{H}
-    \field{booktitle}{Proceedings of the 51st {Annual} {Meeting} of the
-  {Association} for {Computational} {Linguistics} ({Volume} 2: {Short}
-  {Papers})}
+    \field{booktitle}{Proceedings of the 51st {{Annual Meeting}} of the
+  {{Association}} for {{Computational Linguistics}} ({{Volume}} 2: {{Short
+  Papers}})}
     \field{pages}{440\bibrangedash 445}
-    \field{title}{Measuring semantic content in distributional vectors}
-    \verb{url}
-    \verb https://www.aclweb.org/anthology/P13-2078
-    \endverb
+    \field{title}{Measuring Semantic Content in Distributional Vectors}
     \field{volume}{2}
     \verb{file}
-    \verb Full Text:/Users/Konstantin/Zotero/storage/X7YJ3IHE/Herbelot and Gane
-    \verb salingam - 2013 - Measuring semantic content in distributional vecto.
-    \verb pdf:application/pdf
+    \verb /Users/Konstantin/Zotero/storage/X7YJ3IHE/Herbelot and Ganesalingam -
+    \verb  2013 - Measuring semantic content in distributional vecto.pdf
     \endverb
     \field{annotation}{%
-    443: Hypernyme sind nicht notwendigerweise allgemeinere Wörter im
-  distributionellen Sinne, sie können trotzdem sehr spezifische Kontexte
-  aufweisen (große Extension, aber kleine Intension): "Although beverage is an
-  umbrella word for many various types of drinks, speakers of English use it in
-  very particular contexts. So, distributionally, it is not a ‘general
-  word’."%
+    443: Hypernyme sind nicht notwendigerweise allgemeinere W{\"o}rter im
+  distributionellen Sinne, sie k{\"o}nnen trotzdem sehr spezifische Kontexte
+  aufweisen (gro{\ss}e Extension, aber kleine Intension): "Although beverage is
+  an umbrella word for many various types of drinks, speakers of English use it
+  in very particular contexts. So, distributionally, it is not a `general
+  word'." 444: bei semantischen Analysen sollte immer auf verschiedene
+  Wortbedeutungen geachtet werden: "Some of the errors we observe may also be
+  related to word senses. For instance, the word medium, to be found in the
+  pair magazine \textendash{} medium, can be synonymous with middle,
+  clairvoyant or again mode of communication. In the sense of clairvoyant, it
+  is clearly more specific than in the sense intended in the test pair. As
+  distributions do not distinguish between senses, this will have an effect on
+  our results." 444: Informationsma{\ss}e werden durch starke Kollokationen
+  gest{\"o}rt: "[...] strong collocation effects can influence the measurement
+  of information negatively: it is an open question which phrases should be
+  considered `words-with-spaces' when building distributions."%
     }
     \field{year}{2013}
   \endentry
@@ -217,7 +364,7 @@
       }}%
     }
     \list{publisher}{1}{%
-      {Mouton de Gruyter}%
+      {{Mouton de Gruyter}}%
     }
     \strng{namehash}{NBCDD1}
     \strng{fullhash}{NBCDD1}
@@ -227,30 +374,32 @@
     \field{labeldatesource}{year}
     \field{sortinit}{N}
     \field{sortinithash}{N}
-    \field{booktitle}{Polysemy. {Flexible} {Patterns} of {Meaning} in {Mind}
-  and {Language}}
+    \field{booktitle}{Polysemy. {{Flexible Patterns}} of {{Meaning}} in
+  {{Mind}} and {{Language}}}
     \field{pages}{3\bibrangedash 30}
-    \field{shorttitle}{Polysemy and flexibility}
-    \field{title}{Polysemy and flexibility: introduction and overview}
-    \verb{url}
-    \verb https://books.google.de/books?hl=de&lr=&id=iiP2Clf0i1UC
-    \endverb
+    \field{shorttitle}{Polysemy and Flexibility}
+    \field{title}{Polysemy and Flexibility: Introduction and Overview}
     \list{location}{1}{%
-      {Berlin}%
+      {{Berlin}}%
     }
     \verb{file}
-    \verb Snapshot:/Users/Konstantin/Zotero/storage/FU82SJXC/books.html:text/ht
-    \verb ml
+    \verb /Users/Konstantin/Zotero/storage/FU82SJXC/books.html
     \endverb
     \field{annotation}{%
-    4: Polysemie vs. Homonymie vs. Ambiguität vs. Vagheit: "To give a
+    4: Polysemie vs. Homonymie vs. Ambiguit{\"a}t vs. Vagheit: "To give a
   relatively clear-cut example, the homonyms (river) bank and (financial) bank
-  wouldbe accommodated in two entries, the meanings of the polysemous word nose
-  ('facial organ', 'sense of smell' and 'attribute of a wine') would be
-  accommodatedin one. But not all cases are so clear-cut. Another problem
+  would\\ be accommodated in two entries, the meanings of the polysemous word
+  nose ('facial organ', 'sense of smell' and 'attribute of a wine') would be
+  accommodated\\ in one. But not all cases are so clear-cut. Another problem
   arising from polysemy and homonymy is lexical ambiguity, and the precise
   relationship between polysemy, homonymy, ambiguity and vagueness is still an
-  unresolved issue in lexical semantics."%
+  unresolved issue in lexical semantics." 5: polysemes Wort als Kategorie mit
+  netzwerkartig verbundenen Mitgliedern: "In cognitive linguistics, the word
+  itself with its network of polysemous senses came to be regarded as a
+  category in which the senses of the word (i.e. the members of the category)
+  are related to each other by means of general cognitive principles such as
+  metaphor, metonymy, generalization, specialization, and image-schema
+  transformations."%
     }
     \field{year}{2003}
   \endentry
@@ -284,28 +433,24 @@
     \field{labeldatesource}{year}
     \field{sortinit}{R}
     \field{sortinithash}{R}
-    \field{booktitle}{Proceedings of {COLING} 2014, the 25th {International}
-  {Conference} on {Computational} {Linguistics}: {Technical} {Papers}}
+    \field{booktitle}{Proceedings of {{COLING}} 2014, the 25th {{International
+  Conference}} on {{Computational Linguistics}}: {{Technical Papers}}}
     \field{pages}{1025\bibrangedash 1036}
-    \field{shorttitle}{Inclusive yet selective}
-    \field{title}{Inclusive yet selective: {Supervised} distributional
-  hypernymy detection}
-    \verb{url}
-    \verb https://www.aclweb.org/anthology/C14-1097
-    \endverb
+    \field{shorttitle}{Inclusive yet Selective}
+    \field{title}{Inclusive yet Selective: {{Supervised}} Distributional
+  Hypernymy Detection}
     \verb{file}
-    \verb Full Text:/Users/Konstantin/Zotero/storage/T8VLJX3A/Roller et al. - 2
-    \verb 014 - Inclusive yet selective Supervised distributional.pdf:applicati
-    \verb on/pdf
+    \verb /Users/Konstantin/Zotero/storage/T8VLJX3A/Roller et al. - 2014 - Incl
+    \verb usive yet selective Supervised distributional.pdf
     \endverb
     \field{annotation}{%
     1025: Definition Distributional Inclusion Hypothesis: "[The Distributional
   Inclusion Hypothesis] states that more specific terms appear in a subset of
   the distributional contexts in which more general terms appear. So, animal
   can occur in all the contexts in which dog can occur, plus some contexts in
-  which dog cannot – for instance, rights can be a typical cooccurrence for
-  animal (e.g. “animal rights”), but not so much for dog (e.g. \#“dog
-  rights”)."%
+  which dog cannot \textendash{} for instance, rights can be a typical
+  cooccurrence for animal (e.g. ``animal rights''), but not so much for dog
+  (e.g. \#``dog rights'')."%
     }
     \field{year}{2014}
   \endentry

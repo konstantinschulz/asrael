@@ -2,6 +2,8 @@
 
 \usepackage[style=authoryear,sorting=nyt,backend=bibtex]{biblatex}
 \usepackage{csquotes}
+\usepackage{hyperref}
+
 \addbibresource{lit.bib}
 
 \title{ASRAEL - Acquisition of Semantic RelAtions bEtween Latin nouns}
@@ -17,6 +19,7 @@
 
 \begin{document}
 \maketitle    
+\tableofcontents
                         
 \section{Introduction}
 
@@ -37,8 +40,26 @@ Since the solution to this problem may be to disambiguate word senses for every 
 \blockquote[{\cite[p.~443]{herbelotMeasuringSemanticContent2013}}]{Although beverage is an umbrella word for many various types of drinks, speakers of English use it in very particular contexts. So, distributionally, it is not a ‘general word’.}
 In this view, other existing taxonomies that may have acted as models of hypernymy need to be replaced by a definition that reflects how actual usage contexts can limit our selection of possible candidates for hypernymy:
 \blockquote[{\cite[p.~443]{rollerInclusiveSelectiveSupervised2014}}]{[The Distributional Inclusion Hypothesis] states that more specific terms appear in a subset of the distributional contexts in which more general terms appear. So, animal can occur in all the contexts in which dog can occur, plus some contexts in which dog cannot – for instance, rights can be a typical cooccurrence for animal (e.g. “animal rights”), but not so much for dog (e.g. \#“dog rights”).}
-...
+Unfortunately, this view may clash with the observations of \cite{herbelotMeasuringSemanticContent2013}:
+\begin{itemize}
+      \item Hypernyms can have very specific usage contexts.
+      \item Collocations may lead to unexpected results in the distribution of words.
+\end{itemize}
+Similar adjustments have to be made in treating other kinds of semantic relations. Therefore, many researchers apply preprocessing to their corpora before performing the actual analysis on them:
+\blockquote[{\cite[p.~56f.]{gyllenstenRgramsUnsupervisedLearning2019}}]{It is worth noting that the skipgram model uses subsampling of common words, which is an optimization introduced to compensate for the power law distribution in common vocabularies. Also, the skipgram model controls for collocations by dampening the impact of frequent collocations.}
+However, this increases the danger of circularity, revealing only those results that we were already expecting in the first place. As an alternative, we should look for a model that is robust enough to detect semantic relations despite the confounding factors. The objective should be to fit the model to the base text, not the other way round. 
 
+\subsection{Agile and Open Methodology}
+
+To achieve that, this study will follow an approach which is borrowed from computer science, i.e. the agile methodology for software development:
+\blockquote[{\cite[p.~32]{fowlerAgileManifesto2001}}]{[...] agile processes assume and encourage the alteration of requirements while the code is being written. As such, design cannot be a purely up-front activity to be completed before construction. Instead, design is a continuous activity that's performed throughout the project.}
+Coding will be used to establish a proof of concept for this study by implementing the discussed models and testing them on real-world corpus data. Furthermore, the basic notion of incremental and iterative progress also applies to the way the models themselves are being created: The dissertation will see a range of approaches and considerations being applied for various purposes, which reflects my own thoughts about the detection of semantic relations growing from initial, very basic foundations (e.g. pure contingency tables) to more complex environments of semantic study. The application of agile methodology to linguistic research is motivated not just by the related coding activities, but also by the similarities between dissertations and software products: In this view, a dissertation can be seen as a product to be delivered to customers, i.e. the research community. The analogy is enhanced further by the overlapping quality factor of openness: Dissertations are necessarily products of open science in much the same way as open source software is the product of other communities sharing the desire for unrestricted public access to creative commons.
+\blockquote[{\cite[p.~518]{garcia-penalvoOpenKnowledgeManagement2010}}]{We think that Open Knowledge comprises Open Software, Open Content, Open Science and Open Innovation. [...] Open Software owes its deepest roots to Open Access; Open Contents are related to open access to the educative, cultural or divulgative contents that are published under a non restrictive license that allows copy and distribution, but also the right to modify works. Open Science is devoted to the open access to scientific contents, while Open Innovation transfers the Open Access principles to the enterprise production world, which is actually indispensable for the enhancement of University-Enterprises relationships.}
+To demonstrate the viability of this transfer, the dissertation is split into various modules, separating, e.g., the bibliography from the rest of the documents and employing cross-references to put it all together for presentational purposes. These modules are, to some extent, directly visible in the sense of multiple source files that may be compiled to form a more complex document. Also, they are all publicly accessible at \href{https://github.com/konstantinschulz/asrael} and subject to version control, thus enabling readers to trace the resulting thoughts back to their very roots. Eventually, the reason to make all these considerations explicit is not so much to suggest a high quality of the work process, but rather to emphasize their possibly tremendous influence on the results and how they are gathered.
+
+\subsection{Corpus data}
+
+Now that the basic work flow with regard to development and dissemination has been outlined, it is time to have a closer look at the involved resources, most notably the corpus. 
 
 \printbibliography
 
