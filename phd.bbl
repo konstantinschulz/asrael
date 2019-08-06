@@ -17,6 +17,131 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
+  \entry{anstattTypenSemantischerRelationen2009a}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=AT}{%
+         family={Anstatt},
+         familyi={A\bibinitperiod},
+         given={Tanja},
+         giveni={T\bibinitperiod},
+      }}%
+    }
+    \name{editor}{4}{}{%
+      {{hash=BT}{%
+         family={Berger},
+         familyi={B\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=GK}{%
+         family={Gutschmidt},
+         familyi={G\bibinitperiod},
+         given={K.},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=KS}{%
+         family={Kempgen},
+         familyi={K\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KP}{%
+         family={Kosta},
+         familyi={K\bibinitperiod},
+         given={P.},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AT1}
+    \strng{fullhash}{AT1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Die Slavischen {{Sprachen}}. {{Ein}} Internationales
+  {{Handbuch}} Zu Ihrer {{Geschichte}}, Ihrer {{Struktur}} Und Ihrer
+  {{Erforschung}}}
+    \field{pages}{906\bibrangedash 915}
+    \field{title}{Typen Semantischer {{Relationen}}}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/UJJVJSM9/Tanja_Anstatt_2009_Typen_se
+    \verb mantischer_Relationen.html
+    \endverb
+    \field{annotation}{%
+    913: Suffixe zur Bildung von Hyponymen in slawischen Sprachen: "[...] zur
+  Bildung von Hyponymen kann z.B. das Suffix -ovye/-evye (seld' ,Hering`
+  \textendash{} sel'devye ,Heringsartige`) verwendet werden (s. Ginzburg 1985,
+  9)."%
+    }
+    \field{year}{2009}
+  \endentry
+
+  \entry{coenenAnalogieUndMetapher2013}{book}{}
+    \name{author}{1}{}{%
+      {{hash=CHG}{%
+         family={Coenen},
+         familyi={C\bibinitperiod},
+         given={Hans\bibnamedelima Georg},
+         giveni={H\bibinitperiod\bibinitdelim G\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {de}%
+    }
+    \list{publisher}{1}{%
+      {{Walter de Gruyter}}%
+    }
+    \keyw{Language Arts \& Disciplines / Linguistics / Historical \&
+  Comparative,Literary Criticism / European / German,Literary Criticism /
+  General,Literary Criticism / Semiotics \& Theory}
+    \strng{namehash}{CHG1}
+    \strng{fullhash}{CHG1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{abstract}{%
+    Von zahllosen anderen Ver{\"o}ffentlichungen zur bildlichen Rede
+  unterscheidet sich das Studienbuch "Analogie und Metapher" in zweifacher
+  Hinsicht: 1. Es verbindet Anregungen der antiken Rhetorik mit
+  Errungenschaften der modernen Sprachwissenschaft und -philosophie, so da{\ss}
+  die Entw{\"u}rfe der Klassiker in ein tragf{\"a}higeres theoretisches
+  Ger{\"u}st eingef{\"u}gt werden k{\"o}nnen. 2. Es f{\"u}hrt die verschiedenen
+  Erscheinungsformen der bildlichen Rede auf eine gemeinsame Tiefenstruktur
+  zur{\"u}ck: die Analogie, verstanden als Geltung eines gemeinsamen
+  Beschreibungsinhalts f{\"u}r zwei verschiedene Gegenst{\"a}nde. Die
+  Differenzierung des Analogiebegriffs - z.B. in ein- und mehrstellige sowie
+  triviale und nicht-triviale Analogien - erweist sich als Schl{\"u}ssel sowohl
+  zum linguistischen Verst{\"a}ndnis des Ph{\"a}nomens der Bildlichkeit wie
+  auch zur Interpretation einzelner sprachlicher Bilder etwa in der Literatur.
+  Insofern ist dieses Studienbuch sowohl f{\"u}r Linguisten als auch f{\"u}r
+  Literaturwissenschaftler von Interesse.%
+    }
+    \field{isbn}{978-3-11-089463-9}
+    \field{shorttitle}{{Analogie und Metapher}}
+    \field{title}{{Analogie und Metapher: Grundlegung einer Theorie der
+  bildlichen Rede}}
+    \field{annotation}{%
+    46: Unterscheidung von theoretischer und empirischer Bedeutung bzw.
+  Anwendungsbereich eines Wortes: "Theoretischer Anwendungsbereich eines
+  Wortes: die Klasse der Gegenst{\"a}nde, auf die ein Wort kraft seiner
+  Bedeutung beschreibend angewandt werden kann (TA). Empirischer
+  Anwendungsbereich eines Wortes: die Menge der Gegenst{\"a}nde, zu deren
+  Beschreibung ein Wort - bis zu einem gewissen Zeitpunkt - in der Erfahrung
+  eines bestimmten SprachteiInehmers bereits angewandt wurde (EA)." 58:
+  Hyponymie l{\"a}sst sich hierarchisch {\"u}bertragen, ist also transitiv:
+  "Die Relationen der Hyper- und Hyponymie sind transitiv. Wenn A Hyponym in
+  Bezug auf B ist, dann auch in Bezug auf die Hyperonyme von B, und wenn B
+  Hyperonym in Bezug auf A ist, dann auch in Bezug auf die Hyponyme von A."%
+    }
+    \field{month}{02}
+    \field{year}{2013}
+  \endentry
+
   \entry{divjakCorpusbasedCognitiveSemantics2009}{article}{}
     \name{author}{2}{}{%
       {{hash=DD}{%
@@ -157,6 +282,49 @@
   indispensable for the enhancement of University-Enterprises relationships."%
     }
     \field{year}{2010}
+  \endentry
+
+  \entry{gevaudanSemantischeRelationenNominalen1999}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GP}{%
+         family={G{\'e}vaudan},
+         familyi={G\bibinitperiod},
+         given={Paul},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GP1}
+    \strng{fullhash}{GP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1999}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{11\bibrangedash 34}
+    \field{title}{Semantische {{Relationen}} in Nominalen Und Adjektivischen
+  {{Kompositionen}} Und {{Syntagmen}}}
+    \field{volume}{9}
+    \field{journaltitle}{PhiN. Philologie im Netz}
+    \field{annotation}{%
+    16: Definition Hyponymie: "Auf der konzeptuellen Ebene, auf der auch
+  Similarit{\"a}t und Kontiguit{\"a}t angesiedelt sind, beruht Hyponymie auf
+  der~\emph{taxonomischen Inklusion}~von Konzepten. Die taxonomische Inklusion
+  ist nichts anderes als eine Ober-/Unterbegriffsbeziehung [...]. Diese
+  Konzeptpaare sind teilidentisch, weil die Extension (die Menge der mit dem
+  Begriff gemeinten Ph{\"a}nomene) des Unterbegriffs in der des Oberbegriffs
+  enthalten ist und gleichzeitig die Intension (die Menge der dem Begriff
+  zugeordneten Eigenschaften) des Oberbegriffs in der des Unterbegriffs
+  enthalten ist [...]." 17: Zusammenspiel von Hyponymie mit anderen
+  semantischen Ph{\"a}nomenen: "(4) Hyponymische Relationen (taxonomische
+  Inklusion) a. Polysemie: fr.~\emph{homme}~'Mann' / 'Mensch' b.
+  Bedeutungswandel: lt.~\emph{passer}~'Sperling' {$>$}
+  sp.~\emph{p{\'a}jaro}~'(kleiner) Vogel' c. Suffigierung:
+  lt.~\emph{artus}~'Gelenk' {$>~$}\emph{articulus} 'kleines Gelenk'" 18:
+  Hyponymie (taxonomische Inklusion) beruht auf Spezifizierung bzw.
+  Generalisierung:%
+    }
+    \field{year}{1999}
   \endentry
 
   \entry{gyllenstenRgramsUnsupervisedLearning2019}{inproceedings}{}
@@ -322,6 +490,60 @@
     \field{year}{2013}
   \endentry
 
+  \entry{minozziLatinWordNetProject2010}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=MS}{%
+         family={Minozzi},
+         familyi={M\bibinitperiod},
+         given={S.},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=AP}{%
+         family={Anreiter},
+         familyi={A\bibinitperiod},
+         given={Peter},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=KM}{%
+         family={Kienpointner},
+         familyi={K\bibinitperiod},
+         given={M.},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Institut f{\"u}r Sprachen und Literaturen der Universit{\"a}t
+  Innsbruck, Bereich Sprachwissenschaft}}%
+    }
+    \strng{namehash}{MS1}
+    \strng{fullhash}{MS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{booktitle}{Latin Linguistics Today: {{Akten}} Des 15.
+  {{Internationalen Kolloquiums}} Zur {{Lateinischen Linguistik}},
+  {{Innsbruck}}, 4.- 9. {{April}} 2009}
+    \field{isbn}{978-3-85124-723-7}
+    \field{pages}{707\bibrangedash 716}
+    \field{series}{Innsbrucker {{Beitr{\"a}ge}} Zur {{Sprachwissenschaft}}}
+    \field{title}{The {{Latin WordNet Project}}}
+    \field{volume}{137}
+    \list{location}{1}{%
+      {{Innsbruck}}%
+    }
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/M7U8QZFR/latin-linguistics-today-akt
+    \verb en-des-15-internationalen-kolloquiums-zur-lateinischen-linguistik.htm
+    \verb l
+    \endverb
+    \field{year}{2010}
+  \endentry
+
   \entry{nerlichPolysemyFlexibilityIntroduction2003}{incollection}{}
     \name{author}{2}{}{%
       {{hash=NB}{%
@@ -404,6 +626,60 @@
     \field{year}{2003}
   \endentry
 
+  \entry{onoWordEmbeddingbasedAntonym2015}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=OM}{%
+         family={Ono},
+         familyi={O\bibinitperiod},
+         given={Masataka},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=MM}{%
+         family={Miwa},
+         familyi={M\bibinitperiod},
+         given={Makoto},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SY}{%
+         family={Sasaki},
+         familyi={S\bibinitperiod},
+         given={Yutaka},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{OMMMSY1}
+    \strng{fullhash}{OMMMSY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{year}
+    \field{sortinit}{O}
+    \field{sortinithash}{O}
+    \field{booktitle}{Proceedings of the 2015 {{Conference}} of the {{North
+  American Chapter}} of the {{Association}} for {{Computational Linguistics}}:
+  {{Human Language Technologies}}}
+    \field{pages}{984\bibrangedash 989}
+    \field{title}{Word Embedding-Based Antonym Detection Using Thesauri and
+  Distributional Information}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/UE83AWER/Ono et al. - 2015 - Word em
+    \verb bedding-based antonym detection using thesa.pdf
+    \endverb
+    \field{annotation}{%
+    984-988: Distributionelle Semantik alleine reicht zur Unterscheidung von
+  Synonymie und Antonymie nicht aus, man braucht auch Thesauri / Goldstandard:
+  "The WE-T model receives supervised information from synonym and antonym
+  pairs in thesauri and infers the relations of the other word pairs in the
+  thesauri from the supervised information. The WE-TD model incorporates
+  corpus-based contextual information (distributional information) into the
+  WE-T model, which enables the calculation of the similarities among
+  in-vocabulary and out-of-vocabulary words. [...] Our WE-TD model achieved the
+  highest score among the models that use both thesauri and distributional
+  information."%
+    }
+    \field{year}{2015}
+  \endentry
+
   \entry{rollerInclusiveSelectiveSupervised2014}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=RS}{%
@@ -453,6 +729,54 @@
   (e.g. \#``dog rights'')."%
     }
     \field{year}{2014}
+  \endentry
+
+  \entry{souille-rigautSemanticAccountQuasiLexemes2010}{thesis}{}
+    \name{author}{1}{}{%
+      {{hash=SC}{%
+         family={{Souill{\'e}-Rigaut}},
+         familyi={S\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SC1}
+    \strng{fullhash}{SC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{title}{A {{Semantic Account}} of {{Quasi}}-{{Lexemes}} in {{Modern
+  English}}-{{Processing Semiotic Units}} of {{Greek}} or {{Latin Origin}} into
+  {{Lexical Units}}}
+    \list{institution}{1}{%
+      {University of Kansas}%
+    }
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/WQSJT2H9/Souillé-Rigaut - 2010 - A
+    \verb Semantic Account of Quasi-Lexemes in Modern Engl.pdf;/Users/Konstanti
+    \verb n/Zotero/storage/WJSA5ZGD/7406.html
+    \endverb
+    \field{type}{{{PhD Thesis}}}
+    \field{annotation}{%
+    33: semantische Relationen sind aus der Morphologie herleitbar, selbst wenn
+  ein Wort als Ganzes nicht paraphrasiert werden kann: "The head constituent in
+  both compounds is on the right, the modifier constituent on the left, and,
+  although `cardiopathy' is not paraphrasable, we can still deduce from its
+  semiotic units that the compound as a whole is a hyponym of the meaning
+  carried by the semiotic unit -path-." 43: Komposition erm{\"o}glicht
+  Hyponymie bzw. macht sie morphologisch sichtbar: "`Dontopedalogy is the
+  science of opening your mouth and putting your foot in it, a science which I
+  have practiced for a good many years'. There is evidence that we are dealing
+  with a secondary compound of the type W + X + Y, that is to say, with the
+  semiotic units -dont- + -ped- + -log- being concatenated synchronically.
+  [...] secondary compounds W + XY are always expanded primary compounds in
+  which WXY is a hyponym of XY. The compound XY itself may be a primary or a
+  synthetic compound, but stands necessarily as a nominal constituent."%
+    }
+    \field{year}{2010}
   \endentry
 \enddatalist
 \endinput
