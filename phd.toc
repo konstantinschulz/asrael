@@ -4,8 +4,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{Hyponymy}{2}{section*.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Corpus data}{4}{section*.6}% 
+\contentsline {subsection}{Method}{5}{section*.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix}{4}{section*.7}% 
+\contentsline {section}{Appendix}{6}{section*.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Appendix A: Agile and Open Methodology}{4}{section*.8}% 
+\contentsline {subsection}{Appendix A: Agile and Open Methodology}{6}{section*.8}% 

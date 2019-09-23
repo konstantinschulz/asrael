@@ -1,4 +1,14 @@
 
+@inproceedings{haugCreatingParallelTreebank2008,
+  title = {Creating a Parallel Treebank of the Old {{Indo}}-{{European Bible}} Translations [{{PROIEL}}]},
+  booktitle = {Proceedings of the {{Second Workshop}} on {{Language Technology}} for {{Cultural Heritage Data}} ({{LaTeCH}} 2008)},
+  author = {Haug, Dag TT and J{\o}hndal, Marius},
+  year = {2008},
+  pages = {27--34},
+  file = {/Users/Konstantin/Zotero/storage/G88CBH7B/Haug and Jøhndal - 2008 - Creating a parallel treebank of the old Indo-Europ.pdf;/Users/Konstantin/Zotero/storage/RSZ8U3HE/Haug and Jøhndal - 2008 - Creating a parallel treebank of the old Indo-Europ.pdf},
+  annote = {29: Objekt eines Verbs sagt viel {\"u}ber Wortstellung aus: "To study the interaction between syntax/argument structure and pragmatics in determining word order, we need to be able to separate objects (OBJ) from other arguments of the verb (OBL)"}
+}
+
 @incollection{nerlichPolysemyFlexibilityIntroduction2003,
   address = {{Berlin}},
   title = {Polysemy and Flexibility: Introduction and Overview},
@@ -48,6 +58,19 @@ in one. But not all cases are so clear-cut. Another problem arising from polysem
   pages = {273--296},
   file = {/Users/Konstantin/Zotero/storage/574YI3WY/Divjak and Gries - 2009 - Corpus-based cognitive semantics A contrastive st.pdf},
   annote = {274: Probleme bei der Erforschung von Synonymie: "Polysemy requires the researcher to determine whether two usage events are identical or sufficiently similar to be considered a single sense, what the degree of similarity is between different senses, where to connect a sense to others in the network, and which sense(s) to recognize as prototypical one(s). [...] in addition, [linguists] have to decide what the differences are between the near-synonyms as well as what the relation is between semantically similar words in a domain."}
+}
+
+@inproceedings{herbelotBuildingSharedWorld2015,
+  title = {Building a Shared World: {{Mapping}} Distributional to Model-Theoretic Semantic Spaces},
+  shorttitle = {Building a Shared World},
+  booktitle = {Proceedings of the 2015 {{Conference}} on {{Empirical Methods}} in {{Natural Language Processing}}},
+  author = {Herbelot, Aur{\'e}lie and Vecchi, Eva Maria},
+  year = {2015},
+  pages = {22--32},
+  file = {/Users/Konstantin/Zotero/storage/I2QCLQF4/Herbelot and Vecchi - 2015 - Building a shared world Mapping distributional to.pdf},
+  annote = {23: mengentheoretische Zuordnungen (z.B. "Alle/Einige/Keine X sind auch Y") k{\"o}nnen mittels distributioneller Semantik induziert werden: "[...] human-like intuitions about the quantification of simple subject/predicate pairs can be induced from standard distributional data."
+
+27: bei ausreichenden, spezialisierten Trainingsdaten (z.B. annotierte Texte {\"u}ber Tiere) k{\"o}nnen modelltheoretische Repr{\"a}sentationen f{\"u}r Konzept-Eigenschaft-Paare (z.B. bear -{$>$} is\_brown) distributionell gelernt werden: "[...] given a reasonable amount of training data for a category, we can proficiently generate modeltheoretic representations for concept-feature pairs from a distributional space."}
 }
 
 @inproceedings{herbelotMeasuringSemanticContent2013,
@@ -112,6 +135,26 @@ in one. But not all cases are so clear-cut. Another problem arising from polysem
   annote = {518: Offenes Wissen als gemeinsame Grundlage von offener Software und offener Wissenschaft etc.: "We think that Open Knowledge comprises Open Software, Open Content, Open Science and Open Innovation. [...] Open Software owes its deepest roots to Open Access; Open Contents are related to open access to the educative, cultural or divulgative contents that are published under a non restrictive license that allows copy and distribution, but also the right to modify works. Open Science is devoted to the open access to scientific contents, while Open Innovation transfers the Open Access principles to the enterprise production world, which is actually indispensable for the enhancement of University-Enterprises relationships."}
 }
 
+@article{hestnessDeepLearningScaling2017,
+  archivePrefix = {arXiv},
+  eprinttype = {arxiv},
+  eprint = {1712.00409},
+  primaryClass = {cs, stat},
+  title = {Deep {{Learning Scaling}} Is {{Predictable}}, {{Empirically}}},
+  abstract = {Deep learning (DL) creates impactful advances following a virtuous recipe: model architecture search, creating large training data sets, and scaling computation. It is widely believed that growing training sets and models should improve accuracy and result in better products. As DL application domains grow, we would like a deeper understanding of the relationships between training set size, computational scale, and model accuracy improvements to advance the state-of-the-art. This paper presents a large scale empirical characterization of generalization error and model size growth as training sets grow. We introduce a methodology for this measurement and test four machine learning domains: machine translation, language modeling, image processing, and speech recognition. Our empirical results show power-law generalization error scaling across a breadth of factors, resulting in power-law exponents---the "steepness" of the learning curve---yet to be explained by theoretical work. Further, model improvements only shift the error but do not appear to affect the power-law exponent. We also show that model size scales sublinearly with data size. These scaling relationships have significant implications on deep learning research, practice, and systems. They can assist model debugging, setting accuracy targets, and decisions about data set growth. They can also guide computing system design and underscore the importance of continued computational scaling.},
+  journal = {arXiv:1712.00409 [cs, stat]},
+  author = {Hestness, Joel and Narang, Sharan and Ardalani, Newsha and Diamos, Gregory and Jun, Heewoo and Kianinejad, Hassan and Patwary, Md Mostofa Ali and Yang, Yang and Zhou, Yanqi},
+  month = dec,
+  year = {2017},
+  keywords = {Computer Science - Machine Learning,Statistics - Machine Learning},
+  file = {/Users/Konstantin/Zotero/storage/JLUM4XBH/Hestness et al. - 2017 - Deep Learning Scaling is Predictable, Empirically.pdf;/Users/Konstantin/Zotero/storage/5DGISFJH/1712.html},
+  annote = {11: kleine Trainingsdaten verlangen kleinere Batch Size (\& Learning Rate?) "For large models with fixed hyperparameters, increasing the batch sizes and learning rates usually closed a significant portion of the gap to the power-law trend. Analogously, smaller training sets often require smaller batch sizes to ensure models behave well while fitting."
+
+13: mehr Trainingsdaten sind IMMER besser: "We empirically validate that DL model accuracy improves as a power-law as we grow training sets for state-of-the-art (SOTA) model architectures in four machine learning domains: machine translation, language modeling, image processing, and speech recognition. These power-law learning curves [exist] across all tested domains, model architectures, optimizers, and loss functions."
+
+Comment: 19 pages, 11 figures}
+}
+
 @article{gevaudanSemantischeRelationenNominalen1999,
   title = {Semantische {{Relationen}} in Nominalen Und Adjektivischen {{Kompositionen}} Und {{Syntagmen}}},
   volume = {9},
@@ -132,7 +175,7 @@ c. Suffigierung: lt.~\emph{artus}~'Gelenk' {$>~$}\emph{articulus} 'kleines Gelen
 18: Hyponymie (taxonomische Inklusion) beruht auf Spezifizierung bzw. Generalisierung:}
 }
 
-@incollection{anstattTypenSemantischerRelationen2009a,
+@incollection{anstattTypenSemantischerRelationen2009,
   title = {Typen Semantischer {{Relationen}}},
   booktitle = {Die Slavischen {{Sprachen}}. {{Ein}} Internationales {{Handbuch}} Zu Ihrer {{Geschichte}}, Ihrer {{Struktur}} Und Ihrer {{Erforschung}}},
   author = {Anstatt, Tanja},
@@ -153,10 +196,23 @@ c. Suffigierung: lt.~\emph{artus}~'Gelenk' {$>~$}\emph{articulus} 'kleines Gelen
   author = {Coenen, Hans Georg},
   month = feb,
   year = {2013},
-  keywords = {Language Arts \& Disciplines / Linguistics / Historical \& Comparative,Literary Criticism / European / German,Literary Criticism / General,Literary Criticism / Semiotics \& Theory},
+  keywords = {Literary Criticism / General,Language Arts \& Disciplines / Linguistics / Historical \& Comparative,Literary Criticism / European / German,Literary Criticism / Semiotics \& Theory},
   annote = {46: Unterscheidung von theoretischer und empirischer Bedeutung bzw. Anwendungsbereich eines Wortes: "Theoretischer Anwendungsbereich eines Wortes: die Klasse der Gegenst{\"a}nde, auf die ein Wort kraft seiner Bedeutung beschreibend angewandt werden kann (TA). Empirischer Anwendungsbereich eines Wortes: die Menge der Gegenst{\"a}nde, zu deren Beschreibung ein Wort - bis zu einem gewissen Zeitpunkt - in der Erfahrung eines bestimmten SprachteiInehmers bereits angewandt wurde (EA)."
 
 58: Hyponymie l{\"a}sst sich hierarchisch {\"u}bertragen, ist also transitiv: "Die Relationen der Hyper- und Hyponymie sind transitiv. Wenn A Hyponym in Bezug auf B ist, dann auch in Bezug auf die Hyperonyme von B, und wenn B Hyperonym in Bezug auf A ist, dann auch in Bezug auf die Hyponyme von A."}
+}
+
+@incollection{ponsborderiaPathsGrammaticalizationSpanish2014,
+  title = {Paths of Grammaticalization in {{Spanish}} o Sea},
+  booktitle = {Discourse and {{Pragmatic Markers}} from {{Latin}} to the {{Romance Languages}}},
+  author = {Pons Border{\'i}a, Salvador},
+  editor = {Ghezzi, Chiara and Molinelli, Piera},
+  year = {2014},
+  pages = {109--136},
+  annote = {126: eindeutige Unterscheidung zwischen Hyponymie und Kohyponymie nicht immer m{\"o}glich: "(29) Y en ese convento nos regalaron diversas veces con tortillas de huevos [ ... ]. Un d{\'i}a, o sea una tarde, salimos de dicho convento de San Diego, adonde hab{\'i}amos merendado muy bien de dichas tortillas (1705, Raimundo de Lantery, Memorias)\\
+'In that convent we were given egg omelettes several times [ ... ] One day, or be-SBJV one afternoon, we went out of this convent of San Diego, where we\\
+had a tasty snack of such omelettes'\\
+In (29), \emph{o sea} links two words, which can be interpreted as either hyperonym {$>$} hyponym (day {$>$} afternoon), or exclusive co-hyponyms (morning V afternoon)."}
 }
 
 @phdthesis{souille-rigautSemanticAccountQuasiLexemes2010,
@@ -166,7 +222,7 @@ c. Suffigierung: lt.~\emph{artus}~'Gelenk' {$>~$}\emph{articulus} 'kleines Gelen
   author = {{Souill{\'e}-Rigaut}, Chris},
   year = {2010},
   file = {/Users/Konstantin/Zotero/storage/WQSJT2H9/Souillé-Rigaut - 2010 - A Semantic Account of Quasi-Lexemes in Modern Engl.pdf;/Users/Konstantin/Zotero/storage/WJSA5ZGD/7406.html},
-  annote = {33: semantische Relationen sind aus der Morphologie herleitbar, selbst wenn ein Wort als Ganzes nicht paraphrasiert werden kann: "The head constituent in both compounds is on the right, the modifier constituent on the left, and, although `cardiopathy' is not paraphrasable, we can still deduce from its semiotic units that the compound as a whole is a hyponym of the meaning carried by the semiotic unit -path-."
+  annote = {24-33: semantische Relationen sind aus der Morphologie herleitbar, selbst wenn ein Wort als Ganzes nicht paraphrasiert werden kann: "Because quasi-lexemes are protolexical elements, rather than independent lexemes, I would argue that they are never paraphrasable. I may say that a toothache is when a tooth aches, but I may not say that an odontalgia is when an -odont- -alg-. [...] The head constituent in both compounds is on the right, the modifier constituent on the left, and, although `cardiopathy' is not paraphrasable, we can still deduce from its semiotic units that the compound as a whole is a hyponym of the meaning carried by the semiotic unit -path-."
 
 43: Komposition erm{\"o}glicht Hyponymie bzw. macht sie morphologisch sichtbar: "`Dontopedalogy is the science of opening your mouth and putting your foot in it, a science which I have practiced for a good many years'. There is evidence that we are dealing with a secondary compound of the type W + X + Y, that is to say, with the semiotic units -dont- + -ped- + -log- being concatenated synchronically. [...] secondary compounds W + XY are always expanded primary compounds in which WXY is a hyponym of XY. The compound XY itself may be a primary or a synthetic compound, but stands necessarily as a nominal constituent."}
 }
@@ -184,6 +240,55 @@ c. Suffigierung: lt.~\emph{artus}~'Gelenk' {$>~$}\emph{articulus} 'kleines Gelen
   year = {2010},
   pages = {707-716},
   file = {/Users/Konstantin/Zotero/storage/M7U8QZFR/latin-linguistics-today-akten-des-15-internationalen-kolloquiums-zur-lateinischen-linguistik.html}
+}
+
+@incollection{pinkalSemantik1993,
+  edition = {1},
+  title = {Semantik},
+  booktitle = {Einf{\"u}hrung in Die K{\"u}nstliche {{Intelligenz}}},
+  author = {Pinkal, Manfred},
+  editor = {G{\"o}rz, G{\"u}nther},
+  year = {1993},
+  pages = {425-498},
+  annote = {427f.: semantische Konstruktion vs. Resolution vs. Auswertung einer Aussage:
+
+"[...] die Semantikkonstruktion [...], die das semantische Potential auf der Grundlage der lexikalischen und syntaktischen Information ermittelt, die in der Eingabekette enthalten ist; [...] die semantische Resolution, die den aktuellen semantischen Wert bestimmt, unter anderem durch die Aufl{\"o}sung von Mehrdeutigkeiten (Disambiguierung) und [...] die semantische Auswertung, die durch die Anwendung von Deduktions- und Inferenzmechanismen auf den semantischen Wert einer {\"A}u{\ss}erung die relevante {\"A}u{\ss}erungsinformation extrahiert und dabei unter anderem Weltwissen (episodisches Wissen und Regelwissen) einbezieht."}
+}
+
+@article{faruquiProblemsEvaluationWord2016,
+  title = {Problems with Evaluation of Word Embeddings Using Word Similarity Tasks},
+  journal = {arXiv preprint arXiv:1605.02276},
+  author = {Faruqui, Manaal and Tsvetkov, Yulia and Rastogi, Pushpendre and Dyer, Chris},
+  year = {2016},
+  file = {/Users/Konstantin/Zotero/storage/KY2HU9J4/Faruqui et al. - 2016 - Problems with evaluation of word embeddings using .pdf;/Users/Konstantin/Zotero/storage/LNR5YHXT/1605.html},
+  annote = {4: Evaluation von Embeddings beruht oft auf Reduzierung der Wortbedeutungen auf eine einzige zentrale Bedeutung pro Wort: "However in [the dataset] WS-353, bank is given a similarity score of 8.5/10 to money, signifying that bank is a financial institution. Such an assumption of one sense per word is prevalent in many of the existing word similarity tasks, and it can incorrectly penalize a word vector model for capturing a specific sense of the word absent in the word similarity task."}
+}
+
+@article{petersDeepContextualizedWord2018,
+  title = {Deep Contextualized Word Representations},
+  journal = {arXiv preprint arXiv:1802.05365},
+  author = {Peters, Matthew E. and Neumann, Mark and Iyyer, Mohit and Gardner, Matt and Clark, Christopher and Lee, Kenton and Zettlemoyer, Luke},
+  year = {2018},
+  file = {/Users/Konstantin/Zotero/storage/AL3ZNP2P/Peters et al. - 2018 - Deep contextualized word representations.pdf;/Users/Konstantin/Zotero/storage/UL78NLC2/1802.html},
+  annote = {2f.: ELMo ber{\"u}cksichtigt Wortkontext f{\"u}r die Berechnung der Vektoren, indem es die Token-Abfolge vorw{\"a}rts und r{\"u}ckw{\"a}rts modelliert: "Given a sequence of N tokens, (t1, t2, ..., tN), a forward language model computes the probability of the sequence by modeling the probability of token tk given the history (t1, ..., tk-1) [...]. A backward LM is similar to a forward LM, except it runs over the sequence in reverse, predicting the previous token given the future context [...]. A biLM combines both a forward and backward LM. Our formulation jointly maximizes the log likelihood of the forward and backward directions [...]."}
+}
+
+@article{devlinBertPretrainingDeep2018,
+  title = {Bert: {{Pre}}-Training of Deep Bidirectional Transformers for Language Understanding},
+  shorttitle = {Bert},
+  journal = {arXiv preprint arXiv:1810.04805},
+  author = {Devlin, Jacob and Chang, Ming-Wei and Lee, Kenton and Toutanova, Kristina},
+  year = {2018},
+  file = {/Users/Konstantin/Zotero/storage/QIH93SR6/Devlin et al. - 2018 - Bert Pre-training of deep bidirectional transform.pdf;/Users/Konstantin/Zotero/storage/Q5R6ARG5/1810.html},
+  annote = {8: Gr{\"u}nde f{\"u}r die {\"U}berlegenheit von tief bidirektionalen Modellen wie BERT gegen{\"u}ber einfachen LSTMs oder losen Verkettungen zweier LSTMs im Sinne eines oberfl{\"a}chlich bidirektionalen Modells (z.B: ELMo): "(b) [Concatenating separate Left-To-Right and Right-To-Left models] is non-intuitive for tasks like QA, since the RTL model would not be able to condition the answer on the question; (c) [this] is strictly less powerful than a deep bidirectional model, since it can use both left and right context at every layer."}
+}
+
+@article{roelliCorpusCorporumNew2014,
+  title = {The {{Corpus Corporum}}, a New Open {{Latin}} Text Repository and Tool},
+  journal = {Archivum Latinitatis Medii Aevi-Bulletin du Cange (ALMA)},
+  author = {Roelli, Philipp},
+  year = {2014},
+  file = {/Users/Konstantin/Zotero/storage/8QP8LVWQ/Roelli - 2014 - The Corpus Corporum, a new open Latin text reposit.pdf;/Users/Konstantin/Zotero/storage/TMFM3VHH/69525.html}
 }
 
 

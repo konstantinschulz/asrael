@@ -17,7 +17,7 @@
 \endgroup
 
 \datalist[entry]{nyt/global//global/global}
-  \entry{anstattTypenSemantischerRelationen2009a}{incollection}{}
+  \entry{anstattTypenSemantischerRelationen2009}{incollection}{}
     \name{author}{1}{}{%
       {{hash=AT}{%
          family={Anstatt},
@@ -93,9 +93,9 @@
     \list{publisher}{1}{%
       {{Walter de Gruyter}}%
     }
-    \keyw{Language Arts \& Disciplines / Linguistics / Historical \&
-  Comparative,Literary Criticism / European / German,Literary Criticism /
-  General,Literary Criticism / Semiotics \& Theory}
+    \keyw{Literary Criticism / General,Language Arts \& Disciplines /
+  Linguistics / Historical \& Comparative,Literary Criticism / European /
+  German,Literary Criticism / Semiotics \& Theory}
     \strng{namehash}{CHG1}
     \strng{fullhash}{CHG1}
     \field{labelnamesource}{author}
@@ -142,6 +142,63 @@
     \field{year}{2013}
   \endentry
 
+  \entry{devlinBertPretrainingDeep2018}{article}{}
+    \name{author}{4}{}{%
+      {{hash=DJ}{%
+         family={Devlin},
+         familyi={D\bibinitperiod},
+         given={Jacob},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CMW}{%
+         family={Chang},
+         familyi={C\bibinitperiod},
+         given={Ming-Wei},
+         giveni={M\bibinithyphendelim W\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Kenton},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=TK}{%
+         family={Toutanova},
+         familyi={T\bibinitperiod},
+         given={Kristina},
+         giveni={K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{DJ+1}
+    \strng{fullhash}{DJCMWLKTK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{year}
+    \field{sortinit}{D}
+    \field{sortinithash}{D}
+    \field{shorttitle}{Bert}
+    \field{title}{Bert: {{Pre}}-Training of Deep Bidirectional Transformers for
+  Language Understanding}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/QIH93SR6/Devlin et al. - 2018 - Bert
+    \verb  Pre-training of deep bidirectional transform.pdf;/Users/Konstantin/Z
+    \verb otero/storage/Q5R6ARG5/1810.html
+    \endverb
+    \field{journaltitle}{arXiv preprint arXiv:1810.04805}
+    \field{annotation}{%
+    8: Gr{\"u}nde f{\"u}r die {\"U}berlegenheit von tief bidirektionalen
+  Modellen wie BERT gegen{\"u}ber einfachen LSTMs oder losen Verkettungen
+  zweier LSTMs im Sinne eines oberfl{\"a}chlich bidirektionalen Modells (z.B:
+  ELMo): "(b) [Concatenating separate Left-To-Right and Right-To-Left models]
+  is non-intuitive for tasks like QA, since the RTL model would not be able to
+  condition the answer on the question; (c) [this] is strictly less powerful
+  than a deep bidirectional model, since it can use both left and right context
+  at every layer."%
+    }
+    \field{year}{2018}
+  \endentry
+
   \entry{divjakCorpusbasedCognitiveSemantics2009}{article}{}
     \name{author}{2}{}{%
       {{hash=DD}{%
@@ -185,6 +242,61 @@
   words in a domain."%
     }
     \field{year}{2009}
+  \endentry
+
+  \entry{faruquiProblemsEvaluationWord2016}{article}{}
+    \name{author}{4}{}{%
+      {{hash=FM}{%
+         family={Faruqui},
+         familyi={F\bibinitperiod},
+         given={Manaal},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=TY}{%
+         family={Tsvetkov},
+         familyi={T\bibinitperiod},
+         given={Yulia},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=RP}{%
+         family={Rastogi},
+         familyi={R\bibinitperiod},
+         given={Pushpendre},
+         giveni={P\bibinitperiod},
+      }}%
+      {{hash=DC}{%
+         family={Dyer},
+         familyi={D\bibinitperiod},
+         given={Chris},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{FM+1}
+    \strng{fullhash}{FMTYRPDC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{title}{Problems with Evaluation of Word Embeddings Using Word
+  Similarity Tasks}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/KY2HU9J4/Faruqui et al. - 2016 - Pro
+    \verb blems with evaluation of word embeddings using .pdf;/Users/Konstantin
+    \verb /Zotero/storage/LNR5YHXT/1605.html
+    \endverb
+    \field{journaltitle}{arXiv preprint arXiv:1605.02276}
+    \field{annotation}{%
+    4: Evaluation von Embeddings beruht oft auf Reduzierung der Wortbedeutungen
+  auf eine einzige zentrale Bedeutung pro Wort: "However in [the dataset]
+  WS-353, bank is given a similarity score of 8.5/10 to money, signifying that
+  bank is a financial institution. Such an assumption of one sense per word is
+  prevalent in many of the existing word similarity tasks, and it can
+  incorrectly penalize a word vector model for capturing a specific sense of
+  the word absent in the word similarity task."%
+    }
+    \field{year}{2016}
   \endentry
 
   \entry{fowlerAgileManifesto2001}{article}{}
@@ -436,6 +548,49 @@
     \field{year}{2009}
   \endentry
 
+  \entry{haugCreatingParallelTreebank2008}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=HDT}{%
+         family={Haug},
+         familyi={H\bibinitperiod},
+         given={Dag\bibnamedelima TT},
+         giveni={D\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=JM}{%
+         family={J{\o}hndal},
+         familyi={J\bibinitperiod},
+         given={Marius},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HDTJM1}
+    \strng{fullhash}{HDTJM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2008}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the {{Second Workshop}} on {{Language
+  Technology}} for {{Cultural Heritage Data}} ({{LaTeCH}} 2008)}
+    \field{pages}{27\bibrangedash 34}
+    \field{title}{Creating a Parallel Treebank of the Old {{Indo}}-{{European
+  Bible}} Translations [{{PROIEL}}]}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/G88CBH7B/Haug and Jøhndal - 2008 -
+    \verb Creating a parallel treebank of the old Indo-Europ.pdf;/Users/Konstan
+    \verb tin/Zotero/storage/RSZ8U3HE/Haug and Jøhndal - 2008 - Creating a par
+    \verb allel treebank of the old Indo-Europ.pdf
+    \endverb
+    \field{annotation}{%
+    29: Objekt eines Verbs sagt viel {\"u}ber Wortstellung aus: "To study the
+  interaction between syntax/argument structure and pragmatics in determining
+  word order, we need to be able to separate objects (OBJ) from other arguments
+  of the verb (OBL)"%
+    }
+    \field{year}{2008}
+  \endentry
+
   \entry{herbelotMeasuringSemanticContent2013}{inproceedings}{}
     \name{author}{2}{}{%
       {{hash=HA}{%
@@ -488,6 +643,176 @@
   considered `words-with-spaces' when building distributions."%
     }
     \field{year}{2013}
+  \endentry
+
+  \entry{herbelotBuildingSharedWorld2015}{inproceedings}{}
+    \name{author}{2}{}{%
+      {{hash=HA}{%
+         family={Herbelot},
+         familyi={H\bibinitperiod},
+         given={Aur{\'e}lie},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VEM}{%
+         family={Vecchi},
+         familyi={V\bibinitperiod},
+         given={Eva\bibnamedelima Maria},
+         giveni={E\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HAVEM1}
+    \strng{fullhash}{HAVEM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2015}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{booktitle}{Proceedings of the 2015 {{Conference}} on {{Empirical
+  Methods}} in {{Natural Language Processing}}}
+    \field{pages}{22\bibrangedash 32}
+    \field{shorttitle}{Building a Shared World}
+    \field{title}{Building a Shared World: {{Mapping}} Distributional to
+  Model-Theoretic Semantic Spaces}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/I2QCLQF4/Herbelot and Vecchi - 2015
+    \verb - Building a shared world Mapping distributional to.pdf
+    \endverb
+    \field{annotation}{%
+    23: mengentheoretische Zuordnungen (z.B. "Alle/Einige/Keine X sind auch Y")
+  k{\"o}nnen mittels distributioneller Semantik induziert werden: "[...]
+  human-like intuitions about the quantification of simple subject/predicate
+  pairs can be induced from standard distributional data." 27: bei
+  ausreichenden, spezialisierten Trainingsdaten (z.B. annotierte Texte {\"u}ber
+  Tiere) k{\"o}nnen modelltheoretische Repr{\"a}sentationen f{\"u}r
+  Konzept-Eigenschaft-Paare (z.B. bear -{$>$} is\_brown) distributionell
+  gelernt werden: "[...] given a reasonable amount of training data for a
+  category, we can proficiently generate modeltheoretic representations for
+  concept-feature pairs from a distributional space."%
+    }
+    \field{year}{2015}
+  \endentry
+
+  \entry{hestnessDeepLearningScaling2017}{article}{}
+    \name{author}{9}{}{%
+      {{hash=HJ}{%
+         family={Hestness},
+         familyi={H\bibinitperiod},
+         given={Joel},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=NS}{%
+         family={Narang},
+         familyi={N\bibinitperiod},
+         given={Sharan},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=AN}{%
+         family={Ardalani},
+         familyi={A\bibinitperiod},
+         given={Newsha},
+         giveni={N\bibinitperiod},
+      }}%
+      {{hash=DG}{%
+         family={Diamos},
+         familyi={D\bibinitperiod},
+         given={Gregory},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=JH}{%
+         family={Jun},
+         familyi={J\bibinitperiod},
+         given={Heewoo},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=KH}{%
+         family={Kianinejad},
+         familyi={K\bibinitperiod},
+         given={Hassan},
+         giveni={H\bibinitperiod},
+      }}%
+      {{hash=PMMA}{%
+         family={Patwary},
+         familyi={P\bibinitperiod},
+         given={Md\bibnamedelima Mostofa\bibnamedelima Ali},
+         giveni={M\bibinitperiod\bibinitdelim M\bibinitperiod\bibinitdelim
+  A\bibinitperiod},
+      }}%
+      {{hash=YY}{%
+         family={Yang},
+         familyi={Y\bibinitperiod},
+         given={Yang},
+         giveni={Y\bibinitperiod},
+      }}%
+      {{hash=ZY}{%
+         family={Zhou},
+         familyi={Z\bibinitperiod},
+         given={Yanqi},
+         giveni={Y\bibinitperiod},
+      }}%
+    }
+    \keyw{Computer Science - Machine Learning,Statistics - Machine Learning}
+    \strng{namehash}{HJ+1}
+    \strng{fullhash}{HJNSANDGJHKHPMMAYYZY1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2017}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{abstract}{%
+    Deep learning (DL) creates impactful advances following a virtuous recipe:
+  model architecture search, creating large training data sets, and scaling
+  computation. It is widely believed that growing training sets and models
+  should improve accuracy and result in better products. As DL application
+  domains grow, we would like a deeper understanding of the relationships
+  between training set size, computational scale, and model accuracy
+  improvements to advance the state-of-the-art. This paper presents a large
+  scale empirical characterization of generalization error and model size
+  growth as training sets grow. We introduce a methodology for this measurement
+  and test four machine learning domains: machine translation, language
+  modeling, image processing, and speech recognition. Our empirical results
+  show power-law generalization error scaling across a breadth of factors,
+  resulting in power-law exponents---the "steepness" of the learning
+  curve---yet to be explained by theoretical work. Further, model improvements
+  only shift the error but do not appear to affect the power-law exponent. We
+  also show that model size scales sublinearly with data size. These scaling
+  relationships have significant implications on deep learning research,
+  practice, and systems. They can assist model debugging, setting accuracy
+  targets, and decisions about data set growth. They can also guide computing
+  system design and underscore the importance of continued computational
+  scaling.%
+    }
+    \verb{eprint}
+    \verb 1712.00409
+    \endverb
+    \field{title}{Deep {{Learning Scaling}} Is {{Predictable}},
+  {{Empirically}}}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/JLUM4XBH/Hestness et al. - 2017 - De
+    \verb ep Learning Scaling is Predictable, Empirically.pdf;/Users/Konstantin
+    \verb /Zotero/storage/5DGISFJH/1712.html
+    \endverb
+    \field{journaltitle}{arXiv:1712.00409 [cs, stat]}
+    \field{annotation}{%
+    11: kleine Trainingsdaten verlangen kleinere Batch Size (\& Learning Rate?)
+  "For large models with fixed hyperparameters, increasing the batch sizes and
+  learning rates usually closed a significant portion of the gap to the
+  power-law trend. Analogously, smaller training sets often require smaller
+  batch sizes to ensure models behave well while fitting." 13: mehr
+  Trainingsdaten sind IMMER besser: "We empirically validate that DL model
+  accuracy improves as a power-law as we grow training sets for
+  state-of-the-art (SOTA) model architectures in four machine learning domains:
+  machine translation, language modeling, image processing, and speech
+  recognition. These power-law learning curves [exist] across all tested
+  domains, model architectures, optimizers, and loss functions." Comment: 19
+  pages, 11 figures%
+    }
+    \field{eprinttype}{arxiv}
+    \field{eprintclass}{cs, stat}
+    \field{month}{12}
+    \field{year}{2017}
+    \warn{\item Can't use 'eprinttype' + 'archiveprefix'}
   \endentry
 
   \entry{minozziLatinWordNetProject2010}{incollection}{}
@@ -680,6 +1005,203 @@
     \field{year}{2015}
   \endentry
 
+  \entry{petersDeepContextualizedWord2018}{article}{}
+    \name{author}{7}{}{%
+      {{hash=PME}{%
+         family={Peters},
+         familyi={P\bibinitperiod},
+         given={Matthew\bibnamedelima E.},
+         giveni={M\bibinitperiod\bibinitdelim E\bibinitperiod},
+      }}%
+      {{hash=NM}{%
+         family={Neumann},
+         familyi={N\bibinitperiod},
+         given={Mark},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=IM}{%
+         family={Iyyer},
+         familyi={I\bibinitperiod},
+         given={Mohit},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=GM}{%
+         family={Gardner},
+         familyi={G\bibinitperiod},
+         given={Matt},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=CC}{%
+         family={Clark},
+         familyi={C\bibinitperiod},
+         given={Christopher},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=LK}{%
+         family={Lee},
+         familyi={L\bibinitperiod},
+         given={Kenton},
+         giveni={K\bibinitperiod},
+      }}%
+      {{hash=ZL}{%
+         family={Zettlemoyer},
+         familyi={Z\bibinitperiod},
+         given={Luke},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PME+1}
+    \strng{fullhash}{PMENMIMGMCCLKZL1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2018}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{title}{Deep Contextualized Word Representations}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/AL3ZNP2P/Peters et al. - 2018 - Deep
+    \verb  contextualized word representations.pdf;/Users/Konstantin/Zotero/sto
+    \verb rage/UL78NLC2/1802.html
+    \endverb
+    \field{journaltitle}{arXiv preprint arXiv:1802.05365}
+    \field{annotation}{%
+    2f.: ELMo ber{\"u}cksichtigt Wortkontext f{\"u}r die Berechnung der
+  Vektoren, indem es die Token-Abfolge vorw{\"a}rts und r{\"u}ckw{\"a}rts
+  modelliert: "Given a sequence of N tokens, (t1, t2, ..., tN), a forward
+  language model computes the probability of the sequence by modeling the
+  probability of token tk given the history (t1, ..., tk-1) [...]. A backward
+  LM is similar to a forward LM, except it runs over the sequence in reverse,
+  predicting the previous token given the future context [...]. A biLM combines
+  both a forward and backward LM. Our formulation jointly maximizes the log
+  likelihood of the forward and backward directions [...]."%
+    }
+    \field{year}{2018}
+  \endentry
+
+  \entry{pinkalSemantik1993}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=PM}{%
+         family={Pinkal},
+         familyi={P\bibinitperiod},
+         given={Manfred},
+         giveni={M\bibinitperiod},
+      }}%
+    }
+    \name{editor}{1}{}{%
+      {{hash=GG}{%
+         family={G{\"o}rz},
+         familyi={G\bibinitperiod},
+         given={G{\"u}nther},
+         giveni={G\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PM1}
+    \strng{fullhash}{PM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{1993}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Einf{\"u}hrung in Die K{\"u}nstliche {{Intelligenz}}}
+    \field{edition}{1}
+    \field{pages}{425\bibrangedash 498}
+    \field{title}{Semantik}
+    \field{annotation}{%
+    427f.: semantische Konstruktion vs. Resolution vs. Auswertung einer
+  Aussage: "[...] die Semantikkonstruktion [...], die das semantische Potential
+  auf der Grundlage der lexikalischen und syntaktischen Information ermittelt,
+  die in der Eingabekette enthalten ist; [...] die semantische Resolution, die
+  den aktuellen semantischen Wert bestimmt, unter anderem durch die
+  Aufl{\"o}sung von Mehrdeutigkeiten (Disambiguierung) und [...] die
+  semantische Auswertung, die durch die Anwendung von Deduktions- und
+  Inferenzmechanismen auf den semantischen Wert einer {\"A}u{\ss}erung die
+  relevante {\"A}u{\ss}erungsinformation extrahiert und dabei unter anderem
+  Weltwissen (episodisches Wissen und Regelwissen) einbezieht."%
+    }
+    \field{year}{1993}
+  \endentry
+
+  \entry{ponsborderiaPathsGrammaticalizationSpanish2014}{incollection}{}
+    \name{author}{1}{}{%
+      {{hash=PBS}{%
+         family={Pons\bibnamedelima Border{\'i}a},
+         familyi={P\bibinitperiod\bibinitdelim B\bibinitperiod},
+         given={Salvador},
+         giveni={S\bibinitperiod},
+      }}%
+    }
+    \name{editor}{2}{}{%
+      {{hash=GC}{%
+         family={Ghezzi},
+         familyi={G\bibinitperiod},
+         given={Chiara},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=MP}{%
+         family={Molinelli},
+         familyi={M\bibinitperiod},
+         given={Piera},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{PBS1}
+    \strng{fullhash}{PBS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{booktitle}{Discourse and {{Pragmatic Markers}} from {{Latin}} to the
+  {{Romance Languages}}}
+    \field{pages}{109\bibrangedash 136}
+    \field{title}{Paths of Grammaticalization in {{Spanish}} o Sea}
+    \field{annotation}{%
+    126: eindeutige Unterscheidung zwischen Hyponymie und Kohyponymie nicht
+  immer m{\"o}glich: "(29) Y en ese convento nos regalaron diversas veces con
+  tortillas de huevos [ ... ]. Un d{\'i}a, o sea una tarde, salimos de dicho
+  convento de San Diego, adonde hab{\'i}amos merendado muy bien de dichas
+  tortillas (1705, Raimundo de Lantery, Memorias)\\ 'In that convent we were
+  given egg omelettes several times [ ... ] One day, or be-SBJV one afternoon,
+  we went out of this convent of San Diego, where we\\ had a tasty snack of
+  such omelettes'\\ In (29), \emph{o sea} links two words, which can be
+  interpreted as either hyperonym {$>$} hyponym (day {$>$} afternoon), or
+  exclusive co-hyponyms (morning V afternoon)."%
+    }
+    \field{year}{2014}
+  \endentry
+
+  \entry{roelliCorpusCorporumNew2014}{article}{}
+    \name{author}{1}{}{%
+      {{hash=RP}{%
+         family={Roelli},
+         familyi={R\bibinitperiod},
+         given={Philipp},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RP1}
+    \strng{fullhash}{RP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{The {{Corpus Corporum}}, a New Open {{Latin}} Text Repository
+  and Tool}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/8QP8LVWQ/Roelli - 2014 - The Corpus
+    \verb Corporum, a new open Latin text reposit.pdf;/Users/Konstantin/Zotero/
+    \verb storage/TMFM3VHH/69525.html
+    \endverb
+    \field{journaltitle}{Archivum Latinitatis Medii Aevi-Bulletin du Cange
+  (ALMA)}
+    \field{year}{2014}
+  \endentry
+
   \entry{rollerInclusiveSelectiveSupervised2014}{inproceedings}{}
     \name{author}{3}{}{%
       {{hash=RS}{%
@@ -761,20 +1283,24 @@
     \endverb
     \field{type}{{{PhD Thesis}}}
     \field{annotation}{%
-    33: semantische Relationen sind aus der Morphologie herleitbar, selbst wenn
-  ein Wort als Ganzes nicht paraphrasiert werden kann: "The head constituent in
-  both compounds is on the right, the modifier constituent on the left, and,
-  although `cardiopathy' is not paraphrasable, we can still deduce from its
-  semiotic units that the compound as a whole is a hyponym of the meaning
-  carried by the semiotic unit -path-." 43: Komposition erm{\"o}glicht
-  Hyponymie bzw. macht sie morphologisch sichtbar: "`Dontopedalogy is the
-  science of opening your mouth and putting your foot in it, a science which I
-  have practiced for a good many years'. There is evidence that we are dealing
-  with a secondary compound of the type W + X + Y, that is to say, with the
-  semiotic units -dont- + -ped- + -log- being concatenated synchronically.
-  [...] secondary compounds W + XY are always expanded primary compounds in
-  which WXY is a hyponym of XY. The compound XY itself may be a primary or a
-  synthetic compound, but stands necessarily as a nominal constituent."%
+    24-33: semantische Relationen sind aus der Morphologie herleitbar, selbst
+  wenn ein Wort als Ganzes nicht paraphrasiert werden kann: "Because
+  quasi-lexemes are protolexical elements, rather than independent lexemes, I
+  would argue that they are never paraphrasable. I may say that a toothache is
+  when a tooth aches, but I may not say that an odontalgia is when an -odont-
+  -alg-. [...] The head constituent in both compounds is on the right, the
+  modifier constituent on the left, and, although `cardiopathy' is not
+  paraphrasable, we can still deduce from its semiotic units that the compound
+  as a whole is a hyponym of the meaning carried by the semiotic unit -path-."
+  43: Komposition erm{\"o}glicht Hyponymie bzw. macht sie morphologisch
+  sichtbar: "`Dontopedalogy is the science of opening your mouth and putting
+  your foot in it, a science which I have practiced for a good many years'.
+  There is evidence that we are dealing with a secondary compound of the type W
+  + X + Y, that is to say, with the semiotic units -dont- + -ped- + -log- being
+  concatenated synchronically. [...] secondary compounds W + XY are always
+  expanded primary compounds in which WXY is a hyponym of XY. The compound XY
+  itself may be a primary or a synthetic compound, but stands necessarily as a
+  nominal constituent."%
     }
     \field{year}{2010}
   \endentry
