@@ -78,6 +78,247 @@
     \field{year}{2009}
   \endentry
 
+  \entry{ayseExtractionSemanticWord2011}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=AS}{%
+         family={Ay{\c s}e},
+         familyi={A\bibinitperiod},
+         given={{\c S}erbet{\c c}i},
+         giveni={{\c S}\bibinitperiod},
+      }}%
+      {{hash=ZO}{%
+         family={Zeynep},
+         familyi={Z\bibinitperiod},
+         given={Orhan},
+         giveni={O\bibinitperiod},
+      }}%
+      {{hash=IP}{%
+         family={{\.I}lknur},
+         familyi={{\\bibinitperiodI}\bibinitperiod},
+         given={Pehlivan},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{Association for Computational Linguistics}}%
+    }
+    \strng{namehash}{ASZOIP1}
+    \strng{fullhash}{ASZOIP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2011}
+    \field{labeldatesource}{year}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{booktitle}{Proceedings of the {{ACL}} 2011 {{Workshop}} on
+  {{Relational Models}} of {{Semantics}}}
+    \field{pages}{11\bibrangedash 18}
+    \field{title}{Extraction of {{Semantic Word Relations}} in {{Turkish}} from
+  {{Dictionary Definitions}}}
+    \list{location}{1}{%
+      {{Portland, Oregon, USA}}%
+    }
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/HKR3KEGH/Ayşe et al. - 2011 - Extra
+    \verb ction of Semantic Word Relations in Turkish f.pdf
+    \endverb
+    \field{annotation}{%
+    12: semantische Relationen m{\"u}ssen immer je nach Wortbedeutung
+  differenziert werden: "For more accurate semantic analysis, the connection
+  between words should be established between appropriate senses of the words.
+  To be more concrete, an example can be given on the semantically ambiguous
+  word as; y{\"u}z `face' or `hundred'. When a has-a relation is detected
+  between the words v{\"u}cut `body' and y{\"u}z, the appropriate sense for
+  y{\"u}z should be selected as `face', instead of `hundred'."%
+    }
+    \field{month}{06}
+    \field{year}{2011}
+  \endentry
+
+  \entry{bartunovBreakingSticksAmbiguities2016}{inproceedings}{}
+    \name{author}{4}{}{%
+      {{hash=BS}{%
+         family={Bartunov},
+         familyi={B\bibinitperiod},
+         given={Sergey},
+         giveni={S\bibinitperiod},
+      }}%
+      {{hash=KD}{%
+         family={Kondrashkin},
+         familyi={K\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+      {{hash=OA}{%
+         family={Osokin},
+         familyi={O\bibinitperiod},
+         given={Anton},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=VD}{%
+         family={Vetrov},
+         familyi={V\bibinitperiod},
+         given={Dmitry},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{BS+1}
+    \strng{fullhash}{BSKDOAVD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Artificial {{Intelligence}} and {{Statistics}}}
+    \field{pages}{130\bibrangedash 138}
+    \field{title}{Breaking Sticks and Ambiguities with Adaptive Skip-Gram}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/K7AHQAHW/Bartunov et al. - 2016 - Br
+    \verb eaking sticks and ambiguities with adaptive skip.pdf
+    \endverb
+    \field{annotation}{%
+    131: AdaGram erlaubt mehrere Wortbedeutungen f{\"u}r jedes Wort: "It
+  retains all noticeable properties of [Skip-gram] such as fast online learning
+  and high quality of representations while allowing to automatically learn the
+  necessary number of prototypes per word at desired semantic resolution." 137:
+  Testset f{\"u}r Word Sense Induction aus den Disambiguierungsseiten von
+  Wikipedia gewonnen: "Since the problem of learning multi-prototype word
+  representation is closely related to word-sense induction, we evaluated
+  AdaGram on several WSI datasets and contributed a new large one obtained
+  automatically from Wikipedia disambiguation pages."%
+    }
+    \field{year}{2016}
+  \endentry
+
+  \entry{boledaIntensionalityWasOnly2013}{inproceedings}{}
+    \name{author}{3}{}{%
+      {{hash=BG}{%
+         family={Boleda},
+         familyi={B\bibinitperiod},
+         given={Gemma},
+         giveni={G\bibinitperiod},
+      }}%
+      {{hash=BM}{%
+         family={Baroni},
+         familyi={B\bibinitperiod},
+         given={Marco},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=ML}{%
+         family={McNally},
+         familyi={M\bibinitperiod},
+         given={Louise},
+         giveni={L\bibinitperiod},
+      }}%
+    }
+    \list{publisher}{1}{%
+      {{ACL (Association for Computational Linguistics)}}%
+    }
+    \strng{namehash}{BGBMML1}
+    \strng{fullhash}{BGBMML1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{B}
+    \field{sortinithash}{B}
+    \field{booktitle}{Proceedings of the 10th {{International Conference}} on
+  {{Computational Semantics}} ({{IWCS}} 2013): Long Papers; 2013 {{Mar}} 20-22;
+  {{Postdam}}, {{Germany}}. {{Stroudsburg}} ({{USA}}): {{Association}} for
+  {{Computational Linguistics}} ({{ACL}})}
+    \field{pages}{35\bibrangedash 46}
+    \field{shorttitle}{Intensionality Was Only Alleged}
+    \field{title}{Intensionality Was Only Alleged: {{On}} Adjective-Noun
+  Composition in Distributional Semantics}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/TZL9TG8J/Boleda et al. - 2013 - Inte
+    \verb nsionality was only alleged On adjective-noun.pdf;/Users/Konstantin/Z
+    \verb otero/storage/NX339DFP/37126.html
+    \endverb
+    \field{annotation}{%
+    42: Modifizierende Adjektive k{\"o}nnen die Polysemie von Substantiven
+  deutlich eingrenzen und dadurch zur Disambiguierung der Wortbedeutung
+  wesentlich beitragen: "We find that, the more polysemous a noun is, the less
+  similar its vector is to the corresponding phrase vector. It is plausible
+  that modifying a noun has a larger impact when the noun is polysemous, as the
+  adjective narrows down the meaning of the noun; indeed, adjectives have been
+  independently shown to be powerful word sense disambiguators of nouns [...].
+  In distributional terms, the adjective notably ``shifts'' the vector of
+  polysemous nouns, but for monosemous nouns there is just not much shifting
+  room."%
+    }
+    \field{year}{2013}
+  \endentry
+
+  \entry{carlsonArchitectureNeverendingLanguage2010}{inproceedings}{}
+    \name{author}{6}{}{%
+      {{hash=CA}{%
+         family={Carlson},
+         familyi={C\bibinitperiod},
+         given={Andrew},
+         giveni={A\bibinitperiod},
+      }}%
+      {{hash=BJ}{%
+         family={Betteridge},
+         familyi={B\bibinitperiod},
+         given={Justin},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=KB}{%
+         family={Kisiel},
+         familyi={K\bibinitperiod},
+         given={Bryan},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=SB}{%
+         family={Settles},
+         familyi={S\bibinitperiod},
+         given={Burr},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=HER}{%
+         family={Hruschka},
+         familyi={H\bibinitperiod},
+         given={Estevam\bibnamedelima R.},
+         giveni={E\bibinitperiod\bibinitdelim R\bibinitperiod},
+      }}%
+      {{hash=MTM}{%
+         family={Mitchell},
+         familyi={M\bibinitperiod},
+         given={Tom\bibnamedelima M.},
+         giveni={T\bibinitperiod\bibinitdelim M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CA+1}
+    \strng{fullhash}{CABJKBSBHERMTM1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{Twenty-{{Fourth AAAI Conference}} on {{Artificial
+  Intelligence}}}
+    \field{pages}{1306\bibrangedash 1313}
+    \field{title}{Toward an Architecture for Never-Ending Language Learning}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/CMRWR4KL/Carlson et al. - 2010 - Tow
+    \verb ard an architecture for never-ending language l.pdf;/Users/Konstantin
+    \verb /Zotero/storage/PXP2U9WG/1879.html
+    \endverb
+    \field{annotation}{%
+    1306: semantische Relationen sind auch im Bereich der k{\"u}nstlichen
+  Intelligenz f{\"u}r den Spracherwerb unerl{\"a}sslich: "At present,
+  [Never-Ending Language Learner] acquires two types of knowledge: (1)
+  knowledge about which noun phrases refer to which specified semantic
+  categories, such as cities, companies, and sports teams, and (2) knowledge
+  about which pairs of noun phrases satisfy which specified semantic relations,
+  such as hasOfficesIn(organization, location)."%
+    }
+    \field{year}{2010}
+  \endentry
+
   \entry{coenenAnalogieUndMetapher2013}{book}{}
     \name{author}{1}{}{%
       {{hash=CHG}{%
@@ -140,6 +381,65 @@
     }
     \field{month}{02}
     \field{year}{2013}
+  \endentry
+
+  \entry{crossleyDevelopmentSemanticRelations2010}{article}{}
+    \name{author}{3}{}{%
+      {{hash=CSA}{%
+         family={Crossley},
+         familyi={C\bibinitperiod},
+         given={Scott\bibnamedelima A.},
+         giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
+      }}%
+      {{hash=ST}{%
+         family={Salsbury},
+         familyi={S\bibinitperiod},
+         given={Tom},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=MDS}{%
+         family={McNamara},
+         familyi={M\bibinitperiod},
+         given={Danielle\bibnamedelima S.},
+         giveni={D\bibinitperiod\bibinitdelim S\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{CSASTMDS1}
+    \strng{fullhash}{CSASTMDS1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2010}
+    \field{labeldatesource}{year}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{pages}{55\bibrangedash 74}
+    \field{shorttitle}{The Development of Semantic Relations in Second Language
+  Speakers}
+    \field{title}{The Development of Semantic Relations in Second Language
+  Speakers: {{A}} Case for Latent Semantic Analysis.}
+    \field{volume}{7}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/37ZW5ST9/Crossley et al. - 2010 - Th
+    \verb e development of semantic relations in second la.pdf
+    \endverb
+    \field{journaltitle}{Vigo International Journal of Applied Linguistics}
+    \field{annotation}{%
+    56: Auswendiglernen hilft nur bei hochfrequenten Vokabeln im
+  anf{\"a}nglichen Spracherwerb, f{\"u}r Fortgeschrittene sind semantische
+  Relationen wichtiger: "While it may be true that explicit vocabulary
+  instruction concentrating on the first 2,000 to 3,000 words is valuable for
+  the beginning learner [...], it is generally agreed that subsequent
+  vocabulary acquisition results from inference strategies and the development
+  of word connections [...]." 70: Fortgeschrittene Sprachlernende entwickeln
+  immer engere semantische Verkn{\"u}pfungen zwischen einzelnen
+  Sprachsegmenten: "[...] L2 learners begin to develop closer semantic
+  similarities between speech segments as they progress in acquiring a second
+  language." 71: Wortschatzerwerb ist zu komplex, um ohne maschinelle Hilfe
+  erforscht zu werden: "[...] since lexical acquisition is a phenomenon that is
+  generally too complex to be analyzed based on human intuition, computational
+  approaches are beneficial."%
+    }
+    \field{year}{2010}
   \endentry
 
   \entry{devlinBertPretrainingDeep2018}{article}{}
@@ -244,6 +544,57 @@
     \field{year}{2009}
   \endentry
 
+  \entry{ellisUsagebasedLanguageInvestigating2013}{article}{}
+    \name{author}{3}{}{%
+      {{hash=ENC}{%
+         family={Ellis},
+         familyi={E\bibinitperiod},
+         given={Nick\bibnamedelima C.},
+         giveni={N\bibinitperiod\bibinitdelim C\bibinitperiod},
+      }}%
+      {{hash=OMB}{%
+         family={O'Donnell},
+         familyi={O\bibinitperiod},
+         given={Matthew\bibnamedelima Brook},
+         giveni={M\bibinitperiod\bibinitdelim B\bibinitperiod},
+      }}%
+      {{hash=RU}{%
+         family={R{\"o}mer},
+         familyi={R\bibinitperiod},
+         given={Ute},
+         giveni={U\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ENCOMBRU1}
+    \strng{fullhash}{ENCOMBRU1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{E}
+    \field{sortinithash}{E}
+    \field{pages}{25\bibrangedash 51}
+    \field{shorttitle}{Usage-Based Language}
+    \field{title}{Usage-Based Language: {{Investigating}} the Latent Structures
+  That Underpin Acquisition}
+    \field{volume}{63}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/XJ25GGBE/Ellis et al. - 2013 - Usage
+    \verb -based language Investigating the latent str.pdf
+    \endverb
+    \field{journaltitle}{Language Learning}
+    \field{annotation}{%
+    27: Basiskategorien / Prototypen werden fr{\"u}her erworben als {\"u}ber-
+  oder untergeordnete W{\"o}rter: "Basic categories are also those which are
+  the most codable (naming is faster), most coded, and most necessary in
+  language (being highly frequent in usage). Children acquire basic-category
+  terms like dog, bird, hammer, or apple earlier than they do their
+  superordinates animal, tool, fruit, or subordinates poodle, wren, ball-peen
+  hammer, or Granny Smith."%
+    }
+    \field{year}{2013}
+  \endentry
+
   \entry{faruquiProblemsEvaluationWord2016}{article}{}
     \name{author}{4}{}{%
       {{hash=FM}{%
@@ -297,6 +648,70 @@
   the word absent in the word similarity task."%
     }
     \field{year}{2016}
+  \endentry
+
+  \entry{fellbaumChallengesMultilingualWordnet2012}{article}{}
+    \name{author}{2}{}{%
+      {{hash=FC}{%
+         family={Fellbaum},
+         familyi={F\bibinitperiod},
+         given={Christiane},
+         giveni={C\bibinitperiod},
+      }}%
+      {{hash=VP}{%
+         family={Vossen},
+         familyi={V\bibinitperiod},
+         given={Piek},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \keyw{Formal ontology,Information system,Multilingual wordnets}
+    \strng{namehash}{FCVP1}
+    \strng{fullhash}{FCVP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{year}
+    \field{sortinit}{F}
+    \field{sortinithash}{F}
+    \field{abstract}{%
+    Wordnets have been created in many languages, revealing both their lexical
+  commonalities and diversity. The next challenge is to make multilingual
+  wordnets fully interoperable. The EuroWordNet experience revealed the
+  shortcomings of an interlingua based on a natural language. Instead, we
+  propose a model based on the division of the lexicon and a
+  language-independent, formal ontology that serves as the hub interlinking the
+  language-specific lexicons. The ontology avoids the idiosyncracies of the
+  lexicon and furthermore allows formal reasoning about the concepts it
+  contains. We address the division of labor between ontology and lexicon.
+  Finally, we illustrate our model in the context of a domain-specific
+  multilingual information system based on a central ontology and
+  interconnected wordnets in seven languages.%
+    }
+    \verb{doi}
+    \verb 10.1007/s10579-012-9186-z
+    \endverb
+    \field{issn}{1574-0218}
+    \field{number}{2}
+    \field{pages}{313\bibrangedash 326}
+    \field{title}{Challenges for a Multilingual Wordnet}
+    \field{volume}{46}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/59NZN9HK/Fellbaum and Vossen - 2012
+    \verb - Challenges for a multilingual wordnet.pdf
+    \endverb
+    \field{journaltitle}{Language Resources and Evaluation}
+    \field{annotation}{%
+    315: WordNet als Modell des menschlichen Ged{\"a}chtnisses, v.a. in Bezug
+  auf Semantik: "WordNet's original motivation was to test the feasibility of a
+  model of human semantic memory that sought to explain principles of storage
+  and retrieval of words and concepts."%
+    }
+    \field{month}{06}
+    \field{year}{2012}
   \endentry
 
   \entry{fowlerAgileManifesto2001}{article}{}
@@ -396,6 +811,66 @@
     \field{year}{2010}
   \endentry
 
+  \entry{gardnerValidatingConstructWord2007}{article}{}
+    \name{author}{1}{}{%
+      {{hash=GD}{%
+         family={Gardner},
+         familyi={G\bibinitperiod},
+         given={D.},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \strng{namehash}{GD1}
+    \strng{fullhash}{GD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2007}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \verb{doi}
+    \verb 10.1093/applin/amm010
+    \endverb
+    \field{issn}{0142-6001, 1477-450X}
+    \field{number}{2}
+    \field{pages}{241\bibrangedash 265}
+    \field{shorttitle}{Validating the {{Construct}} of {{Word}} in {{Applied
+  Corpus}}-Based {{Vocabulary Research}}}
+    \field{title}{Validating the {{Construct}} of {{Word}} in {{Applied
+  Corpus}}-Based {{Vocabulary Research}}: {{A Critical Survey}}}
+    \field{volume}{28}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/HYDZU5BG/612101f506d0270b002e8a051d5
+    \verb 424233478.pdf
+    \endverb
+    \field{journaltitle}{Applied Linguistics}
+    \field{annotation}{%
+    248: Wortfamilien sollten von der Wurzel her gelernt werden: "Of particular
+  concern here is the question of whether learners of various skill levels and
+  language backgrounds are as capable of recognizing and utilizing the common
+  morphemic stem of a Word Family when their initial and extensive exposure to
+  that stem may be through inflected and derived forms, rather than base forms.
+  Extant research in this regard suggests that such a non-linear process may be
+  more difficult for learners. [...] Furthermore, while instruction may tend to
+  favor the presentation of root forms before their affixed relatives (cf.
+  Jiang 2000), there is no way of controlling for such exposure in `authentic'
+  texts and during `natural' reading and conversational experiences. This would
+  only seem possible through materials and communicative contexts that have
+  been linguistically engineered to control for vocabulary presentation." 251:
+  Homonymie und Polysemie werden erst im Kontext wirklich erfassbar und
+  analysierbar: "This potential for meaning variation (both homonymy and
+  polysemy) becomes even more convoluted when the morphological word family is
+  considered. For instance, forms that appear to be related through affixation
+  may actually be homographs in context (e.g. \emph{bear}, the animal, and
+  \emph{bears}/\emph{bearing}, the verb meaning \emph{to carry}) [...]."%
+    }
+    \field{month}{04}
+    \field{year}{2007}
+  \endentry
+
   \entry{gevaudanSemantischeRelationenNominalen1999}{article}{}
     \name{author}{1}{}{%
       {{hash=GP}{%
@@ -437,6 +912,56 @@
   Generalisierung:%
     }
     \field{year}{1999}
+  \endentry
+
+  \entry{griesBehavioralProfilesCorpusbased2009}{article}{}
+    \name{author}{2}{}{%
+      {{hash=GST}{%
+         family={Gries},
+         familyi={G\bibinitperiod},
+         given={Stefan\bibnamedelima Th},
+         giveni={S\bibinitperiod\bibinitdelim T\bibinitperiod},
+      }}%
+      {{hash=DD}{%
+         family={Divjak},
+         familyi={D\bibinitperiod},
+         given={Dagmar},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{GSTDD1}
+    \strng{fullhash}{GSTDD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2009}
+    \field{labeldatesource}{year}
+    \field{sortinit}{G}
+    \field{sortinithash}{G}
+    \field{pages}{57\bibrangedash 75}
+    \field{shorttitle}{Behavioral Profiles}
+    \field{title}{Behavioral Profiles: A Corpus-Based Approach to Cognitive
+  Semantic Analysis}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/JBN4ZAXB/books.html
+    \endverb
+    \field{journaltitle}{New directions in cognitive linguistics}
+    \field{annotation}{%
+    59: {\"a}hnliche Wortverteilung weist auf {\"a}hnliche Semantik hin: "[...]
+  distributional similarity reflects, or is indicative of, functional
+  similarity, the understanding of functional similarity being rather broad,
+  i.e. encompassing semantic, discourse-pragmatic, and other functions a
+  particular expression can take on." 60: Frequenz, Authentizit{\"a}t,
+  Variation und systematische Induktion als Vorteile von Korpora gegen{\"u}ber
+  Introspektion/Intuition: "[In contrast to introspection,] corpora a. provide
+  many instances rather than a few isolated judgments; b. provide data from
+  natural settings rather than 'armchair' judgments or responses that
+  potentially reflect experimentally-induced biases; c. provide co-occurrence
+  data of many different kinds, i.e. not just those a particular researcher may
+  consider important; d. and thus, allow for bottom-up identification of
+  relevant distinctions as well as for a more comprehensive description than is
+  typically provided."%
+    }
+    \field{year}{2009}
   \endentry
 
   \entry{gyllenstenRgramsUnsupervisedLearning2019}{inproceedings}{}
@@ -546,6 +1071,54 @@
   PMI(z, c\textsubscript{j}) [...]"%
     }
     \field{year}{2009}
+  \endentry
+
+  \entry{hamiltonDiachronicWordEmbeddings2016}{article}{}
+    \name{author}{3}{}{%
+      {{hash=HWL}{%
+         family={Hamilton},
+         familyi={H\bibinitperiod},
+         given={William\bibnamedelima L.},
+         giveni={W\bibinitperiod\bibinitdelim L\bibinitperiod},
+      }}%
+      {{hash=LJ}{%
+         family={Leskovec},
+         familyi={L\bibinitperiod},
+         given={Jure},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=JD}{%
+         family={Jurafsky},
+         familyi={J\bibinitperiod},
+         given={Dan},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{HWLLJJD1}
+    \strng{fullhash}{HWLLJJD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2016}
+    \field{labeldatesource}{year}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{Diachronic Word Embeddings Reveal Statistical Laws of
+  Semantic Change}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/HKULL62R/Hamilton et al. - 2016 - Di
+    \verb achronic word embeddings reveal statistical laws.pdf;/Users/Konstanti
+    \verb n/Zotero/storage/Z5L9AGG8/1605.html
+    \endverb
+    \field{journaltitle}{arXiv preprint arXiv:1605.09096}
+    \field{annotation}{%
+    8: Kollokationsnetzwerke als n{\"a}herungsweise Quantifizierung von
+  Polysemie: "We construct empirical co-occurrence networks for the top-10,000
+  non-stop words of each language using the PPMI measure [...]. In these
+  networks words are connected to each other if they co-occur more than one
+  would expect by chance (after smoothing). The polysemy of a word is then
+  measured as its local clustering coefficient within this network [...]."%
+    }
+    \field{year}{2016}
   \endentry
 
   \entry{haugCreatingParallelTreebank2008}{inproceedings}{}
@@ -815,6 +1388,59 @@
     \warn{\item Can't use 'eprinttype' + 'archiveprefix'}
   \endentry
 
+  \entry{karanDistributionalSemanticsApproach2012}{article}{}
+    \name{author}{3}{}{%
+      {{hash=KM}{%
+         family={Karan},
+         familyi={K\bibinitperiod},
+         given={Mladen},
+         giveni={M\bibinitperiod},
+      }}%
+      {{hash=SJ}{%
+         family={{\v S}najder},
+         familyi={{\v S}\bibinitperiod},
+         given={Jan},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=BBD}{%
+         family={Ba{\v s}ic},
+         familyi={B\bibinitperiod},
+         given={Bojana\bibnamedelima Dalbelo},
+         giveni={B\bibinitperiod\bibinitdelim D\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{KMSJBBD1}
+    \strng{fullhash}{KMSJBBD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{year}
+    \field{sortinit}{K}
+    \field{sortinithash}{K}
+    \field{pages}{111\bibrangedash 116}
+    \field{title}{Distributional Semantics Approach to Detecting Synonyms in
+  {{Croatian}} Language}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/FIGU2ATQ/Karan et al. - 2012 - Distr
+    \verb ibutional semantics approach to detecting syn.pdf
+    \endverb
+    \field{journaltitle}{Information Society}
+    \field{annotation}{%
+    114: einheitliche Vektoren pro Lemma sind bei starker Polysemie
+  problematisch: "Distributional representations of each sense of a polysemous
+  word get merged into a single distributional representation \textendash{} a
+  mixture of distributions. For questions with high polysemy level, the
+  corresponding distributional vectors are blurred and the similarity
+  comparisons between such vectors are less meaningful." 115: Unterscheidung
+  zwischen Synonymie und semantischer Verwandtschaft ist f{\"u}r
+  distributionelle Semantik problematisch: "However, manual inspection revealed
+  that most false synonyms are syntagmatically related to the target word. To
+  avoid this kind of error, we would need a method to distinguish between
+  synonymy and general semantic relatedness."%
+    }
+    \field{year}{2012}
+  \endentry
+
   \entry{minozziLatinWordNetProject2010}{incollection}{}
     \name{author}{1}{}{%
       {{hash=MS}{%
@@ -867,6 +1493,47 @@
     \verb l
     \endverb
     \field{year}{2010}
+  \endentry
+
+  \entry{munznerNeueWegeIm2013}{article}{}
+    \name{author}{1}{}{%
+      {{hash=MI}{%
+         family={M{\"u}nzner},
+         familyi={M\bibinitperiod},
+         given={Iris},
+         giveni={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{MI1}
+    \strng{fullhash}{MI1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{pages}{218\bibrangedash 273}
+    \field{shorttitle}{Neue {{Wege}} Im {{Lateinunterricht}}?}
+    \field{title}{Neue {{Wege}} Im {{Lateinunterricht}}? {{Zur}} Praktischen
+  {{Umsetzung}} Der {{Kompetenzorientierung}} Am {{Beispiel}} Der
+  {{Metamorphosen Ovids}}}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/R6V4G366/Münzner - 2013 - Neue Wege
+    \verb  im Lateinunterricht Zur praktischen Ums.pdf
+    \endverb
+    \field{journaltitle}{Pegasus-Onlinezeitschrift}
+    \field{annotation}{%
+    243 Anm. 89: Diskussion {\"u}ber lautes Vorlesen im Lateinunterricht:
+  "Gl{\"u}cklich / von Albrecht erg{\"a}nzen jedoch auch, dass das Lesen
+  eigentlich erst nach dem {\"U}bersetzen und Interpretieren des lateinischen
+  Textes sinnvoll sei, da erst dann Rhythmus, Musikalit{\"a}t und die
+  inhaltliche Sinnhaftigkeit des Textes ber{\"u}cksichtigt werden k{\"o}nnten
+  [...]. Diese Warnung wird nicht v{\"o}llig zu Unrecht ausgesprochen.
+  Allerdings kann die Skandierung der Metrik auch als sinnvolle
+  Textvorerschlie{\ss}ung gew{\"a}hlt werden und auf bestimmte Ph{\"a}nomene
+  des Textes vor der {\"U}bersetzung hinweisen."%
+    }
+    \field{year}{2013}
   \endentry
 
   \entry{nerlichPolysemyFlexibilityIntroduction2003}{incollection}{}
@@ -1173,6 +1840,83 @@
     \field{year}{2014}
   \endentry
 
+  \entry{punuruLearningNontaxonomicalSemantic2012}{article}{}
+    \name{author}{2}{}{%
+      {{hash=PJ}{%
+         family={Punuru},
+         familyi={P\bibinitperiod},
+         given={Janardhana},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=CJ}{%
+         family={Chen},
+         familyi={C\bibinitperiod},
+         given={Jianhua},
+         giveni={J\bibinitperiod},
+      }}%
+    }
+    \list{language}{1}{%
+      {en}%
+    }
+    \keyw{Ontology learning,Semantical relation,Text mining}
+    \strng{namehash}{PJCJ1}
+    \strng{fullhash}{PJCJ1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2012}
+    \field{labeldatesource}{year}
+    \field{sortinit}{P}
+    \field{sortinithash}{P}
+    \field{abstract}{%
+    Ontology of a domain mainly consists of concepts, taxonomical
+  (hierarchical) relations and non-taxonomical relations. Automatic ontology
+  construction requires methods for extracting both taxonomical and
+  non-taxonomical relations. Compared to extensive works on concept extraction
+  and taxonomical relation learning, little attention has been given on
+  identification and labeling of non-taxonomical relations in text mining. In
+  this paper, we propose an unsupervised technique for extracting
+  non-taxonomical relations from domain texts. We propose the VF*ICF metric for
+  measuring the importance of a verb as a representative relation label, in
+  much the same spirit as the TF*IDF measure in information retrieval.
+  Domain-relevant concepts (nouns) are extracted using techniques developed
+  earlier. Candidate non-taxonomical relations are generated as (SVO) triples
+  of the form (subject, verb, object) from domain texts. A statistical method
+  with log-likelihood ratios is used to estimate the significance of
+  relationships between concepts and to select suitable relation labels. Texts
+  from two domains, the Electronic Voting (EV) domain texts and the Tenders and
+  Mergers (TNM) domain texts are used to compare our method with one of the
+  existing approaches. Experiments showed that our method achieved better
+  performance in both domains.%
+    }
+    \verb{doi}
+    \verb 10.1007/s10844-011-0149-4
+    \endverb
+    \field{issn}{1573-7675}
+    \field{number}{1}
+    \field{pages}{191\bibrangedash 207}
+    \field{title}{Learning Non-Taxonomical Semantic Relations from Domain
+  Texts}
+    \field{volume}{38}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/RUML34M4/Punuru and Chen - 2012 - Le
+    \verb arning non-taxonomical semantic relations from d.pdf
+    \endverb
+    \field{journaltitle}{Journal of Intelligent Information Systems}
+    \field{annotation}{%
+    192f.: automatischer Aufbau von Ontologien f{\"u}r das Semantic Web hilft
+  bei der Erschlie{\ss}ung dom{\"a}nenspezifischer Texte und erh{\"o}ht die
+  Qualit{\"a}t maschineller Suchverfahren: "Semantic Web aims at representing
+  the textual content of Web pages by ontologies, which allow machines to
+  comprehend the semantics of documents and return more accurate answers to
+  user queries. As of now, ontologies for domains of interests are developed
+  manually in spite of the wide spread use of ontologies. This situation
+  clearly indicates the urgent need for techniques that can automatically learn
+  (construct) ontology from domain texts."%
+    }
+    \field{month}{02}
+    \field{year}{2012}
+  \endentry
+
   \entry{roelliCorpusCorporumNew2014}{article}{}
     \name{author}{1}{}{%
       {{hash=RP}{%
@@ -1253,6 +1997,44 @@
     \field{year}{2014}
   \endentry
 
+  \entry{schibelZurAneignungLateinischer2013}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=SW}{%
+         family={Schibel},
+         familyi={S\bibinitperiod},
+         given={Wolfgang},
+         giveni={W\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{SW1}
+    \strng{fullhash}{SW1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2013}
+    \field{labeldatesource}{year}
+    \field{sortinit}{S}
+    \field{sortinithash}{S}
+    \field{booktitle}{Forum {{Classicum}}}
+    \field{pages}{113\bibrangedash 124}
+    \field{title}{Zur {{Aneignung}} Lateinischer {{Literatur}} Und {{Sprache}}}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/C4K8VU6U/Schibel - 2013 - Zur Aneign
+    \verb ung lateinischer Literatur und Sprache.pdf
+    \endverb
+    \field{annotation}{%
+    115: Lekt{\"u}reschock ist bedingt durch schlechtes Design der
+  Lehrb{\"u}cher, z.B. zu wenig Progression: "Die Antwort gibt die von
+  Lateinlehrern oft zu h{\"o}rende Klage {\"u}ber einen ,Lekt{\"u}reschock`,
+  den Sch{\"u}ler beim {\"U}bergang vom Lehrbuch zu Originaltexten erleiden.
+  Die wohlmeinende Sorge der Verfasser lateinischer Lehrwerke f{\"u}r einen
+  allm{\"a}hlichen, von Lektion zu Lektion sparsam dosierten Anstieg der
+  sprachlichen Anforderungen zeitigt einen langen Aufenthalt der Lerner in
+  einer fabrizierten Sprachwelt, die nicht zur {\"U}berwindung sprachlicher
+  H{\"u}rden anspornt."%
+    }
+    \field{year}{2013}
+  \endentry
+
   \entry{souille-rigautSemanticAccountQuasiLexemes2010}{thesis}{}
     \name{author}{1}{}{%
       {{hash=SC}{%
@@ -1303,6 +2085,74 @@
   nominal constituent."%
     }
     \field{year}{2010}
+  \endentry
+
+  \entry{taslimExperimentalStudyTeaching2014}{article}{}
+    \name{author}{1}{}{%
+      {{hash=TF}{%
+         family={Taslim},
+         familyi={T\bibinitperiod},
+         given={Fadilla},
+         giveni={F\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{TF1}
+    \strng{fullhash}{TF1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{labelyear}{2014}
+    \field{labeldatesource}{year}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{number}{3}
+    \field{pages}{189\bibrangedash 197}
+    \field{title}{An {{Experimental Study}} of {{Teaching Vocabulary}} by
+  {{Using Hyponymy Games}} on the {{Seventh Grader F MTs Syech Ibrahim
+  Payakumbuh}}}
+    \field{volume}{21}
+    \verb{file}
+    \verb /Users/Konstantin/Zotero/storage/SHBTLPL7/Taslim - 2014 - An Experime
+    \verb ntal Study of Teaching Vocabulary by Us.pdf
+    \endverb
+    \field{journaltitle}{Al-Ta lim Journal}
+    \field{annotation}{%
+    196: hyponymie-basierte Spiele tragen zum Wortschatzerwerb bei: "[...]
+  Hyponymy games are highly effective in developing students' level of
+  vocabulary [...]."%
+    }
+    \field{year}{2014}
+  \endentry
+
+  \entry{zipfPsychobiologyLanguageIntroduction1936}{book}{}
+    \name{author}{1}{}{%
+      {{hash=ZGK}{%
+         family={Zipf},
+         familyi={Z\bibinitperiod},
+         given={George\bibnamedelima Kingsley},
+         giveni={G\bibinitperiod\bibinitdelim K\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{ZGK1}
+    \strng{fullhash}{ZGK1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{shorttitle}
+    \field{labelyear}{1936}
+    \field{labeldatesource}{year}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{shorttitle}{The Psycho-Biology of Language}
+    \field{title}{The Psycho-Biology of Language: {{An}} Introduction to
+  Dynamic Philology}
+    \field{annotation}{%
+    VI: Definition Zipf'sches Gesetz: "If the number of different words
+  occurring once in a given sample is taken as x, the number of different words
+  occurring twice, three times, four times, n times, in the same sample, is
+  respectively 1/2**2, 1/3**2, 1/4**2,.... 1/n**2 of x, up to, though not
+  including, the few most frequently used words; that is, we find an
+  unmistakable progression according to the inverse square, valid for well over
+  95\% of all the different words used in the sample."%
+    }
+    \field{year}{1936}
   \endentry
 \enddatalist
 \endinput

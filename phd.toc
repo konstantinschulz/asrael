@@ -1,11 +1,17 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Introduction}{1}{section*.3}% 
+\contentsline {section}{Introduction}{1}{section*.4}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Hyponymy}{2}{section*.4}% 
+\contentsline {subsection}{Semantic relations in language learning}{1}{section*.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Method}{5}{section*.6}% 
+\contentsline {subsection}{Word Sense Induction}{2}{section*.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{Appendix}{6}{section*.7}% 
+\contentsline {subsection}{Hyponymy}{4}{section*.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{Appendix A: Agile and Open Methodology}{6}{section*.8}% 
+\contentsline {subsection}{Method}{7}{section*.9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{Appendix}{9}{section*.13}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{Appendix A: Agile and Open Methodology}{9}{section*.14}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{References}{10}{section*.15}% 
