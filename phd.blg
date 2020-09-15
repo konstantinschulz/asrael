@@ -1,15 +1,15 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'phd.blg'
-[45] biber-darwin:315> INFO - === Tue Sep 15, 2020, 15:16:10
-[76] Biber.pm:371> INFO - Reading 'phd.bcf'
-[196] Biber.pm:889> INFO - Found 90 citekeys in bib section 0
-[214] Biber.pm:4093> INFO - Processing section 0
-[226] Biber.pm:4254> INFO - Looking for bibtex format file 'lit.bib' for section 0
-[236] bibtex.pm:1523> INFO - LaTeX decoding ...
-[465] bibtex.pm:1340> INFO - Found BibTeX data source 'lit.bib'
-[1180] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[1180] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[1180] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
-[1180] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
-[1280] bbl.pm:636> INFO - Writing 'phd.bbl' with encoding 'UTF-8'
-[1374] bbl.pm:739> INFO - Output to phd.bbl
+[41] biber-darwin:315> INFO - === Tue Sep 15, 2020, 16:16:26
+[72] Biber.pm:371> INFO - Reading 'phd.bcf'
+[186] Biber.pm:889> INFO - Found 90 citekeys in bib section 0
+[199] Biber.pm:4093> INFO - Processing section 0
+[213] Biber.pm:4254> INFO - Looking for bibtex format file 'lit.bib' for section 0
+[219] bibtex.pm:1523> INFO - LaTeX decoding ...
+[389] bibtex.pm:1340> INFO - Found BibTeX data source 'lit.bib'
+[1124] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[1124] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[1124] Biber.pm:3921> INFO - Sorting list 'nyt/global//global/global' of type 'entry' with template 'nyt' and locale 'en-US'
+[1125] Biber.pm:3927> INFO - No sort tailoring available for locale 'en-US'
+[1233] bbl.pm:636> INFO - Writing 'phd.bbl' with encoding 'UTF-8'
+[1321] bbl.pm:739> INFO - Output to phd.bbl
