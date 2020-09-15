@@ -1,0 +1,60 @@
+\ifglsentryexists{PMI}{}%
+{%
+\gls@defglossaryentry{PMI}%
+{%
+name={PMI},%
+sort={PMI},%
+type={main},%
+first={PMI},%
+firstplural={PMIs},%
+text={PMI},%
+plural={PMIs},%
+description={Pointwise Mutual Information},%
+descriptionplural={Pointwise Mutual Information},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{latex2}{}%
+{%
+\gls@defglossaryentry{latex2}%
+{%
+name={latex2},%
+sort={latex2},%
+type={main},%
+first={latex2},%
+firstplural={latex2s},%
+text={latex2},%
+plural={latex2s},%
+description={Is a mark up language specially suited for scientific documents},%
+descriptionplural={Is a mark up language specially suited for scientific documents},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

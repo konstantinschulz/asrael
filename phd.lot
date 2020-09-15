@@ -1,5 +1,9 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Percentage of sentences with hyponymy, extracted by shallow comparison to WordNet\relax }}{8}{table.caption.10}% 
+\contentsline {table}{\numberline {1}{\ignorespaces Noun-to-verb ratio for different treebanks in the Universal Dependencies corpus (Latin, French, German; \cite {nivreUniversalDependenciesV12016}).\relax }}{8}{table.caption.7}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Evaluation of the simplest model, trained with data from a shallow comparison to WordNet\relax }}{9}{table.caption.11}% 
+\contentsline {table}{\numberline {2}{\ignorespaces Average number of types per lemma for Latin, French and German.\relax }}{14}{table.caption.8}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {3}{\ignorespaces Cosine similarity for tokens in almost identical sentences from PROIEL.\relax }}{15}{table.caption.9}% 
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {4}{\ignorespaces Cosine similarity for sentences from PROIEL in which exactly one token was replaced.\relax }}{16}{table.caption.10}% 
