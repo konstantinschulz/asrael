@@ -1,11 +1,16 @@
+import os
+import pickle
+from itertools import combinations
+
 import numpy
+from conllu import TokenList
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.image import AxesImage
 from matplotlib.text import Text
 from scipy.spatial.distance import cosine
 from tensorflow import keras, Tensor
-from typing import List, Any, Tuple, Set
+from typing import List, Any, Tuple, Set, Dict
 import tensorflow_datasets as tfds
 from tensorflow.python.data import Dataset
 import tensorflow as tf
@@ -283,13 +288,62 @@ class Transformer(keras.Model):
             [encoder_input, True, enc_padding_mask])  # (layer_id, batch_size, inp_seq_len, d_model)
         # batch size is 1, so might as well remove that dimension completely
         enc_output_no_batch: Tensor = keras.backend.squeeze(enc_output, 1)  # (layer_id, inp_seq_len, d_model)
+        sentence_length: int = len(sentence)
         tok_idx: int = sentence.find(token)
+        next_char_idx: int = tok_idx + len(token)
+        # if the found index is not at the end of a token, retry until we get a full token
+        while next_char_idx < sentence_length and sentence[next_char_idx].isalpha() and tok_idx > -1:
+            tok_idx = sentence.find(token, next_char_idx)
+            next_char_idx: int = tok_idx + len(token)
         found_tensors: List[Tensor] = []
         if tok_idx > -1:
             found_tensors = self.compute_embeddings(tok_idx, token, enc_output_no_batch, sentence, input_tensor)
         if not len(found_tensors):
             raise Exception(f"{token} not found in input '{sentence}'")
         return found_tensors
+
+
+def cluster_word_senses(proiel_pickle: str, tokenizer: SubwordTextEncoder):
+    conllu_all: List[TokenList] = pickle.load(open(proiel_pickle, "rb"))[:50]
+
+    class Cluster:
+        def __init__(self, tensors: List[Tensor], average_tensor: Tensor = None):
+            self.tensors: List[Tensor] = tensors
+            self.average_tensor: Tensor = average_tensor
+
+    lemma_dict: Dict[str, List[Cluster]] = dict()
+    for sent in tqdm(conllu_all):
+        content: str = " ".join([x["form"] for x in sent.tokens])
+        ignore_set: Set[str] = set()
+        for tok in sent.tokens:
+            form: str = tok["form"]
+            if form in ignore_set:
+                continue
+            tensors: List[Tensor] = transformer.get_embeddings_for_token(content, tokenizer, form)
+            if len(tensors) > 1:
+                ignore_set.add(form)
+            lemma: str = tok["lemma"]
+            if lemma not in lemma_dict:
+                lemma_dict[lemma] = []
+            for tensor in tensors:
+                lemma_dict[lemma].append(Cluster(tensors=[tensor]))
+    for lemma in tqdm(lemma_dict):
+        if len(lemma_dict[lemma]) < 2:
+            continue
+        for cluster in lemma_dict[lemma]:
+            cluster.average_tensor = transformer.avg(cluster.tensors)
+        averages: List[Tensor] = [x.average_tensor for x in lemma_dict[lemma]]
+        unique_pairs: List[Tuple[Tensor, Tensor]] = [comb for comb in combinations(averages, 2)]
+        distances: List[float] = [cosine(t1, t2) for t1, t2 in unique_pairs]
+        min_dist: float = min(distances)
+        target_pair_idx: int = next(i for i in range(len(distances)) if distances[i] == min_dist)
+        target_averages: Tuple[Tensor, Tensor] = unique_pairs[target_pair_idx]
+        # equality = tf.equal(lemma_dict[lemma][0].tensors[0], target_averages[0])
+        src_cluster: Cluster = next(x for x in lemma_dict[lemma] if all(tf.equal(x.average_tensor, target_averages[0])))
+        tgt_cluster: Cluster = next(x for x in lemma_dict[lemma] if all(tf.equal(x.average_tensor, target_averages[1])))
+        tgt_cluster.tensors += src_cluster.tensors
+        lemma_dict[lemma].remove(src_cluster)
+    a = 0
 
 
 def create_look_ahead_mask(size):
@@ -380,9 +434,9 @@ def evaluate_polysemy(tokenizer: SubwordTextEncoder, transformer: Transformer):
     predictions: List[int] = []
     sims: List[float] = []
     for ex in examples:
-        token1: str = ex.context1.content[ex.context1.token_range_start:ex.context1.token_range_end] + " "
+        token1: str = ex.context1.content[ex.context1.token_range_start:ex.context1.token_range_end]
         tensors1: List[Tensor] = transformer.get_embeddings_for_token(ex.context1.content, tokenizer, token1)
-        token2: str = ex.context2.content[ex.context2.token_range_start:ex.context2.token_range_end] + " "
+        token2: str = ex.context2.content[ex.context2.token_range_start:ex.context2.token_range_end]
         tensors2: List[Tensor] = transformer.get_embeddings_for_token(ex.context2.content, tokenizer, token2)
         cos_sim: float = 1 - cosine(tensors1[0], tensors2[0])
         sims.append(cos_sim)
@@ -745,7 +799,9 @@ if ckpt_manager.latest_checkpoint:
 evaluate_polysemy(tokenizer, transformer)
 # evaluate_word_order()
 # evaluate_lexis()
-cluster_
+data_dir: str = "../data"
+proiel_pickle_path: str = os.path.join(data_dir, "proiel_conllu.pickle")
+cluster_word_senses(proiel_pickle_path, tokenizer)
 # train_model(train_loss, train_accuracy, train_dataset, ckpt_manager)
 evaluate_polysemy(tokenizer, transformer)
 predict_next_sentence("Gallia est omnis divisa in partes tres.")

@@ -44,11 +44,11 @@ def calculate_contexts_dvs(proiel_pickle: str):
             continue
         elif vec_list_len > 100:
             vec_list = random.sample(vec_list, 100)
-        pairs: List[Tuple[ndarray, ndarray]] = [comb for comb in combinations(vec_list, 2)]
+        unique_pairs: List[Tuple[ndarray, ndarray]] = [comb for comb in combinations(vec_list, 2)]
         max_pairs_len: int = 100
-        if len(pairs) > max_pairs_len:
-            pairs = random.sample(pairs, max_pairs_len)
-        sims: List[float] = [1 - cosine(x[0], x[1]) for x in pairs]
+        if len(unique_pairs) > max_pairs_len:
+            unique_pairs = random.sample(unique_pairs, max_pairs_len)
+        sims: List[float] = [1 - cosine(x[0], x[1]) for x in unique_pairs]
         if len(sims):
             avg_dict[entry] = sum(sims) / len(sims)
     avg_sorted: list = sorted(avg_dict.items(), key=lambda x: x[1], reverse=False)
