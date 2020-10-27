@@ -64,9 +64,13 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1608.04207}
       \field{title}{Fine-Grained Analysis of Sentence Embeddings Using Auxiliary Prediction Tasks}
       \field{year}{2016}
+      \verb{eprint}
+      \verb 1608.04207
+      \endverb
       \verb{urlraw}
       \verb https://arxiv.org/pdf/1608.04207.pdf
       \endverb
@@ -893,6 +897,47 @@
       \endverb
       \keyw{Computer Science - Artificial Intelligence,Computer Science - Computation and Language,Computer Science - Machine Learning}
     \endentry
+    \entry{debowskiNaturalLanguagePerigraphic2018}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=6f941aee02f4a3f466623d4dc3e5706c}{%
+           family={D{ę}bowski},
+           familyi={D\bibinitperiod},
+           given={{Ł}ukasz},
+           giveni={Ł\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Multidisciplinary Digital Publishing Institute}%
+      }
+      \strng{namehash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \strng{fullhash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \strng{bibnamehash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \strng{authorbibnamehash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \strng{authornamehash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \strng{authorfullhash}{6f941aee02f4a3f466623d4dc3e5706c}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Entropy}
+      \field{number}{2}
+      \field{title}{Is Natural Language a Perigraphic Process? {{The}} Theorem about Facts and Words Revisited}
+      \field{volume}{20}
+      \field{year}{2018}
+      \field{pages}{85}
+      \range{pages}{1}
+      \verb{doi}
+      \verb 10.3390/e20020085
+      \endverb
+      \verb{urlraw}
+      \verb https://www.mdpi.com/1099-4300/20/2/85/pdf
+      \endverb
+      \verb{url}
+      \verb https://www.mdpi.com/1099-4300/20/2/85/pdf
+      \endverb
+    \endentry
     \entry{devineLatinWordOrder2006}{book}{}
       \name{author}{2}{}{%
         {{uniquename=0,uniquepart=base,hash=3bdeeaed2c8f265f206269b5b14427d9}{%
@@ -972,10 +1017,14 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1810.04805}
       \field{shorttitle}{Bert}
       \field{title}{Bert: {{Pre}}-Training of Deep Bidirectional Transformers for Language Understanding}
       \field{year}{2018}
+      \verb{eprint}
+      \verb 1810.04805
+      \endverb
       \verb{file}
       \verb /Users/Konstantin/Zotero/storage/Q5R6ARG5/1810.html
       \endverb
@@ -1113,9 +1162,13 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1605.02276}
       \field{title}{Problems with Evaluation of Word Embeddings Using Word Similarity Tasks}
       \field{year}{2016}
+      \verb{eprint}
+      \verb 1605.02276
+      \endverb
       \verb{file}
       \verb /Users/Konstantin/Zotero/storage/LNR5YHXT/1605.html
       \endverb
@@ -1632,9 +1685,13 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1106.4058}
       \field{title}{Experimental Support for a Categorical Compositional Distributional Model of Meaning}
       \field{year}{2011}
+      \verb{eprint}
+      \verb 1106.4058
+      \endverb
       \verb{urlraw}
       \verb https://arxiv.org/pdf/1106.4058.pdf
       \endverb
@@ -1825,9 +1882,13 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1605.09096}
       \field{title}{Diachronic Word Embeddings Reveal Statistical Laws of Semantic Change}
       \field{year}{2016}
+      \verb{eprint}
+      \verb 1605.09096
+      \endverb
       \verb{file}
       \verb /Users/Konstantin/Zotero/storage/Z5L9AGG8/1605.html
       \endverb
@@ -2927,10 +2988,14 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1301.3781}
       \field{shorttitle}{{{Word2Vec}}}
       \field{title}{Efficient Estimation of Word Representations in Vector Space}
       \field{year}{2013}
+      \verb{eprint}
+      \verb 1301.3781
+      \endverb
       \verb{file}
       \verb /Users/Konstantin/Zotero/storage/VK2LNR37/1301.html
       \endverb
@@ -3479,9 +3544,13 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{title}
+      \field{eprinttype}{arxiv}
       \field{journaltitle}{arXiv preprint arXiv:1802.05365}
       \field{title}{Deep Contextualized Word Representations}
       \field{year}{2018}
+      \verb{eprint}
+      \verb 1802.05365
+      \endverb
       \verb{file}
       \verb /Users/Konstantin/Zotero/storage/UL78NLC2/1802.html
       \endverb
@@ -3490,6 +3559,62 @@
       \endverb
       \verb{url}
       \verb https://arxiv.org/pdf/1802.05365.pdf
+      \endverb
+    \endentry
+    \entry{pierrehumbertBurstinessVerbsDerived2012}{incollection}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=f68758637193f961cfe4e181c4c41058}{%
+           family={Pierrehumbert},
+           familyi={P\bibinitperiod},
+           given={Janet\bibnamedelima B},
+           giveni={J\bibinitperiod\bibinitdelim B\bibinitperiod},
+           givenun=0}}%
+      }
+      \name{editor}{3}{}{%
+        {{hash=26293e2549ed705cc8eee0373003258c}{%
+           family={Santos},
+           familyi={S\bibinitperiod},
+           given={Diana},
+           giveni={D\bibinitperiod}}}%
+        {{hash=18e6c304433fe4472e466e80d125a6c4}{%
+           family={Linden},
+           familyi={L\bibinitperiod},
+           given={Krister},
+           giveni={K\bibinitperiod}}}%
+        {{hash=43ddd3a50fc5fee20dee868292b25856}{%
+           family={Ng'ang'a},
+           familyi={N\bibinitperiod},
+           given={Wanjiju},
+           giveni={W\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Springer}%
+      }
+      \strng{namehash}{f68758637193f961cfe4e181c4c41058}
+      \strng{fullhash}{f68758637193f961cfe4e181c4c41058}
+      \strng{bibnamehash}{f68758637193f961cfe4e181c4c41058}
+      \strng{authorbibnamehash}{f68758637193f961cfe4e181c4c41058}
+      \strng{authornamehash}{f68758637193f961cfe4e181c4c41058}
+      \strng{authorfullhash}{f68758637193f961cfe4e181c4c41058}
+      \strng{editorbibnamehash}{250297d8b55ebcff2304d27cb4c62aa2}
+      \strng{editornamehash}{408ba8a455293abeabb50cbc8e765168}
+      \strng{editorfullhash}{250297d8b55ebcff2304d27cb4c62aa2}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{Shall {{We Play}} the {{Festschrift Game}}? {{Essays}} on the {{Occasion}} of {{Lauri Carlson}}'s 60th {{Birthday}}}
+      \field{title}{Burstiness of Verbs and Derived Nouns}
+      \field{year}{2012}
+      \field{pages}{99\bibrangedash 115}
+      \range{pages}{17}
+      \verb{urlraw}
+      \verb http://www.phon.ox.ac.uk/jpierrehumbert/publications/Burstiness_Nouns_Verbs.pdf
+      \endverb
+      \verb{url}
+      \verb http://www.phon.ox.ac.uk/jpierrehumbert/publications/Burstiness_Nouns_Verbs.pdf
       \endverb
     \endentry
     \entry{pinkalSemantik1993}{incollection}{}
@@ -3507,6 +3632,9 @@
            familyi={G\bibinitperiod},
            given={G{ü}nther},
            giveni={G\bibinitperiod}}}%
+      }
+      \list{publisher}{1}{%
+        {Addison-Wesley}%
       }
       \strng{namehash}{68dabe81b30b293187dfa72e0e07d497}
       \strng{fullhash}{68dabe81b30b293187dfa72e0e07d497}
@@ -3944,6 +4072,56 @@
       \endverb
       \verb{url}
       \verb https://hal.inria.fr/hal-01798801/document
+      \endverb
+    \endentry
+    \entry{shadrovaMeasuringCoselectionalConstraint2020}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=3a65324de83b74346fb5e614f7f8068b}{%
+           family={Shadrova},
+           familyi={S\bibinitperiod},
+           given={Anna\bibnamedelima Valer'evna},
+           giveni={A\bibinitperiod\bibinitdelim V\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {eng}%
+      }
+      \list{publisher}{1}{%
+        {Humboldt-Universität zu Berlin}%
+      }
+      \strng{namehash}{3a65324de83b74346fb5e614f7f8068b}
+      \strng{fullhash}{3a65324de83b74346fb5e614f7f8068b}
+      \strng{bibnamehash}{3a65324de83b74346fb5e614f7f8068b}
+      \strng{authorbibnamehash}{3a65324de83b74346fb5e614f7f8068b}
+      \strng{authornamehash}{3a65324de83b74346fb5e614f7f8068b}
+      \strng{authorfullhash}{3a65324de83b74346fb5e614f7f8068b}
+      \field{sortinit}{S}
+      \field{sortinithash}{322b1d5276f2f6c1bccdcd15920dbee6}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{abstract}{Die korpuslinguistische Arbeit untersucht den Erwerb von Koselektionsbeschränkungen bei Lerner*innen des Deutschen als Fremdsprache in einem quasi-longitudinalen Forschungsdesign anhand des Kobalt-Korpus. Neben einigen statistischen Analysen wird vordergründig eine graphbasierte Analyse entwickelt, die auf der Graphmetrik Louvain-Modularität aufbaut. Diese wird für diverse Subkorpora nach verschiedenen Kriterien berechnet und mit Hilfe verschiedener Samplingtechniken umfassend intern validiert. Im Ergebnis zeigen sich eine Abhängigkeit der gemessenen Modularitätswerte vom Sprachstand der Teilnehmer*innen, eine höhere Modularität bei Muttersprachler*innen, niedrigere Modularitätswerte bei weißrussischen vs. chinesischen Lerner*innen sowie ein U-Kurven-förmiger Erwerbsverlauf bei weißrussischen, nicht aber chinesischen Lerner*innen. Unterschiede zwischen den Gruppen werden aus typologischer, kognitiver, diskursiv-kultureller und Registerperspektive diskutiert. Abschließend werden Vorschläge für den Einsatz von graphbasierten Modellierungen in kernlinguistischen Fragestellungen entwickelt. Zusätzlich werden theoretische Lücken in der gebrauchsbasierten Beschreibung von Koselektionsphänomenen (Phraseologie, Idiomatizität, Kollokation) aufgezeigt und ein multidimensionales funktionales Modell als Alternative vorgeschlagen.}
+      \field{annotation}{Accepted: 2020-07-24T10:43:05Z}
+      \field{month}{7}
+      \field{shorttitle}{Measuring Coselectional Constraint in Learner Corpora}
+      \field{title}{Measuring Coselectional Constraint in Learner Corpora: {{A}} Graph-Based Approach}
+      \field{urlday}{19}
+      \field{urlmonth}{10}
+      \field{urlyear}{2020}
+      \field{year}{2020}
+      \field{urldateera}{ce}
+      \verb{doi}
+      \verb 10.18452/21606
+      \endverb
+      \verb{file}
+      \verb /Users/Konstantin/Zotero/storage/GU5ZZKYA/22356.html;/Users/Konstantin/Zotero/storage/Z38NMF7F/22356.html
+      \endverb
+      \verb{urlraw}
+      \verb https://edoc.hu-berlin.de/handle/18452/22356
+      \endverb
+      \verb{url}
+      \verb https://edoc.hu-berlin.de/handle/18452/22356
       \endverb
     \endentry
     \entry{shortLatinDictionary1879}{book}{}

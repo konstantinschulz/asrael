@@ -2103,8 +2103,11 @@
     <bcf:citekey order="106">rogersTooManyProblems2017</bcf:citekey>
     <bcf:citekey order="107">karanDistributionalSemanticsApproach2012</bcf:citekey>
     <bcf:citekey order="108">rogersTooManyProblems2017</bcf:citekey>
-    <bcf:citekey order="109">fowlerAgileManifesto2001</bcf:citekey>
-    <bcf:citekey order="110">garcia-penalvoOpenKnowledgeManagement2010</bcf:citekey>
+    <bcf:citekey order="109">pierrehumbertBurstinessVerbsDerived2012</bcf:citekey>
+    <bcf:citekey order="110">shadrovaMeasuringCoselectionalConstraint2020</bcf:citekey>
+    <bcf:citekey order="111">debowskiNaturalLanguagePerigraphic2018</bcf:citekey>
+    <bcf:citekey order="112">fowlerAgileManifesto2001</bcf:citekey>
+    <bcf:citekey order="113">garcia-penalvoOpenKnowledgeManagement2010</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nyt">

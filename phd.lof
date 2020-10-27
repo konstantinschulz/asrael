@@ -1,1 +1,3 @@
 \boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of cosine distance and usage frequency.\relax }}{18}{figure.caption.11}% 

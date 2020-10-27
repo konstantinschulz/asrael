@@ -1,16 +1,11 @@
 import os
-import pickle
-from itertools import combinations
-
-import numpy
-from conllu import TokenList
 from matplotlib.axes import Axes
 from matplotlib.figure import Figure
 from matplotlib.image import AxesImage
 from matplotlib.text import Text
 from scipy.spatial.distance import cosine
 from tensorflow import keras, Tensor
-from typing import List, Any, Tuple, Set, Dict
+from typing import List, Tuple, Set
 import tensorflow_datasets as tfds
 from tensorflow.python.data import Dataset
 import tensorflow as tf
@@ -18,14 +13,14 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from tensorflow.python.framework.errors_impl import NotFoundError
-from tensorflow.python.keras.losses import SparseCategoricalCrossentropy
 from tensorflow.python.keras.metrics import SparseCategoricalAccuracy
-from tensorflow.python.keras.optimizer_v2.optimizer_v2 import OptimizerV2
 from tensorflow.python.ops.gen_math_ops import Mean
 from tensorflow.python.training.checkpoint_management import CheckpointManager
 from tensorflow.python.training.tracking.util import Checkpoint
 from tensorflow_datasets.core.features.text import SubwordTextEncoder
 from tqdm import tqdm
+
+from classes import Cluster, create_padding_mask, Transformer, Example, scaled_dot_product_attention, CustomSchedule
 
 BUFFER_SIZE = 20000
 BATCH_SIZE = 1000
@@ -37,313 +32,8 @@ NUMBER_OF_HEADS = 8
 DROPOUT_RATE = 0.1
 EPOCHS = 5
 
-
-class Context:
-    def __init__(self, content: str, token_range: str):
-        self.content: str = content
-        range_parts: List[int] = [int(x) for x in token_range.split(":")]
-        self.token_range_start: int = range_parts[0]
-        self.token_range_end: int = range_parts[1]
-
-
-class Example:
-    def __init__(self, line: str):
-        parts: List[str] = line.split("\t")
-        self.context1: Context = Context(parts[0], parts[2])
-        self.context2: Context = Context(parts[1], parts[3])
-        if len(parts) > 4:
-            self.label: int = int(parts[4])
-
-
-class CustomSchedule(keras.optimizers.schedules.LearningRateSchedule):
-    def get_config(self):
-        pass
-
-    def __init__(self, d_model, warmup_steps=4000):
-        super(CustomSchedule, self).__init__()
-        self.d_model = d_model
-        self.d_model = keras.backend.cast(self.d_model, tf.float32)
-        self.warmup_steps = warmup_steps
-
-    def __call__(self, step):
-        arg1 = tf.math.rsqrt(step)
-        arg2 = step * (self.warmup_steps ** -1.5)
-        return tf.math.rsqrt(self.d_model) * keras.backend.minimum(arg1, arg2)
-
-
-class Decoder(keras.layers.Layer):
-    def __init__(self, num_layers, d_model, num_heads, dff, target_vocab_size,
-                 maximum_position_encoding, rate=0.1):
-        super(Decoder, self).__init__()
-        self.d_model = d_model
-        self.num_layers = num_layers
-        self.embedding = keras.layers.Embedding(target_vocab_size, d_model)
-        self.pos_encoding = positional_encoding(maximum_position_encoding, d_model)
-        self.dec_layers: List[DecoderLayer] = [DecoderLayer(d_model, num_heads, dff, rate) for _ in range(num_layers)]
-        self.dropout = keras.layers.Dropout(rate)
-
-    def call(self, inputs: List[Any], **kwargs):
-        x, enc_output, training, look_ahead_mask, padding_mask = inputs
-        seq_len = keras.backend.shape(x)[1]
-        attention_weights = {}
-        x = self.embedding(x)  # (batch_size, target_seq_len, d_model)
-        x *= tf.math.sqrt(keras.backend.cast(self.d_model, tf.float32))
-        x += self.pos_encoding[:, :seq_len, :]
-        x = self.dropout(x, training=training)
-        for i in range(self.num_layers):
-            dec_layer: DecoderLayer = self.dec_layers[i]
-            x, block1, block2 = dec_layer([x, enc_output, training, look_ahead_mask, padding_mask])
-            attention_weights['decoder_layer{}_block1'.format(i + 1)] = block1
-            attention_weights['decoder_layer{}_block2'.format(i + 1)] = block2
-        # x.shape == (batch_size, target_seq_len, d_model)
-        return x, attention_weights
-
-
-class DecoderLayer(keras.layers.Layer):
-    def __init__(self, d_model, num_heads, dff, rate=0.1):
-        super(DecoderLayer, self).__init__()
-        self.mha1 = MultiHeadAttention(d_model, num_heads)
-        self.mha2 = MultiHeadAttention(d_model, num_heads)
-        self.ffn = point_wise_feed_forward_network(d_model, dff)
-        self.layernorm1 = keras.layers.LayerNormalization(epsilon=1e-6)
-        self.layernorm2 = keras.layers.LayerNormalization(epsilon=1e-6)
-        self.layernorm3 = keras.layers.LayerNormalization(epsilon=1e-6)
-        self.dropout1 = keras.layers.Dropout(rate)
-        self.dropout2 = keras.layers.Dropout(rate)
-        self.dropout3 = keras.layers.Dropout(rate)
-
-    def call(self, inputs: List[Any], **kwargs):
-        x, enc_output, training, look_ahead_mask, padding_mask = inputs
-        # enc_output.shape == (batch_size, input_seq_len, d_model)
-        attn1, attn_weights_block1 = self.mha1([x, x, x, look_ahead_mask])  # (batch_size, target_seq_len, d_model)
-        attn1 = self.dropout1(attn1, training=training)
-        out1 = self.layernorm1(attn1 + x)
-        attn2, attn_weights_block2 = self.mha2(
-            [enc_output, enc_output, out1, padding_mask])  # (batch_size, target_seq_len, d_model)
-        attn2 = self.dropout2(attn2, training=training)
-        out2 = self.layernorm2(attn2 + out1)  # (batch_size, target_seq_len, d_model)
-        ffn_output = self.ffn(out2)  # (batch_size, target_seq_len, d_model)
-        ffn_output = self.dropout3(ffn_output, training=training)
-        out3 = self.layernorm3(ffn_output + out2)  # (batch_size, target_seq_len, d_model)
-        return out3, attn_weights_block1, attn_weights_block2
-
-
-class Encoder(keras.layers.Layer):
-    def __init__(self, num_layers, d_model, num_heads, dff, input_vocab_size, maximum_position_encoding, rate=0.1):
-        super(Encoder, self).__init__()
-        self.d_model = d_model
-        self.num_layers = num_layers
-        self.embedding = keras.layers.Embedding(input_vocab_size, d_model)
-        self.pos_encoding = positional_encoding(maximum_position_encoding, self.d_model)
-        self.enc_layers: List[EncoderLayer] = [EncoderLayer(d_model, num_heads, dff, rate) for _ in range(num_layers)]
-        self.dropout = keras.layers.Dropout(rate)
-
-    def call(self, inputs: List[Any], **kwargs):
-        x, training, mask = inputs
-        seq_len = keras.backend.shape(x)[1]
-        # adding embedding and position encoding.
-        x: Tensor = self.embedding(x)  # (batch_size, input_seq_len, d_model)
-        x *= tf.math.sqrt(keras.backend.cast(self.d_model, tf.float32))
-        x += self.pos_encoding[:, :seq_len, :]
-        x = self.dropout(x, training=training)
-        x = keras.backend.expand_dims(x, axis=0)
-        for i in range(self.num_layers):
-            enc_layer: EncoderLayer = self.enc_layers[i]
-            # only give the output of the last layer to the next layer, not all the previous outputs
-            layer_output: Tensor = enc_layer([x[-1], training, mask])
-            layer_output_exp: Tensor = keras.backend.expand_dims(layer_output, axis=0)
-            x = keras.backend.concatenate([x, layer_output_exp], axis=0)
-            # at the last layer, overwrite all the previous output and only return the current output
-            # x = enc_layer([x, training, mask])
-        return x  # (batch_size, input_seq_len, d_model)
-
-
-class EncoderLayer(keras.layers.Layer):
-    def __init__(self, d_model, num_heads, dff, rate=0.1):
-        super(EncoderLayer, self).__init__()
-        self.mha = MultiHeadAttention(d_model, num_heads)
-        self.ffn = point_wise_feed_forward_network(d_model, dff)
-        self.layernorm1 = keras.layers.LayerNormalization(epsilon=1e-6)
-        self.layernorm2 = keras.layers.LayerNormalization(epsilon=1e-6)
-        self.dropout1 = keras.layers.Dropout(rate)
-        self.dropout2 = keras.layers.Dropout(rate)
-
-    def call(self, inputs: List[Any], **kwargs):
-        x, training, mask = inputs
-        attn_output, _ = self.mha([x, x, x, mask])  # (batch_size, input_seq_len, d_model)
-        attn_output = self.dropout1(attn_output, training=training)
-        out1 = self.layernorm1(x + attn_output)  # (batch_size, input_seq_len, d_model)
-        ffn_output = self.ffn(out1)  # (batch_size, input_seq_len, d_model)
-        ffn_output = self.dropout2(ffn_output, training=training)
-        out2 = self.layernorm2(out1 + ffn_output)  # (batch_size, input_seq_len, d_model)
-        return out2
-
-
-class MultiHeadAttention(keras.layers.Layer):
-    def __init__(self, d_model, num_heads):
-        super(MultiHeadAttention, self).__init__()
-        self.num_heads = num_heads
-        self.d_model = d_model
-        assert d_model % self.num_heads == 0
-        self.depth = d_model // self.num_heads
-        self.wq = keras.layers.Dense(d_model)
-        self.wk = keras.layers.Dense(d_model)
-        self.wv = keras.layers.Dense(d_model)
-        self.dense = keras.layers.Dense(d_model)
-
-    def split_heads(self, x, batch_size):
-        """Split the last dimension into (num_heads, depth).
-        Transpose the result such that the shape is (batch_size, num_heads, seq_len, depth)
-        """
-        x = keras.backend.reshape(x, (batch_size, -1, self.num_heads, self.depth))
-        return tf.transpose(x, perm=[0, 2, 1, 3])
-
-    def call(self, inputs: List[Any], **kwargs):
-        v, k, q, mask = inputs
-        batch_size = keras.backend.shape(q)[0]
-        q = self.wq(q)  # (layer_id, batch_size, seq_len, d_model)
-        k = self.wk(k)  # (layer_id, batch_size, seq_len, d_model)
-        v = self.wv(v)  # (layer_id, batch_size, seq_len, d_model)
-        q = self.split_heads(q, batch_size)  # (batch_size, num_heads, seq_len_q, depth)
-        k = self.split_heads(k, batch_size)  # (batch_size, num_heads, seq_len_k, depth)
-        v = self.split_heads(v, batch_size)  # (batch_size, num_heads, seq_len_v, depth)
-        # scaled_attention.shape == (batch_size, num_heads, seq_len_q, depth)
-        # attention_weights.shape == (batch_size, num_heads, seq_len_q, seq_len_k)
-        scaled_attention, attention_weights = scaled_dot_product_attention(q, k, v, mask)
-        scaled_attention = tf.transpose(
-            scaled_attention, perm=[0, 2, 1, 3])  # (batch_size, seq_len_q, num_heads, depth)
-        concat_attention = keras.backend.reshape(scaled_attention,
-                                                 (batch_size, -1, self.d_model))  # (batch_size, seq_len_q, d_model)
-        output = self.dense(concat_attention)  # (batch_size, seq_len_q, d_model)
-        return output, attention_weights
-
-
-class Transformer(keras.Model):
-    def __init__(self, num_layers, d_model, num_heads, dff, input_vocab_size,
-                 target_vocab_size, pe_input, pe_target, rate=0.1):
-        super(Transformer, self).__init__()
-        self.encoder: Encoder = Encoder(num_layers, d_model, num_heads, dff, input_vocab_size, pe_input, rate)
-        self.decoder: Decoder = Decoder(num_layers, d_model, num_heads, dff, target_vocab_size, pe_target, rate)
-        self.final_layer: keras.layers.Dense = keras.layers.Dense(target_vocab_size)
-        # only for custom computation of embeddings
-        self.avg: keras.layers.Average = keras.layers.Average()
-
-    def call(self, inputs: List[Any], **kwargs):
-        inp, tar, training, enc_padding_mask, look_ahead_mask, dec_padding_mask = inputs
-        enc_output: Tensor = self.encoder(
-            [inp, training, enc_padding_mask])  # (layer_id, batch_size, inp_seq_len, d_model)
-        enc_output_last_layer: Tensor = enc_output[-1]
-        # dec_output.shape == (batch_size, tar_seq_len, d_model)
-        dec_output, attention_weights = self.decoder(
-            [tar, enc_output_last_layer, training, look_ahead_mask, dec_padding_mask])
-        final_output = self.final_layer(dec_output)  # (batch_size, tar_seq_len, target_vocab_size)
-        return final_output, attention_weights
-
-    def compute_embeddings(self, tok_idx: int, token: str, enc_output_no_batch: Tensor, sentence: str,
-                           input_tensor: Tensor) -> List[Tensor]:
-        found_tensors: List[Tensor] = []
-        target_representation: List[int]
-        next_idx: int = tok_idx + len(token)
-        # add whitespace after the token if present in the input, otherwise use just the raw token
-        if next_idx < len(sentence) and sentence[next_idx] == " ":
-            target_representation = tokenizer.encode(token + " ")
-        else:
-            target_representation = tokenizer.encode(token)
-        cursor: int = 0
-        found_indices: List[int] = []
-        for i in range(len(input_tensor)):
-            if input_tensor[i] == target_representation[cursor]:
-                cursor += 1
-                if cursor == len(target_representation):
-                    found_indices.append(i - len(target_representation) + 1)
-                    cursor = 0
-            else:
-                cursor = 0
-        for found_idx in found_indices:
-            local_indices: List[int] = [found_idx + i for i in range(len(target_representation))]
-            layer_tensors: List[Tensor] = []
-            # iterate over the outputs of the last 4 layers
-            for layer_id in range(1, len(enc_output_no_batch)):
-                local_tensors: List[Tensor] = [enc_output_no_batch[layer_id][i] for i in local_indices]
-                found_tensor: Tensor = self.avg(local_tensors) if len(local_tensors) > 1 else local_tensors[0]
-                layer_tensors.append(found_tensor)
-            found_tensors.append(self.avg(layer_tensors))
-        return found_tensors
-
-    def get_config(self):
-        pass
-
-    def get_embeddings_for_token(self, sentence: str, tokenizer: SubwordTextEncoder, token: str) -> List[Tensor]:
-        def generator():
-            for x in [sentence]:
-                yield x
-
-        dataset: Dataset = tf.data.Dataset.from_generator(generator, tf.string, tf.TensorShape([]))
-        sentence_tensor: Tensor = next(enumerate(dataset))[1]
-        vs: int = tokenizer.vocab_size
-        input_tensor: Tensor = [vs] + tokenizer.encode(sentence_tensor.numpy()) + [vs + 1]
-        encoder_input: Tensor = keras.backend.expand_dims(input_tensor, 0)
-        enc_padding_mask = create_padding_mask(encoder_input)
-        enc_output: Tensor = self.encoder(
-            [encoder_input, True, enc_padding_mask])  # (layer_id, batch_size, inp_seq_len, d_model)
-        # batch size is 1, so might as well remove that dimension completely
-        enc_output_no_batch: Tensor = keras.backend.squeeze(enc_output, 1)  # (layer_id, inp_seq_len, d_model)
-        sentence_length: int = len(sentence)
-        tok_idx: int = sentence.find(token)
-        next_char_idx: int = tok_idx + len(token)
-        # if the found index is not at the end of a token, retry until we get a full token
-        while next_char_idx < sentence_length and sentence[next_char_idx].isalpha() and tok_idx > -1:
-            tok_idx = sentence.find(token, next_char_idx)
-            next_char_idx: int = tok_idx + len(token)
-        found_tensors: List[Tensor] = []
-        if tok_idx > -1:
-            found_tensors = self.compute_embeddings(tok_idx, token, enc_output_no_batch, sentence, input_tensor)
-        if not len(found_tensors):
-            raise Exception(f"{token} not found in input '{sentence}'")
-        return found_tensors
-
-
-def cluster_word_senses(proiel_pickle: str, tokenizer: SubwordTextEncoder):
-    conllu_all: List[TokenList] = pickle.load(open(proiel_pickle, "rb"))[:50]
-
-    class Cluster:
-        def __init__(self, tensors: List[Tensor], average_tensor: Tensor = None):
-            self.tensors: List[Tensor] = tensors
-            self.average_tensor: Tensor = average_tensor
-
-    lemma_dict: Dict[str, List[Cluster]] = dict()
-    for sent in tqdm(conllu_all):
-        content: str = " ".join([x["form"] for x in sent.tokens])
-        ignore_set: Set[str] = set()
-        for tok in sent.tokens:
-            form: str = tok["form"]
-            if form in ignore_set:
-                continue
-            tensors: List[Tensor] = transformer.get_embeddings_for_token(content, tokenizer, form)
-            if len(tensors) > 1:
-                ignore_set.add(form)
-            lemma: str = tok["lemma"]
-            if lemma not in lemma_dict:
-                lemma_dict[lemma] = []
-            for tensor in tensors:
-                lemma_dict[lemma].append(Cluster(tensors=[tensor]))
-    for lemma in tqdm(lemma_dict):
-        if len(lemma_dict[lemma]) < 2:
-            continue
-        for cluster in lemma_dict[lemma]:
-            cluster.average_tensor = transformer.avg(cluster.tensors)
-        averages: List[Tensor] = [x.average_tensor for x in lemma_dict[lemma]]
-        unique_pairs: List[Tuple[Tensor, Tensor]] = [comb for comb in combinations(averages, 2)]
-        distances: List[float] = [cosine(t1, t2) for t1, t2 in unique_pairs]
-        min_dist: float = min(distances)
-        target_pair_idx: int = next(i for i in range(len(distances)) if distances[i] == min_dist)
-        target_averages: Tuple[Tensor, Tensor] = unique_pairs[target_pair_idx]
-        # equality = tf.equal(lemma_dict[lemma][0].tensors[0], target_averages[0])
-        src_cluster: Cluster = next(x for x in lemma_dict[lemma] if all(tf.equal(x.average_tensor, target_averages[0])))
-        tgt_cluster: Cluster = next(x for x in lemma_dict[lemma] if all(tf.equal(x.average_tensor, target_averages[1])))
-        tgt_cluster.tensors += src_cluster.tensors
-        lemma_dict[lemma].remove(src_cluster)
-    a = 0
+tokenizer: SubwordTextEncoder
+transformer: Transformer
 
 
 def create_look_ahead_mask(size):
@@ -362,12 +52,6 @@ def create_masks(inp, tar):
     dec_target_padding_mask = create_padding_mask(tar)
     combined_mask = keras.backend.maximum(dec_target_padding_mask, look_ahead_mask)
     return enc_padding_mask, combined_mask, dec_padding_mask
-
-
-def create_padding_mask(seq):
-    seq = keras.backend.cast(tf.math.equal(seq, 0), tf.float32)
-    # add extra dimensions to add the padding to the attention logits.
-    return seq[:, tf.newaxis, tf.newaxis, :]  # (batch_size, 1, 1, seq_len)
 
 
 def encode(lang1, lang2) -> Tuple[Tensor, Tensor]:
@@ -472,7 +156,7 @@ def evaluate_polysemy_old(tokenizer: SubwordTextEncoder, transformer: Transforme
         "pars solis", "pars fluminis", "equitatus in omnes partes divisus", "manu scriptus", "magna manus",
         "litteras dare alicui", "praesidium litterarum", "fides publica", "fides dei", "fides iustitiae", "sol",
         "merces"]
-    sims: numpy.ndarray = numpy.zeros((len(tokens), len(tokens)))
+    sims: np.ndarray = np.zeros((len(tokens), len(tokens)))
     cross_validation_k: int = 5
     for k in range(cross_validation_k):
         relevant_tensors: List[Tensor] = []
@@ -519,7 +203,7 @@ def find_word_senses(tokenizer: SubwordTextEncoder, transformer: Transformer, da
         target_token: str = next(x for x in example.split() if x in word_forms_set)
         tensors: List[Tensor] = transformer.get_embeddings_for_token(example, tokenizer, target_token)
         relevant_tensors.append(tensors[0])
-    sims: numpy.ndarray = numpy.zeros((len(relevant_tensors), len(relevant_tensors)))
+    sims: np.ndarray = np.zeros((len(relevant_tensors), len(relevant_tensors)))
     for i in range(len(relevant_tensors)):
         for j in range(len(relevant_tensors) - 1):
             if i == j:
@@ -536,11 +220,6 @@ def find_word_senses(tokenizer: SubwordTextEncoder, transformer: Transformer, da
     sims_with_ex = sims_with_ex[:5] + sims_with_ex[-5:]
     for swe in sims_with_ex:
         print(swe)
-
-
-def get_angles(pos, i, d_model):
-    angle_rates = 1 / np.power(10000, (2 * (i // 2)) / np.float32(d_model))
-    return pos * angle_rates
 
 
 def loss_function(real, pred, loss_object):
@@ -576,7 +255,7 @@ def plot_attention_weights(attention, sentence, result, layer, tokenizer):
     plt.show()
 
 
-def plot_similarities(print_tokens: List[str], sims: numpy.ndarray):
+def plot_similarities(print_tokens: List[str], sims: np.ndarray):
     ax: Axes
     fig: Figure
     fig, ax = plt.subplots()
@@ -600,60 +279,12 @@ def plot_similarities(print_tokens: List[str], sims: numpy.ndarray):
     plt.show()
 
 
-def point_wise_feed_forward_network(d_model, dff):
-    return keras.Sequential([
-        keras.layers.Dense(dff, activation='relu'),  # (batch_size, seq_len, dff)
-        keras.layers.Dense(d_model)  # (batch_size, seq_len, d_model)
-    ])
-
-
-def positional_encoding(position, d_model):
-    angle_rads = get_angles(np.arange(position)[:, np.newaxis], np.arange(d_model)[np.newaxis, :], d_model)
-    # apply sin to even indices in the array; 2i
-    angle_rads[:, 0::2] = np.sin(angle_rads[:, 0::2])
-    # apply cos to odd indices in the array; 2i+1
-    angle_rads[:, 1::2] = np.cos(angle_rads[:, 1::2])
-    pos_encoding = angle_rads[np.newaxis, ...]
-    return keras.backend.cast(pos_encoding, dtype=tf.float32)
-
-
 def print_out(q, k, v):
     temp_out, temp_attn = scaled_dot_product_attention(q, k, v, None)
     print('Attention weights are:')
     print(temp_attn)
     print('Output is:')
     print(temp_out)
-
-
-def scaled_dot_product_attention(q, k, v, mask):
-    """Calculate the attention weights.
-    q, k, v must have matching leading dimensions.
-    k, v must have matching penultimate dimension, i.e.: seq_len_k = seq_len_v.
-    The mask has different shapes depending on its type (padding or look ahead)
-    but it must be broadcastable for addition.
-
-    Args:
-      q: query shape == (..., seq_len_q, depth)
-      k: key shape == (..., seq_len_k, depth)
-      v: value shape == (..., seq_len_v, depth_v)
-      mask: Float tensor with shape broadcastable
-            to (..., seq_len_q, seq_len_k). Defaults to None.
-
-    Returns:
-      output, attention_weights
-    """
-
-    matmul_qk = tf.matmul(q, k, transpose_b=True)  # (..., seq_len_q, seq_len_k)
-    # scale matmul_qk
-    dk = keras.backend.cast(keras.backend.shape(k)[-1], tf.float32)
-    scaled_attention_logits = matmul_qk / keras.backend.sqrt(dk)
-    # add the mask to the scaled tensor.
-    if mask is not None:
-        scaled_attention_logits += (mask * -1e9)
-    # softmax is normalized on the last axis (seq_len_k) so that the scores add up to 1.
-    attention_weights = keras.backend.softmax(scaled_attention_logits, axis=-1)  # (..., seq_len_q, seq_len_k)
-    output = tf.matmul(attention_weights, v)  # (..., seq_len_q, depth_v)
-    return output, attention_weights
 
 
 def train_model(train_loss: Mean, train_accuracy: SparseCategoricalAccuracy, train_dataset: Dataset,
@@ -703,11 +334,11 @@ def train_step(inp: Tensor, tar: Tensor):
     enc_padding_mask, combined_mask, dec_padding_mask = create_masks(inp, tar_inp)
     with tf.GradientTape() as tape:
         predictions, _ = transformer([inp, tar_inp, True, enc_padding_mask, combined_mask, dec_padding_mask])
-        loss = loss_function(tar_real, predictions, loss_object)
+        loss = loss_function(tar_real, predictions, transformer.loss_object)
     gradients = tape.gradient(loss, transformer.trainable_variables)
-    optimizer.apply_gradients(zip(gradients, transformer.trainable_variables))
-    train_loss(loss)
-    train_accuracy(tar_real, predictions)
+    transformer.optimizer.apply_gradients(zip(gradients, transformer.trainable_variables))
+    transformer.train_loss(loss)
+    transformer.train_accuracy(tar_real, predictions)
 
 
 def translate(sentence: str, tokenizer, transformer, plot='') -> None:
@@ -749,62 +380,63 @@ def generate_val_examples() -> Tuple[str, str]:
     return generate_examples(val_dataset_fp)
 
 
-def predict_next_sentence(sentence: str) -> None:
+def predict_next_sentence(sentence: str, tokenizer: SubwordTextEncoder, transformer: Transformer) -> None:
     result, attention_weights = evaluate(sentence, tokenizer, transformer)
     predicted_sentence = tokenizer.decode([i for i in result if i < tokenizer.vocab_size])
     print(f'Input: {sentence}')
     print(f'Predicted translation: {predicted_sentence}')
 
 
-checkpoint_path: str = "./checkpoints/train"
-train_examples: Dataset = tf.data.Dataset.from_generator(
-    generate_train_examples, (tf.string, tf.string), (tf.TensorShape([]), tf.TensorShape([]))).take(500)
-tokenizer_path: str = "tokenizer.subwords"
-tokenizer_prefix: str = tokenizer_path.split(".")[0]
-tokenizer: SubwordTextEncoder
-try:
-    tokenizer = tfds.features.text.SubwordTextEncoder.load_from_file(tokenizer_prefix)
-except NotFoundError:
-    tokenizer: SubwordTextEncoder = tfds.features.text.SubwordTextEncoder.build_from_corpus(
-        (la1.numpy() + la2.numpy()[:-1] for la1, la2 in train_examples), target_vocab_size=2 ** 13)
-tokenizer.save_to_file(tokenizer_prefix)
-train_dataset: Dataset = train_examples.map(tf_encode)
-train_dataset = train_dataset.filter(filter_max_length)
-# cache the dataset to memory to get a speedup while reading from it.
-train_dataset = train_dataset.cache()
-train_dataset = train_dataset.shuffle(BUFFER_SIZE).padded_batch(BATCH_SIZE)
-train_dataset = train_dataset.prefetch(tf.data.experimental.AUTOTUNE)
-val_examples: Dataset = tf.data.Dataset.from_generator(
-    generate_val_examples, (tf.string, tf.string), (tf.TensorShape([]), tf.TensorShape([]))).take(5000)
-val_dataset = val_examples.map(tf_encode)
-val_dataset = val_dataset.filter(filter_max_length).padded_batch(BATCH_SIZE)
-input_vocabulary_size = target_vocabulary_size = tokenizer.vocab_size + 2
-# TODO: USE VALIDATION DATASET DURING TRAINING!
-np.set_printoptions(suppress=True)
-learning_rate: CustomSchedule = CustomSchedule(MODEL_DIMENSIONS)
-optimizer: OptimizerV2 = keras.optimizers.Adam(learning_rate, beta_1=0.9, beta_2=0.98, epsilon=1e-9)
-loss_object: SparseCategoricalCrossentropy = keras.losses.SparseCategoricalCrossentropy(
-    from_logits=True, reduction='none')
-train_loss: Mean = keras.metrics.Mean(name='train_loss')
-train_accuracy: SparseCategoricalAccuracy = keras.metrics.SparseCategoricalAccuracy(name='train_accuracy')
-transformer: Transformer = Transformer(
-    NUMBER_OF_LAYERS, MODEL_DIMENSIONS, NUMBER_OF_HEADS, FEED_FORWARD_DIMENSIONS, input_vocabulary_size,
-    target_vocabulary_size, pe_input=input_vocabulary_size, pe_target=target_vocabulary_size, rate=DROPOUT_RATE)
-ckpt: Checkpoint = tf.train.Checkpoint(transformer=transformer, optimizer=optimizer)
-ckpt_manager: CheckpointManager = tf.train.CheckpointManager(ckpt, checkpoint_path, max_to_keep=5)
-# if a checkpoint exists, restore the latest checkpoint.
-if ckpt_manager.latest_checkpoint:
-    ckpt.restore(ckpt_manager.latest_checkpoint)
-    print('Latest checkpoint restored!!')
-evaluate_polysemy(tokenizer, transformer)
-# evaluate_word_order()
-# evaluate_lexis()
-data_dir: str = "../data"
-proiel_pickle_path: str = os.path.join(data_dir, "proiel_conllu.pickle")
-cluster_word_senses(proiel_pickle_path, tokenizer)
-# train_model(train_loss, train_accuracy, train_dataset, ckpt_manager)
-evaluate_polysemy(tokenizer, transformer)
-predict_next_sentence("Gallia est omnis divisa in partes tres.")
-predict_next_sentence("Arma virumque cano Troiae qui primus ab oris Italiam fato profugus Laviniaque venit litora.")
-predict_next_sentence(
-    "Omnis homines qui sese student praestare ceteris animalibus summa ope niti decet ne vitam silentio transeant veluti pecora quae natura prona atque ventri oboedientia finxit.")
+def do_deep_learning():
+    checkpoint_path: str = "./checkpoints/train"
+    train_examples: Dataset = tf.data.Dataset.from_generator(
+        generate_train_examples, (tf.string, tf.string), (tf.TensorShape([]), tf.TensorShape([]))).take(500)
+    tokenizer_path: str = "tokenizer.subwords"
+    tokenizer_prefix: str = tokenizer_path.split(".")[0]
+    tokenizer: SubwordTextEncoder
+    try:
+        tokenizer = SubwordTextEncoder.load_from_file(tokenizer_prefix)
+    except NotFoundError:
+        tokenizer: SubwordTextEncoder = tfds.features.text.SubwordTextEncoder.build_from_corpus(
+            (la1.numpy() + la2.numpy()[:-1] for la1, la2 in train_examples), target_vocab_size=2 ** 13)
+    tokenizer.save_to_file(tokenizer_prefix)
+    train_dataset: Dataset = train_examples.map(tf_encode)
+    train_dataset = train_dataset.filter(filter_max_length)
+    # cache the dataset to memory to get a speedup while reading from it.
+    train_dataset = train_dataset.cache()
+    train_dataset = train_dataset.shuffle(BUFFER_SIZE).padded_batch(BATCH_SIZE)
+    train_dataset = train_dataset.prefetch(tf.data.experimental.AUTOTUNE)
+    val_examples: Dataset = tf.data.Dataset.from_generator(
+        generate_val_examples, (tf.string, tf.string), (tf.TensorShape([]), tf.TensorShape([]))).take(5000)
+    val_dataset = val_examples.map(tf_encode)
+    val_dataset = val_dataset.filter(filter_max_length).padded_batch(BATCH_SIZE)
+    input_vocabulary_size = target_vocabulary_size = tokenizer.vocab_size + 2
+    # TODO: USE VALIDATION DATASET DURING TRAINING!
+    np.set_printoptions(suppress=True)
+    transformer: Transformer = Transformer(
+        NUMBER_OF_LAYERS, MODEL_DIMENSIONS, NUMBER_OF_HEADS, FEED_FORWARD_DIMENSIONS, input_vocabulary_size,
+        target_vocabulary_size, pe_input=input_vocabulary_size, pe_target=target_vocabulary_size, rate=DROPOUT_RATE)
+    ckpt: Checkpoint = tf.train.Checkpoint(transformer=transformer, optimizer=transformer.optimizer)
+    ckpt_manager: CheckpointManager = tf.train.CheckpointManager(ckpt, checkpoint_path, max_to_keep=5)
+    # if a checkpoint exists, restore the latest checkpoint.
+    if ckpt_manager.latest_checkpoint:
+        ckpt.restore(ckpt_manager.latest_checkpoint)
+        print('Latest checkpoint restored!!')
+    evaluate_polysemy(tokenizer, transformer)
+    # evaluate_word_order()
+    # evaluate_lexis()
+    data_dir: str = "../data"
+    proiel_pickle_path: str = os.path.join(data_dir, "proiel_conllu.pickle")
+    cache_path: str = os.path.join(data_dir, "sense_embeddings.json")
+    # build_sense_embeddings(proiel_pickle_path, tokenizer, cache_path)
+    # train_model(transformer.train_loss, transformer.train_accuracy, train_dataset, ckpt_manager)
+    evaluate_polysemy(tokenizer, transformer)
+    predict_next_sentence("Gallia est omnis divisa in partes tres.", tokenizer, transformer)
+    predict_next_sentence("Arma virumque cano Troiae qui primus ab oris Italiam fato profugus Laviniaque venit litora.",
+                          tokenizer, transformer)
+    predict_next_sentence(
+        "Omnis homines qui sese student praestare ceteris animalibus summa ope niti decet ne vitam silentio transeant veluti pecora quae natura prona atque ventri oboedientia finxit.",
+        tokenizer, transformer)
+
+
+# do_deep_learning()

@@ -24,8 +24,8 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {5}Method}{12}{section.1.5}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {6}Appendix}{17}{section.1.6}% 
+\contentsline {section}{\numberline {6}Appendix}{19}{section.1.6}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {6.1}Appendix A: Agile and Open Methodology}{17}{subsection.1.6.1}% 
+\contentsline {subsection}{\numberline {6.1}Appendix A: Agile and Open Methodology}{19}{subsection.1.6.1}% 
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{References}{18}{section*.11}% 
+\contentsline {section}{References}{20}{section*.12}% 
