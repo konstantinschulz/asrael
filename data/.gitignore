@@ -1,6 +1,7 @@
 .idea/
+backup/
 plots/
 sense_embeddings/
 proiel_conllu.pickle
-sense_inventory.json
+sense_inventory*.pickle
 

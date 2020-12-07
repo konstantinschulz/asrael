@@ -794,12 +794,12 @@
     \endentry
     \entry{crossleyDevelopmentSemanticRelations2010}{article}{}
       \name{author}{3}{}{%
-        {{uniquename=0,uniquepart=base,hash=ebb21dd6ad6f0f369156ed09ca8e1a2d}{%
+        {{uniquename=1,uniquepart=given,hash=ebb21dd6ad6f0f369156ed09ca8e1a2d}{%
            family={Crossley},
            familyi={C\bibinitperiod},
            given={Scott\bibnamedelima A.},
            giveni={S\bibinitperiod\bibinitdelim A\bibinitperiod},
-           givenun=0}}%
+           givenun=1}}%
         {{uniquename=0,uniquepart=base,hash=f59a430a823063e01e58f889acd1aa2d}{%
            family={Salsbury},
            familyi={S\bibinitperiod},
@@ -827,7 +827,7 @@
       \field{labeltitlesource}{shorttitle}
       \field{journaltitle}{Vigo International Journal of Applied Linguistics}
       \field{shorttitle}{The Development of Semantic Relations in Second Language Speakers}
-      \field{title}{The Development of Semantic Relations in Second Language Speakers: {{A}} Case for Latent Semantic Analysis.}
+      \field{title}{The Development of Semantic Relations in Second Language Speakers: {{A}} Case for Latent Semantic Analysis}
       \field{volume}{7}
       \field{year}{2010}
       \field{pages}{55\bibrangedash 74}
@@ -838,6 +838,70 @@
       \verb{url}
       \verb https://pdfs.semanticscholar.org/5f05/7cfe49a7496b453489f03029440e44d804ef.pdf
       \endverb
+    \endentry
+    \entry{crossleyDevelopmentPolysemyFrequency2010}{article}{}
+      \name{author}{3}{}{%
+        {{uniquename=1,uniquepart=given,hash=4ce49e11b6345f434d0b027c3bad0048}{%
+           family={Crossley},
+           familyi={C\bibinitperiod},
+           given={Scott},
+           giveni={S\bibinitperiod},
+           givenun=1}}%
+        {{uniquename=0,uniquepart=base,hash=f59a430a823063e01e58f889acd1aa2d}{%
+           family={Salsbury},
+           familyi={S\bibinitperiod},
+           given={Tom},
+           giveni={T\bibinitperiod},
+           givenun=0}}%
+        {{uniquename=0,uniquepart=base,hash=c2840e5fc1de22a3804200259558acb8}{%
+           family={McNamara},
+           familyi={M\bibinitperiod},
+           given={Danielle},
+           giveni={D\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{language}{1}{%
+        {en}%
+      }
+      \strng{namehash}{49efaf53ca3624cb4885ef6d19300a4f}
+      \strng{fullhash}{34f04e34f98d64a7f98ddb52b8827127}
+      \strng{bibnamehash}{34f04e34f98d64a7f98ddb52b8827127}
+      \strng{authorbibnamehash}{34f04e34f98d64a7f98ddb52b8827127}
+      \strng{authornamehash}{49efaf53ca3624cb4885ef6d19300a4f}
+      \strng{authorfullhash}{34f04e34f98d64a7f98ddb52b8827127}
+      \field{sortinit}{C}
+      \field{sortinithash}{963e9d84a3da2344e8833203de5aed05}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{abstract}{Spoken language data were collected from six adult second language (L2) English learners over a year-long period in order to explore the development of word polysemy and frequency use. The data were analyzed both quantitatively and qualitatively. In the first analysis, the growth of WordNet polysemy values and CELEX word frequency values were examined. For both indexes, significant growth was demonstrated from the 2nd to the 16th week of observation, after which values remained stable. Growth in word polysemy values also correlated with changes in word frequency, supporting the notion that frequency and polysemy effects in word use are related. A second analysis used the WordNet dictionary to explore qualitative changes in word sense use concerning six frequent lexical items in the learner corpus (think, know, place, work, play, and name). A qualitative analysis compared normalized frequencies for each word sense in the first trimester of the study to the later trimesters. Differences in the number of word senses used across trimesters were found for all six words. Analyses 1 and 2, taken together, support the notion that L2 learners begin to use words that have the potential for more senses during the first 4 months; learners then begin to extend the core meanings of these polysemous words. These findings provide further insights into the development of lexical proficiency in L2 learners and the growth of lexical networks.}
+      \field{annotation}{\_eprint: https://onlinelibrary.wiley.com/doi/pdf/10.1111/j.1467-9922.2010.00568.x}
+      \field{issn}{1467-9922}
+      \field{journaltitle}{Language Learning}
+      \field{number}{3}
+      \field{title}{The {{Development}} of {{Polysemy}} and {{Frequency Use}} in {{English Second Language Speakers}}}
+      \field{urlday}{19}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{volume}{60}
+      \field{year}{2010}
+      \field{urldateera}{ce}
+      \field{pages}{573\bibrangedash 605}
+      \range{pages}{33}
+      \verb{doi}
+      \verb 10.1111/j.1467-9922.2010.00568.x
+      \endverb
+      \verb{file}
+      \verb /Users/Konstantin/Zotero/storage/Y8V9P6G7/j.1467-9922.2010.00568.html
+      \endverb
+      \verb{urlraw}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9922.2010.00568.x
+      \endverb
+      \verb{url}
+      \verb https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1467-9922.2010.00568.x
+      \endverb
+      \keyw{computational linguistics,corpus linguistics,lexical networks,lexical proficiency,polysemy,word frequency}
     \endentry
     \entry{daiDocumentEmbeddingParagraph2015}{article}{}
       \name{author}{3}{}{%
@@ -978,7 +1042,7 @@
       \verb https://books.google.de/books?hl=en%5C&lr=%5C&id=WY2Nhc3HY3sC
       \endverb
     \endentry
-    \entry{devlinBertPretrainingDeep2018}{article}{}
+    \entry{devlinBERTPretrainingDeep2019}{inproceedings}{}
       \name{author}{4}{}{%
         {{uniquename=0,uniquepart=base,hash=13202969e372bc82318f9629cbdd199b}{%
            family={Devlin},
@@ -1005,6 +1069,12 @@
            giveni={K\bibinitperiod},
            givenun=0}}%
       }
+      \list{location}{1}{%
+        {Minneapolis, Minnesota}%
+      }
+      \list{publisher}{1}{%
+        {Association for Computational Linguistics}%
+      }
       \strng{namehash}{ad8e2e2a80d28ade21e86852b804fc9b}
       \strng{fullhash}{e8bccd48302a14eeba57d9dce2f49ef4}
       \strng{bibnamehash}{ad8e2e2a80d28ade21e86852b804fc9b}
@@ -1017,24 +1087,27 @@
       \field{labeldatesource}{year}
       \field{labelnamesource}{author}
       \field{labeltitlesource}{shorttitle}
-      \field{eprinttype}{arxiv}
-      \field{journaltitle}{arXiv preprint arXiv:1810.04805}
-      \field{shorttitle}{Bert}
-      \field{title}{Bert: {{Pre}}-Training of Deep Bidirectional Transformers for Language Understanding}
-      \field{year}{2018}
-      \verb{eprint}
-      \verb 1810.04805
-      \endverb
-      \verb{file}
-      \verb /Users/Konstantin/Zotero/storage/Q5R6ARG5/1810.html
+      \field{abstract}{We introduce a new language representation model called BERT, which stands for Bidirectional Encoder Representations from Transformers. Unlike recent language representation models (Peters et al., 2018a; Radford et al., 2018), BERT is designed to pre-train deep bidirectional representations from unlabeled text by jointly conditioning on both left and right context in all layers. As a result, the pre-trained BERT model can be fine-tuned with just one additional output layer to create state-of-the-art models for a wide range of tasks, such as question answering and language inference, without substantial task-specific architecture modifications. BERT is conceptually simple and empirically powerful. It obtains new state-of-the-art results on eleven natural language processing tasks, including pushing the GLUE score to 80.5 (7.7 point absolute improvement), MultiNLI accuracy to 86.7\% (4.6\% absolute improvement), SQuAD v1.1 question answering Test F1 to 93.2 (1.5 point absolute improvement) and SQuAD v2.0 Test F1 to 83.1 (5.1 point absolute improvement).}
+      \field{booktitle}{Proceedings of the 2019 {{Conference}} of the {{North American Chapter}} of the {{Association}} for {{Computational Linguistics}}: {{Human Language Technologies}}, {{Volume}} 1 ({{Long}} and {{Short Papers}})}
+      \field{month}{6}
+      \field{shorttitle}{{{BERT}}}
+      \field{title}{{{BERT}}: {{Pre}}-Training of {{Deep Bidirectional Transformers}} for {{Language Understanding}}}
+      \field{urlday}{25}
+      \field{urlmonth}{11}
+      \field{urlyear}{2020}
+      \field{year}{2019}
+      \field{urldateera}{ce}
+      \field{pages}{4171\bibrangedash 4186}
+      \range{pages}{16}
+      \verb{doi}
+      \verb 10.18653/v1/N19-1423
       \endverb
       \verb{urlraw}
-      \verb https://arxiv.org/pdf/1810.04805.pdf
+      \verb https://www.aclweb.org/anthology/N19-1423
       \endverb
       \verb{url}
-      \verb https://arxiv.org/pdf/1810.04805.pdf
+      \verb https://www.aclweb.org/anthology/N19-1423
       \endverb
-      \keyw{reference}
     \endentry
     \entry{divjakCorpusbasedCognitiveSemantics2009}{article}{}
       \name{author}{2}{}{%
@@ -2369,6 +2442,83 @@
       \verb https://pdfs.semanticscholar.org/acc4/70ec10cdcc2aa720fd2c02407332ddcf2fbf.pdf
       \endverb
     \endentry
+    \entry{kettunenCanTypetokenRatio2014}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=98af0c871158be39ef1133fd9d58d2f8}{%
+           family={Kettunen},
+           familyi={K\bibinitperiod},
+           given={Kimmo},
+           giveni={K\bibinitperiod},
+           givenun=0}}%
+      }
+      \list{publisher}{1}{%
+        {Taylor \& Francis}%
+      }
+      \strng{namehash}{98af0c871158be39ef1133fd9d58d2f8}
+      \strng{fullhash}{98af0c871158be39ef1133fd9d58d2f8}
+      \strng{bibnamehash}{98af0c871158be39ef1133fd9d58d2f8}
+      \strng{authorbibnamehash}{98af0c871158be39ef1133fd9d58d2f8}
+      \strng{authornamehash}{98af0c871158be39ef1133fd9d58d2f8}
+      \strng{authorfullhash}{98af0c871158be39ef1133fd9d58d2f8}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{issn}{0929-6174}
+      \field{journaltitle}{Journal of Quantitative Linguistics}
+      \field{number}{3}
+      \field{title}{Can Type-Token Ratio Be Used to Show Morphological Complexity of Languages?}
+      \field{volume}{21}
+      \field{year}{2014}
+      \field{pages}{223\bibrangedash 245}
+      \range{pages}{23}
+      \verb{doi}
+      \verb https://www.tandfonline.com/doi/pdf/10.1080/09296174.2014.911506
+      \endverb
+      \verb{urlraw}
+      \verb https://www.tandfonline.com/doi/pdf/10.1080/09296174.2014.911506
+      \endverb
+      \verb{url}
+      \verb https://www.tandfonline.com/doi/pdf/10.1080/09296174.2014.911506
+      \endverb
+    \endentry
+    \entry{koizumiRelationshipsTextLength2012}{article}{}
+      \name{author}{1}{}{%
+        {{uniquename=0,uniquepart=base,hash=05d88c5fc4669eb5bdfd76c0c18bf020}{%
+           family={Koizumi},
+           familyi={K\bibinitperiod},
+           given={Rie},
+           giveni={R\bibinitperiod},
+           givenun=0}}%
+      }
+      \strng{namehash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \strng{fullhash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \strng{bibnamehash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \strng{authorbibnamehash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \strng{authornamehash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \strng{authorfullhash}{05d88c5fc4669eb5bdfd76c0c18bf020}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{extradatescope}{labelyear}
+      \field{labeldatesource}{year}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Vocabulary Learning and Instruction}
+      \field{number}{1}
+      \field{title}{Relationships between Text Length and Lexical Diversity Measures: {{Can}} We Use Short Texts of Less than 100 Tokens}
+      \field{volume}{1}
+      \field{year}{2012}
+      \field{pages}{60\bibrangedash 69}
+      \range{pages}{10}
+      \verb{urlraw}
+      \verb http://www.academia.edu/download/31993088/issue01.1.full.pdf\#page=66
+      \endverb
+      \verb{url}
+      \verb http://www.academia.edu/download/31993088/issue01.1.full.pdf%5C#page=66
+      \endverb
+    \endentry
     \entry{kuhnerAusfuhrlicheGrammatikLateinischen1914}{book}{}
       \name{author}{2}{}{%
         {{uniquename=0,uniquepart=base,hash=7c3ef21a011b1dd15f5fc61a76cf6ca5}{%
@@ -2737,45 +2887,6 @@
       \endverb
       \keyw{Computer Science - Computation and Language}
     \endentry
-    \entry{mcdevitteCaesarGallicWar1869}{article}{}
-      \name{author}{2}{}{%
-        {{uniquename=0,uniquepart=base,hash=2577d393bbe3789d4a466f8c984037c3}{%
-           family={McDevitte},
-           familyi={M\bibinitperiod},
-           given={WA},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
-        {{uniquename=0,uniquepart=base,hash=bb0157b25399ee6306277bffb942b0ef}{%
-           family={Bohn},
-           familyi={B\bibinitperiod},
-           given={WS},
-           giveni={W\bibinitperiod},
-           givenun=0}}%
-      }
-      \list{publisher}{1}{%
-        {New York: Harper \& Brothers. Provided by The Internet Classics Archive at~\ldots}%
-      }
-      \strng{namehash}{8cbf5ad4b3173c4b7aa12fd67fa34ed7}
-      \strng{fullhash}{23a14f90c9b90257cbad30c64f7067df}
-      \strng{bibnamehash}{23a14f90c9b90257cbad30c64f7067df}
-      \strng{authorbibnamehash}{23a14f90c9b90257cbad30c64f7067df}
-      \strng{authornamehash}{8cbf5ad4b3173c4b7aa12fd67fa34ed7}
-      \strng{authorfullhash}{23a14f90c9b90257cbad30c64f7067df}
-      \field{sortinit}{M}
-      \field{sortinithash}{cfd219b90152c06204fab207bc6c7cab}
-      \field{extradatescope}{labelyear}
-      \field{labeldatesource}{year}
-      \field{labelnamesource}{author}
-      \field{labeltitlesource}{title}
-      \field{title}{Caesar's {{Gallic War}}, Translated from {{De Bello Gallico}}, {{Julius Caesar}}}
-      \field{year}{1869}
-      \verb{urlraw}
-      \verb http://classics.mit.edu/Caesar/gallic.html
-      \endverb
-      \verb{url}
-      \verb http://classics.mit.edu/Caesar/gallic.html
-      \endverb
-    \endentry
     \entry{mcgillivrayMethodsLatinComputational2013}{book}{}
       \name{author}{1}{}{%
         {{uniquename=0,uniquepart=base,hash=2e9166e829e36f89efce8317d2af4e8f}{%
@@ -2784,6 +2895,9 @@
            given={Barbara},
            giveni={B\bibinitperiod},
            givenun=0}}%
+      }
+      \list{location}{1}{%
+        {Leiden; Boston}%
       }
       \list{publisher}{1}{%
         {Brill}%
@@ -2993,6 +3107,8 @@
       \field{shorttitle}{{{Word2Vec}}}
       \field{title}{Efficient Estimation of Word Representations in Vector Space}
       \field{year}{2013}
+      \field{pages}{1\bibrangedash 12}
+      \range{pages}{12}
       \verb{eprint}
       \verb 1301.3781
       \endverb

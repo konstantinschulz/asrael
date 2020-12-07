@@ -1,3 +1,4 @@
+from collections import Counter
 from typing import List, Any
 import tensorflow as tf
 import numpy as np
@@ -9,22 +10,33 @@ from tensorflow.python.keras.optimizer_v2.optimizer_v2 import OptimizerV2
 from tensorflow_datasets.core.features.text import SubwordTextEncoder
 
 
+class ClusterItem:
+    def __init__(self, form: str, segment_id: str, token_id: int, tensor: Tensor, lemma: str = ""):
+        self.form: str = form
+        self.lemma: str = lemma
+        self.segment_id: str = segment_id
+        self.tensor: Tensor = tensor
+        self.token_id: int = token_id
+
+
 class Cluster:
-    def __init__(self, tensors: List[Tensor], average_tensor: Tensor = None):
-        self.tensors: List[Tensor] = tensors
+    def __init__(self, cluster_items: List[ClusterItem], average_tensor: Tensor = None):
         self.average_tensor: Tensor = average_tensor
+        self.cluster_items: List[ClusterItem] = cluster_items
 
-    @classmethod
-    def from_json(cls, json_dict: dict):
-        return Cluster(json_dict["tensors"], json_dict.get("average_tensor", None))
+    def get_average_tensor(self) -> Tensor:
+        if not isinstance(self.average_tensor, Tensor):
+            if len(self.cluster_items) == 1:
+                self.average_tensor = self.cluster_items[0].tensor
+            else:
+                combo_tensor: Tensor = tf.stack([x.tensor for x in self.cluster_items])
+                self.average_tensor = tf.reduce_mean(combo_tensor, 0)
+        return self.average_tensor
 
-    def to_json(self) -> dict:
-        ret_val: dict = dict()
-        numpy_tensors: List[np.ndarray] = [x.numpy() for x in self.tensors]
-        ret_val["tensors"] = [x.tolist() for x in numpy_tensors]
-        if self.average_tensor:
-            ret_val["average_tensor"] = self.average_tensor.numpy().tolist()
-        return ret_val
+    def get_dominant_lemma(self) -> str:
+        lemmata: List[str] = [x.lemma for x in self.cluster_items]
+        counter: Counter = Counter(lemmata)
+        return counter.most_common(1)[0][0]
 
 
 class Context:
@@ -33,6 +45,13 @@ class Context:
         range_parts: List[int] = [int(x) for x in token_range.split(":")]
         self.token_range_start: int = range_parts[0]
         self.token_range_end: int = range_parts[1]
+
+
+class SimilarityItem:
+    def __init__(self, index1: int, index2: int, similarity: float):
+        self.index1: int = index1
+        self.index2: int = index2
+        self.similarity: float = similarity
 
 
 class Example:

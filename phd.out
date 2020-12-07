@@ -1,13 +1,16 @@
-\BOOKMARK [0][-]{chapter.1}{ASRAEL - Acquisition of Semantic RelAtions bEtween Latin nouns}{}% 1
-\BOOKMARK [1][-]{section.1.1}{Introduction}{chapter.1}% 2
-\BOOKMARK [2][-]{subsection.1.1.1}{Semantic relations in language learning}{section.1.1}% 3
-\BOOKMARK [1][-]{section.1.2}{Polysemy}{chapter.1}% 4
-\BOOKMARK [2][-]{subsection.1.2.1}{Word Sense Induction}{section.1.2}% 5
-\BOOKMARK [2][-]{subsection.1.2.2}{Distributional Semantic Models for Word Senses}{section.1.2}% 6
-\BOOKMARK [1][-]{section.1.3}{Nouns}{chapter.1}% 7
-\BOOKMARK [1][-]{section.1.4}{Hyponymy}{chapter.1}% 8
-\BOOKMARK [2][-]{subsection.1.4.1}{WordNet}{section.1.4}% 9
-\BOOKMARK [1][-]{section.1.5}{Method}{chapter.1}% 10
-\BOOKMARK [1][-]{section.1.6}{Appendix}{chapter.1}% 11
-\BOOKMARK [2][-]{subsection.1.6.1}{Appendix A: Agile and Open Methodology}{section.1.6}% 12
-\BOOKMARK [1][-]{section*.12}{References}{chapter.1}% 13
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 1
+\BOOKMARK [1][-]{section.1.1}{Semantic relations in language learning}{chapter.1}% 2
+\BOOKMARK [0][-]{chapter.2}{Polysemy}{}% 3
+\BOOKMARK [1][-]{section.2.1}{Word Sense Induction}{chapter.2}% 4
+\BOOKMARK [1][-]{section.2.2}{Distributional Semantic Models for Word Senses}{chapter.2}% 5
+\BOOKMARK [0][-]{chapter.3}{Nouns}{}% 6
+\BOOKMARK [0][-]{chapter.4}{Hyponymy}{}% 7
+\BOOKMARK [1][-]{section.4.1}{WordNet}{chapter.4}% 8
+\BOOKMARK [0][-]{chapter.5}{Method}{}% 9
+\BOOKMARK [1][-]{section.5.1}{Experimental Setup}{chapter.5}% 10
+\BOOKMARK [1][-]{section.5.2}{Sensitivity to Lexical and Syntactic Variation}{chapter.5}% 11
+\BOOKMARK [1][-]{section.5.3}{High Variance in Low-Frequency Types: A Case Study on Dis Legomena}{chapter.5}% 12
+\BOOKMARK [1][-]{section.5.4}{Clustering of Contextual Embeddings}{chapter.5}% 13
+\BOOKMARK [0][-]{chapter.6}{Appendix}{}% 14
+\BOOKMARK [1][-]{section.6.1}{Appendix A: Agile and Open Methodology}{chapter.6}% 15
+\BOOKMARK [0][-]{chapter*.14}{Bibliography}{}% 16
