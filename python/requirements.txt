@@ -82,7 +82,7 @@ torch==1.6.0
 torchtext==0.7.0
 tqdm==4.48.0
 transformers==3.0.2
-ujson==3.2.0
+ujson==5.4.0
 urllib3==1.25.10
 Werkzeug==1.0.1
 Whoosh==2.7.4
