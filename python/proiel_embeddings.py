@@ -1,4 +1,3 @@
-import os
 import pickle
 from collections import Counter
 from typing import Union
