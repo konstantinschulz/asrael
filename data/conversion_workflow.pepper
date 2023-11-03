@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pepper-job id="hro3jp3e" version="1.0">
+	<importer name="CoNLLImporter" path="./input/">
+	</importer>
+	<exporter name="ANNISExporter" path="./output/">
+	</exporter>
+</pepper-job>

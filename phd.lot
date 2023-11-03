@@ -6,16 +6,18 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {1}{\ignorespaces Noun-to-verb ratio for different treebanks in the Universal Dependencies corpus (Latin, French, German; \cite {nivreUniversalDependenciesV12016}).\relax }}{7}{table.caption.7}% 
+\contentsline {table}{\numberline {1}{\ignorespaces Noun-to-verb ratio for different treebanks in the Universal Dependencies corpus (Latin, French, German; \cite {nivreUniversalDependenciesV12016}).\relax }}{7}{table.caption.7}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {2}{\ignorespaces Average number of types per lemma for Latin, French and German.\relax }}{15}{table.caption.8}% 
+\contentsline {table}{\numberline {2}{\ignorespaces Average number of types per lemma for Latin, French and German.\relax }}{15}{table.caption.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {3}{\ignorespaces Cosine similarity for tokens in almost identical sentences from PROIEL. Target tokens are highlighted in bold.\relax }}{24}{table.caption.9}% 
+\contentsline {table}{\numberline {3}{\ignorespaces Cosine similarity for tokens in almost identical sentences from PROIEL. Target tokens are highlighted in bold.\relax }}{26}{table.caption.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {table}{\numberline {4}{\ignorespaces Cosine similarity for sentences from PROIEL in which exactly one token was replaced. Replacements and their translations are highlighted in bold.\relax }}{25}{table.caption.10}% 
+\contentsline {table}{\numberline {4}{\ignorespaces Cosine similarity for sentences from PROIEL in which exactly one token was replaced. Replacements and their translations are highlighted in bold.\relax }}{27}{table.caption.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {table}{\numberline {5}{\ignorespaces Nouns in almost identical sentences from PROIEL. Target tokens are highlighted in bold.\relax }}{28}{table.caption.11}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

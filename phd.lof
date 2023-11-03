@@ -10,10 +10,10 @@
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency.\relax }}{18}{figure.caption.11}% 
+\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency.\relax }}{19}{figure.caption.12}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression.\relax }}{20}{figure.caption.12}% 
+\contentsline {figure}{\numberline {2}{\ignorespaces Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression.\relax }}{22}{figure.caption.13}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility.\relax }}{23}{figure.caption.13}% 
+\contentsline {figure}{\numberline {3}{\ignorespaces Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility.\relax }}{25}{figure.caption.14}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }

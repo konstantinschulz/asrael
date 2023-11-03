@@ -1,7 +1,8 @@
-models/
 .data/
 backup/
 checkpoints/
+models/
+opt_latin_hf_tokenizer/
 
 # Created by .ignore support plugin (hsz.mobi)
 ### Python template
