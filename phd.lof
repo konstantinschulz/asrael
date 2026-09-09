@@ -1,19 +1,11 @@
-\boolfalse {citerequest}\boolfalse {citetracker}\boolfalse {pagetracker}\boolfalse {backtracker}\relax 
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency.\relax }}{19}{figure.caption.12}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {2}{\ignorespaces Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression.\relax }}{22}{figure.caption.13}%
-\defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {3}{\ignorespaces Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility.\relax }}{25}{figure.caption.14}%
-\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of cosine similarity and mean pairwise average text length. Each blue dot represents the average pairwise cosine similarity between segment pairs with a given average text length in characters. The red line indicates a linear regression of average cosine similarity and text length.}}{26}{figure.caption.21}%
+\contentsline {figure}{\numberline {2}{\ignorespaces Number of segments for various amount of text lengths. Text length is presented using a log scale to optimize the view of the distribution for the most frequent cases in PROIEL.}}{27}{figure.caption.22}%
+\contentsline {figure}{\numberline {3}{\ignorespaces Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency.}}{28}{figure.caption.23}%
+\contentsline {figure}{\numberline {4}{\ignorespaces Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression.}}{31}{figure.caption.24}%
+\contentsline {figure}{\numberline {5}{\ignorespaces Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility.}}{34}{figure.caption.25}%
 \addvspace {10\p@ }

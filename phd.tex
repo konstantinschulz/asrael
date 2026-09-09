@@ -1,4 +1,4 @@
-% !TEX TS–program = pdflatexmk
+% !TEX TS–program = xelatexmk
 % do not put extra blank pages after each part of the front matter
 \documentclass[oneside]{book}
 
@@ -19,9 +19,10 @@
 % force precise positioning of figures using the 'H' float specifier
 \usepackage{float}
 % displaying Polish special characters
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
+\usepackage{fontspec}
 % displaying figures
-\usepackage{graphicx}
+\usepackage[draft]{graphicx}%
 % links and references
 \usepackage{hyperref}
 \usepackage{soul}
@@ -42,8 +43,6 @@
 % show sections and subsections in the table of contents
 \setcounter{tocdepth}{2}
 \makeglossaries
-% allow inclusion of PDF figures with versions higher than 1.5
-\pdfminorversion=6
 \newglossaryentry{CVS}{name=CVS, description={continuous vector space}}
 \newglossaryentry{DSM}{name=DSM, description={distributional semantic model}}
 \newglossaryentry{LOD}{name=LOD, description={Linked Open Data}}
@@ -53,6 +52,9 @@
 \newglossaryentry{TTR}{name=TTR, description={type-token ratio}}
 \newglossaryentry{WSD}{name=WSD, description={word sense disambiguation}}
 \newglossaryentry{WSI}{name=WSI, description={word sense induction}}
+
+% use this to compile only specific files (overrides \include{chapters/*}) instead of all chapters
+%\includeonly{phd}
 
 \begin{document}
 \frontmatter
@@ -69,10 +71,10 @@
 XXXabstractXXX
 \mainmatter
 
-%\input{chapters/introduction}
-%\input{chapters/polysemy}
-%\input{chapters/nouns}
-%\input{chapters/hyponymy}
+\include{chapters/01_introduction}
+\include{chapters/02_polysemy}
+\include{chapters/03_nouns}
+\include{chapters/04_hyponymy}
 
 \chapter{Method}
 \section{Experimental Setup}
@@ -865,27 +867,3 @@ To demonstrate the viability of this transfer, the dissertation is split into va
 \printbibliography[heading=bibintoc]
 
 \end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
