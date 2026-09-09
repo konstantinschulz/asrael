@@ -16,6 +16,8 @@
 \usepackage{enumitem}
 % interlinear gloss for linguistic examples
 \usepackage{expex}
+% force precise positioning of figures using the 'H' float specifier
+\usepackage{float}
 % displaying Polish special characters
 \usepackage[T1]{fontenc}
 % displaying figures
@@ -45,6 +47,7 @@
 \newglossaryentry{CVS}{name=CVS, description={continuous vector space}}
 \newglossaryentry{DSM}{name=DSM, description={distributional semantic model}}
 \newglossaryentry{LOD}{name=LOD, description={Linked Open Data}}
+\newglossaryentry{NLP}{name=NLP, description={Natural Language Processing}}
 \newglossaryentry{PMI}{name=PMI, description={Pointwise Mutual Information}}
 \newglossaryentry{POS}{name=POS, description={part of speech}}
 \newglossaryentry{TTR}{name=TTR, description={type-token ratio}}
@@ -65,108 +68,11 @@
 \chapter*{abstract}
 XXXabstractXXX
 \mainmatter
-\chapter{Introduction}
-This dissertation deals with different ways of detecting semantic relations in text corpora. Its focus is more on methodology than on analytical results. Some important restrictions are necessitated by the precise research question: In a corpus of Latin texts, how can we automatically extract semantic relations that are relevant for language learning? I will concentrate only on a subset of the existing phenomena, namely hypernymy and hyponymy. This selection is motivated by the objective of utilizing the obtained insights as the basis for exercises in the process of learning historical languages. Thus, the detection of said relations is not an end in itself, but is to be viewed in the context of how humans learn languages. 
 
-\section{Semantic relations in language learning}
-Specifically, recent studies suggest that an improved integration of hyponymy into the learning process can lead to a higher level of language skills \parencite[196]{taslimExperimentalStudyTeaching2014}. Roughly the same procedure is applicable also in the context of artificial intelligence, which highlights the general importance of semantic relations in any kind of language learning effort \parencite[1306]{carlsonArchitectureNeverendingLanguage2010}. The automated extraction of semantic relations from texts can be used for constructing ontologies in specific domains, which is important for language learning because many textbooks are heavily structured according to a range different topics \parencite[192f.]{punuruLearningNontaxonomicalSemantic2012}. 
-
-Since there is a parallel between semantic relations (or ontologies in general) and the way that humans think, it seems reasonable to exploit that connection for learning purposes. This is particularly important for advanced learners' lexical acquisition \parencite[56]{crossleyDevelopmentSemanticRelations2010}. Now, one might be tempted to conclude that predefined lists of basic vocabulary and more advanced semantic relations would be a sufficient help to language teachers. However, static materials und human supervision will probably fail to account for the entire processual complexity of lexical acquisition \parencite[71]{crossleyDevelopmentSemanticRelations2010}. The involvement of artificial intelligence in the modeling of human knowledge about vocabulary faces various problems, including the progression of learning over time \parencite[70]{crossleyDevelopmentSemanticRelations2010}. 
-
-In language learning contexts, this problem extends also to the morphological domain, where it can prove difficult for students to exploit their knowledge about affixation for the acquisition of semantic relations \parencite[248]{gardnerValidatingConstructWord2007}. However, "inflected and derived forms" are exactly what we encounter in the curricular targets for Latin courses, i.e. literary texts. Most textbooks take care of the problem by using hand-crafted Latin texts instead of authentic ones. This leads to a highly problematic transition from textbook to literature, which is already famous among German teachers of Latin \parencite[115]{schibelZurAneignungLateinischer2013}. The challenge, then, is to not only extract semantic relations from a given corpus, but also to group them according to general principles of progression that are tightly coupled with a domain-specific theory of learning.
-
-\chapter{Polysemy}
-\section{Word Sense Induction}
-\label{polysemyProblemForSemanticRelations}
-In order to reach that point, we first need to define the basic object to be acquired, i.e. semantic relations. Unfortunately, this is not a precisely defined research object per se because it strongly depends on our previous knowledge about the possible word senses \parencite[12]{ayseExtractionSemanticWord2011}. Consequently, the sense of a word has to be defined before we can start to learn more abstract representations like hyponymy \parencite[137]{bartunovBreakingSticksAmbiguities2016}. Further obstacles may occur in the case of specific relations like synonymy, where a good operationalization is needed to retrieve the relevant instances from a corpus of text data \parencite[274]{divjakCorpusbasedCognitiveSemantics2009}. In my study, I will focus heavily on the approach of distributional semantics, describing specific semantic relations between words in terms of their co-occurrences, i.e. typical contexts in a corpus \parencites[162]{harrisDistributionalStructure1954}[30]{firthSynopsisLinguisticTheory1957}. This approach has traditionally suffered from several limitations. In some cases (e.g. synonymy), building unified representations for every type in a corpus can prove highly problematic \parencite[114]{karanDistributionalSemanticsApproach2012}. However, this is not universally true anymore as there are \gls{DSM}s that consistently distinguish between various contexts (\hyperlink{ELMO}{see below}). Other problems of distributional semantics are tied to fine-grained distinctions between specific semantic relations \parencite[115]{karanDistributionalSemanticsApproach2012}.
-
-Co-occurrence counts can be a good basis for the detection of semantic relations in general, but they are rarely sufficient for a thorough classification into several subcategories. Nonetheless, previous research has been carried out (more or less successfully) using, e.g., association measures to detect synonymy \parencite[566]{hagiwaraSupervisedSynonymAcquisition2009}. One of the critical parts in that regard is the term `word pair', which introduces the linguistically ill-defined concept of `word' into an otherwise seemingly precise mathematical formula. In the following, we will start by using the term `word' simply as `token in a corpus' and later proceed to a more advanced definition. This progression seems reasonable given the fact that the usage of token-based \gls{PMI} for the research purposes of distributional semantics often leads to severely skewed results \parencite[444]{herbelotMeasuringSemanticContent2013}. Therefore, corpora may have to be tokenized and segmented using more complex separator rules than `whitespace and punctuation' before they can serve as a basis for distributional analyses \parencite[6]{mikolovDistributedRepresentationsWords2013}. Besides, polysemy may also become a problem for resolving other issues like synonymy, e.g. if two words are synonymous only in one of their possibly numerous senses \parencite[444]{herbelotMeasuringSemanticContent2013}. 
-
-In addition to polysemy itself, related concepts like homonymy can also become obstacles with regard to the aim of defining semantic relations precisely \parencite[251]{gardnerValidatingConstructWord2007}. Distributional semantics provides a valuable framework to break down the multiple aspects of meaning for homonymous or polysemous words into smaller subsets, based on the combination with, e.g., adjectival modifiers \parencite[42]{boledaIntensionalityWasOnly2013}. Therefore, the integration of specific contextual elements into the analysis of hyponymy between Latin nouns seems to be a reasonable basis for distinguishing subtle semantic nuances more consistently. As a consequence, polysemy will be treated in this study not just as one of the analytical targets, but also as a methodological aspect that needs to be addressed before other kinds of analyses can be performed. A useful operationalization of polysemy in a distributional context is to look at the collocational diversity \parencite[8]{hamiltonDiachronicWordEmbeddings2016}. This approach brings along the problem of sampling, which is a general one for the whole of corpus linguistics: If we want to model a specific language like Latin as a whole but only use a tiny subset of the available language data for our corpus, how can we expect our results to be applicable to other Latin texts? The key point here is the purpose: For this study, our ultimate goal is not to model Latin nouns per se, but only with regard to the rather well-defined application context of language learning. Therefore, the explanatory power of our linguistic model does not need to be as comprehensive, and it will be restricted to predefined parameters. These parameters may in turn be described as, e.g., the objective of maximizing a student's learning success by providing structured information about semantic relations.
-
-%TODO: add chapter on the choice of PROIEL as corpus... why not AGLDT or ITTB?
-
-\section{Distributional Semantic Models for Word Senses}
-Historically, linguistic features of words have often been represented in \gls{CVS}s \parencites{mikolovEfficientEstimationWord2013}{daiDocumentEmbeddingParagraph2015}{akbikContextualStringEmbeddings2018} that can be seen as statistical models of word distributions in natural language \parencite[1140]{bengioNeuralProbabilisticLanguage2003}. Such models map single elements of an utterance (e.g. characters, tokens, types, phrases etc.) to vectors in an n-dimensional \gls{CVS}. Depending on the dimensionality, various kinds of information will be integrated into the model. For instance, lexically related words (e.g. \textit{amor} `love' in PROIEL 86055.22\footnote{For details on the PROIEL corpus, see \textcite{haugCreatingParallelTreebank2008}. Note that, in this study, we only consider the Latin part of the corpus. Dot-separated unique identifiers will be used to refer to segments and tokens in the PROIEL corpus. This is often more precise than the conventional citation model for ancient works (in this case: Cic. off. 1.12) and does not require knowledge about abbreviations of author names or work titles. On the downside, it is corpus-specific and does not offer immediate information about author, work and structural position of the text passage.} and \textit{amare} `to love' in PROIEL 86334.11) usually correspond to vectors whose distance in the \gls{CVS} is rather small. Since most of these models try to predict words in a corpus given their surrounding context \parencite[5]{mikolovEfficientEstimationWord2013}, those words that co-occur frequently will also be mapped to similar vectors in the \gls{CVS}. This basic interaction helps us to distinguish multiple senses of a polysemous word empirically: If each word sense is associated with different contexts and, thus, different co-occurring words, its calculated vector will be different from those of other word senses. Therefore, a very simple evaluation for \gls{DSM}s with regard to \gls{WSI} looks like this:
-\begin{itemize}
-	\item Given a pair of contexts that
-	\item both contain the same word,
-	\item classify whether that target word is used in the same sense or not.
-\end{itemize}
-Formalizing this into a dataset structure, we may provide a plain text file where each each line contains one example for classification. Since Latin is a highly inflectional language, morphological features of the targeted word can differ a lot. Therefore, the actual word forms have to be indicated separately for each context in the example. If they occur multiple times in a context, the dataset should specify which occurrence of the word is to be evaluated. Finally, a binary value (such as `0 / 1' or `true / false') indicates the ground truth for this classification example, i.e. whether the word senses are the same or not. This is the most critical part: `Ground truth' is a dangerous assumption for linguistic phenomena because it suggests a consistent, unchanging goal to be achieved \parencite[129]{leeGeneratingGroundTruth2012}. This desire stems from the formalization that is deemed necessary to systematically evaluate computational language models \parencite[4]{fischerGroundTruthCreation2010}. Usually, such gold standards depend on human expertise, i.e. people that are highly acquainted with the target domain \parencite[519]{uzunerCommunityAnnotationExperiment2010}. In the case of historical languages like Latin, where specialized software and datasets are scarce \parencites[168]{karakantaNeuralMachineTranslation2018}[3]{mcgillivrayMethodsLatinComputational2013}, researchers often have to resort to digitizing analog resources or creating entirely new ones. This kind of curation process can and should rely on successful patterns from datasets for modern languages. Thus, it is reasonable to have a short look at existing comparable resources for evaluation.
-
-The SemCor \parencite{mihalceaSemCorCorpus2008} and MASC-News \parencite[4218]{moroAnnotatingMASCCorpus2014} datasets are \gls{POS}-tagged English corpora where word senses have been annotated using WordNet \parencite{tengiDesignImplementationWordNet1998}. In that sense, such data is both empirical (because it contains authentic historical utterances) and intuition-based (because it uses an external knowledge base for defining the word senses, \hyperref[WordNet]{see below}). There have been attempts to unify \parencite[216]{navigliBabelNetBuildingVery2010} the various knowledge bases that researchers employed to annotate word senses. Promising results were achieved by discussing discrepancies in the face of text corpora, i.e. actual text passages from authentic sources \parencite[127]{bakerWordNetFrameNetComplementary2009}. This development highlights the importance of usage-based linguistics and points towards the need for a more rigorous, bottom-up formalization of word senses. Further approaches to creating datasets for \gls{WSD} include the usage of dictionaries (other than WordNet) as lexical resources \parencites[25]{mihalceaSenseval3EnglishLexical2004}[2]{jimeno-yepesExploitingMeSHIndexing2011}[6]{yuanSemisupervisedWordSense2016} and the usage of glosses as representations of word senses \parencite[8]{luoIncorporatingGlossesNeural2018}. In contrast, \gls{WSI} usually does not rely on external sense inventories, but tries to infer word senses in an unsupervised, empirical manner only from the text itself. State-of-the-art models cluster distributions of vector representations for possible context-dependent substitutes of a word and, thus, are able to detect distinctions between word senses that had not previously been considered in intuition-based sense inventories \parencite[1-4]{amramiBetterSubstitutionbasedWord2019}. Predecessors to this approach directly used a word's surrounding context to construct sense representations for clustering and identified substantial quality criteria for the evaluation of \gls{WSI} models \parencite[876-878]{huangImprovingWordRepresentations2012}:
-\begin{itemize}
-	\item human judgment on word sense similarity
-	\item variation in patterns of meaning (homonymy, polysemy etc.)
-	\item variation in parts of speech (esp. nouns, verbs, adjectives)
-\end{itemize}
-We can certainly add that, in addition to variation, balancing is a decisive factor for the training data \parencites[620]{liuCombiningIntegratedSampling2011}[9]{weiRoleBalancedTraining2013}[1127]{boneApplyingMachineLearning2015}: If we are interested in rare linguistic phenomena, such as subtle semantic differences between almost synonymous words, we need to make sure that they are represented frequently in our training data. The third criterion is most controversial: On the one hand, powerful \gls{WSI} models need to be general enough to provide sufficient results under different circumstances, e.g. in varying domains and registers. On the other hand, modeling word senses for different parts of speech needs to take into account the diverse influences of lexis and syntax: In some settings, nouns may be represented as sets of their hyponyms \parencite[640]{lewisCompositionalHyponymyPositive2019}, while transitive verbs can be modeled as triples together with their arguments, e.g. subjects and objects \parencite[9]{grefenstetteExperimentalSupportCategorical2011}. Such different approaches uncover the intricate nature of formalizing fine-grained semantic distinctions from a distributional perspective. As a consequence, our goal of detecting hyponyms for language learning seems to warrant a modular operationalization with regard to parts of speech. 
-
-\chapter{Nouns}
-Our choice of nouns as the target for hyponymy detection is motivated by evidence from language learning. It suggests that nouns are usually easier to acquire, especially in most modern languages, where this class of words is particularly important in everyday language use \parencite[9]{garcia-gamezLearningNounsVerbs2019}. This is relevant for our research because, nowadays, many learners of Latin have acquired as L1 one of the `noun-dependent' languages, e.g. German or French \parencite[51-52]{baidakKeyDataTeaching2017}. Therefore, it makes sense to build on their individual preconditions and focus, at least initially, on those word classes that are also important in their L1. However, Latin has often been described as verb-heavy language \parencite[41]{mengeLehrbuchLateinischenSyntax2009}. This claim is supported by comparing the noun-to-verb ratio \parencite[300]{stollNounsVerbsChintang2012} of the PROIEL corpus to the Hamburg Dependency Treebank \parencite{borgesvolkerHDTUDVeryLarge2019} and the French Treebank (\cite{seddahCheatingParserDeath2018}; see Table \ref{tableNounToVerbRatio}).
-\begin{table}[ht]
-	\begin{tabular}{ c | c | c | c }
-  		 & PROIEL & French Treebank & Hamburg Dependency Treebank \\ \hline
-  		Noun-to-Verb Ratio & 0.50 & 0.71 & 0.73 \\
-	\end{tabular}
-	\caption{Noun-to-verb ratio for different treebanks in the Universal Dependencies corpus (Latin, French, German; \cite{nivreUniversalDependenciesV12016}).}
-	\label{tableNounToVerbRatio}
-\end{table}
-
-The lower ratio indicates that Latin authors use fewer nouns, relative to their usage of verbs and compared to authors of modern European languages. This typological difference seems to demand a stronger focus on verbs instead of nouns, at least for Latin. Nonetheless, it has been shown that nouns play a substantial role in the early stages of language acquisition, especially in the understanding of subcategorization frames for verbs \parencite[1383]{yuanCountingNounsSimple2012}. If this is applicable to historical languages as well, we should rather rely on finding suitable combinations, provided that there is a useful formalization of hyponymy for the different parts of speech. The focus on a single word class (in our case: nouns) is one initial step in that direction.
-
-\chapter{Hyponymy}
-After dealing with various issues of polysemy, some of the second-tier semantic relations may have to be redefined when looked at from a distributional perspective, e.g. hyponymy \parencite[443]{herbelotMeasuringSemanticContent2013}. In this view, other existing taxonomies that may have acted as models of hyponymy need to be replaced by a definition that reflects how actual usage contexts can limit our selection of possible candidates for hyponymy \parencite[443]{rollerInclusiveSelectiveSupervised2014}. Unfortunately, this view may clash with the observations of \textcite{herbelotMeasuringSemanticContent2013}:
-\begin{itemize}
-      \item Hypernyms can have very specific usage contexts.
-      \item Collocations may lead to unexpected results in the distribution of words.
-\end{itemize}
-Similar adjustments have to be made in treating other kinds of semantic relations. Therefore, many researchers apply preprocessing to their corpora before performing the actual analysis on them \parencite[56f.]{gyllenstenRgramsUnsupervisedLearning2019}. However, this increases the danger of circularity, revealing only those results that we were already expecting in the first place. As an alternative, we should look for a model that is robust enough to detect semantic relations despite the confounding factors. The objective should be to fit the model to the base text, not the other way round. For vector space models like Skip-gram \parencite[5]{mikolovEfficientEstimationWord2013}, subsampling and the restriction of strong collocations may be justified from a computational perspective because they enable a faster training of models while more or less preserving the resulting performance in the prediction of word contexts. This very tradeoff, though, may not work out as well for the detection of semantic relations, e.g. if we give a higher priority to the frequency of certain contexts. Such a change of algorithm may particularly be motivated by the distinction of theoretical and empirical scopes of words \parencite[46]{coenenAnalogieUndMetapher2013}. 
-
-\label{distributionalInclusionHypothesis}
-This also applies to the domains of corpus linguistics and language learning: Given a text corpus that helps learners to acquire a certain knowledge (e.g. all the ancient literature mentioned in an educational curriculum for the Classics), the theoretical scope of a certain word would be equivalent to the set of all distinct contexts in the corpus in which that word occurs. In contrast, the empirical scope of that same word would be equal to a subset of that theoretical scope, namely those contexts which are already known to the learner (at any given point in time of the learning process). Thus, the theoretical scope will remain static as long as we do not change the corpus, while the empirical one will be dynamic as long as we keep learning. From this point of view, we can also restrict our notion of semantic relations: Hyponymy, for instance, will be tied to those lexical networks that are present in a specific corpus and, for a specific learner, specific instances of hyponomy relations will not exist unless they have already been encountered in the corpus and lead to a relevant learning process. It is therefore our duty to a) detect such instances in the corpus and b) use them to design learning situations that help language learners to construct lexical and semantic knowledge \parencite[25]{yorkConstructivistApproachGamebased2018}. In order to accomplish that first part, we need to have clearly defined requirements to qualify a relation as one of hyponymy, e.g. according to a version of the Distributional Inclusion Hypothesis \parencite[443]{rollerInclusiveSelectiveSupervised2014} that also accounts for idiomaticity, burstiness and other kinds of lexical interferences.
-
-\section{WordNet}
-\label{WordNet}
-Lexical resources like the Latin WordNet \parencite{minozziLatinWordNetProject2010} may contribute a reference model for such a purpose because it includes a built-in notion of hyponymy. Unfortunately, the WordNet defines such relations based on intuition, not on actual language use \parencite[315]{fellbaumChallengesMultilingualWordnet2012}. WordNet is therefore static and non-empirical from the perspective of usage-based fields like corpus linguistics. However, it was constructed by alleged experts and we may use their assessment for reflecting our own approach. This kind of triangulation is supported by recent studies, which often explicitly combine knowledge bases and corpus data \parencite[984-988]{onoWordEmbeddingbasedAntonym2015}, thereby integrating both the introspective and the usage-based approaches to semantics. The former can be helpful in two ways: a) by defining a horizon of expectations in language learning contexts, i.e. which information learners are supposed to infer from their previous knowledge in order to understand a linguistic expression in a specific text passage; and b) by modeling semantic knowledge in a machine-readable, consistent (albeit simplistic) manner. The integration of distributional semantics, on the other hand, is particularly motivated by the hypothesis that semantic properties of words are reflected in their contextual surroundings \parencite[59]{griesBehavioralProfilesCorpusbased2009}. 
-
-By using distributional data from corpora, we also gain the advantages of rigorously empirical research (as opposed to bare intuition and anecdotal evidence): frequency, authenticity, variation and systematic induction \parencite[60]{griesBehavioralProfilesCorpusbased2009}. Still, knowledge databases may be useful for languages like Latin where previous research is scarce and, more often than not, heavily intuition-based or anecdotal. In both the introspective and the distributional case, we can increase the amount of provided information by relying on associated properties of hyponymy relations, e.g. transitivity \parencite[58]{coenenAnalogieUndMetapher2013}. Applied to the Latin WordNet, this may look as follows:
-\begin{enumerate}
-         \item \textit{gladius}
-         \item a cutting or thrusting weapon with a long blade
-         \item weaponry used in fighting or hunting
-         \item weapons considered collectively
-         \item an artifact (or system of artifacts) that is instrumental in accomplishing some end
-         \item a man-made object
-         \item a physical (tangible and visible) entity
-\end{enumerate}
-This information flow can be read from both sides. Beginning at \textit{gladius} (sword), it can be used to simulate the process of reading a text: We encounter a word in the text (e.g. the plural \textit{gladii}) and determine its lemma (\textit{gladius}). From there, we can try to find a corresponding meaning for the surface form, e.g. "a cutting or thrusting weapon with a long blade". This meaning, in the WordNet taxonomy, can be hyponym to other kinds of meaning, e.g. "weaponry used in fighting or hunting". Now, if we know that
-\begin{itemize}
-         \item \textit{gladius} is a weapon with a blade and
-         \item weapons with a blade can be used for hunting,
-\end{itemize}
-then we are safe to assume that a \textit{gladius} can be used for hunting. The further we go down the list, the more abstract do the meanings get. Nonetheless (or because of that), every layer can remind us of new specific features that we may want to associate with \textit{gladius}: specific motion (2.), specific purpose (3.), hypernym (4.), general purpose (5.), origin and production (6.), material (7.). In some cases, we may even use morphological hints to get faster access to information about hyponymy \parencite[913]{anstattTypenSemantischerRelationen2009}. This is especially true for Latin with its relatively rich morphology: the meaning of \textit{artifex} (artist) may be associated directly to \textit{ars} (art) and \textit{facere} (to make), without necessarily traversing a hierarchical tree-like representation of increasing semantic generalization. Interestingly, this is possible even in cases where the compound is formed from foreign language material and thus cannot be easily paraphrased in the native language \parencite[33]{souille-rigautSemanticAccountQuasiLexemes2010}. 
-
-How is that important for Latin hyponymy? Consider Greek loanwords: \textit{xylophytum} (a certain kind of plant) cannot be reasonably described in Latin words as a \textit{*phytum} that is made of \textit{*xylum}. However, Romans may have deduced that the meaning of \textit{xylophytum} is related to ($\rightarrow$ hyponymy) \textit{-phyt-}, thereby inferring previous knowledge about plants. Therefore, we have to allow for the possibility that some instances of hyponymy may not be extractable solely on a distributional basis, but rather on a morphological one. Besides, a morphologically informed model is able to explain why we can immediately see semantic structure in newly coined words \parencite[43]{souille-rigautSemanticAccountQuasiLexemes2010}. In this respect, knowledge about specific hyponyms or hyponymy in general can facilitate the language learning process by providing a rather intuitive access to the meaning of single words or phrases. Unfortunately, this intuition sometimes competes with other interpretations of a word's sense which may be equally intuitive and valid \parencite[126]{ponsborderiaPathsGrammaticalizationSpanish2014}. 
-
-Such examples underline the importance of disambiguation (\hyperref[polysemyProblemForSemanticRelations]{see above}), which may not always be possible. Furthermore, additional steps may be necessary even if a specific word sense was already determined, e.g. the inference of common knowledge or common sense \parencite[427f.]{pinkalSemantik1993}. In this view, disambiguation should be preceded by a thorough linguistic analysis of the context, which, in terms of distributional semantics, is usually addressed by extracting cooccurrence frequencies from sliding windows over a textual input, be it plain text or a linguistically annotated treebank. However, the integration of external information into this process is not as straightforward and therefore often avoided. In the end, this might not be the worst decision, depending on our definition of semantics: Some models of distributional semantics reduce the spectrum of polysemy to one main aspect of meaning per word.
-\parencite[4]{faruquiProblemsEvaluationWord2016}.
-
-\hypertarget{ELMO}{Approaches} of this kind level nuances that may actually be important for our understanding of a single word in its context. As an improvement, other models regard entire sentences for the representation of a word's context-specific meaning, thereby differentiating between various common usages \parencite[2f.]{petersDeepContextualizedWord2018}. Modeling the process of language production both in a forward and backward manner at the same time seems reasonable, especially for the Latin language, because the antecedent of, e.g., a relative pronoun can be part of the relative clause, which makes it difficult to understand the structure of such a construction by reading it in just one direction, without referring to the past and future context at the same time:\footnote{The glossing of longer Latin text passages was created according to the \href{https://www.eva.mpg.de/lingua/pdf/Glossing-Rules.pdf}{Leipzig Glossing Rules}.}
-
-\vspace{10pt}
-\ex[exno=PROIEL 53467]
-	\par
-	\begingl
-		\gla nam et frument-um ex agr-is cotidie in castr-a confere-ba-t et qu-ae grav-issim-e adfli-ct-ae era-nt nav-es e-a-rum materi-a atque ae-re ad reliqu-a-s reficie-nd-a-s ute-bat-ur [...] //
-		\glb since also grain-{\sc acc} from field-{\sc abl.pl} daily-{\sc adv} into camp-{\sc acc.pl} convey-{\sc impf-3sg} and which-{\sc f.pl} heavy-{\sc sup-adv} strike-{\sc pass-f.pl} be-{\sc 3pl} ship-{\sc pl} this-{\sc f-pl.gen} timber-{\sc abl} and brass-{\sc abl} to remaining-{\sc f-pl.acc} repair-{\sc gdv-f-pl.acc} use-{\sc impf-3sg}//
-		\glft for he daily conveyed corn from the country parts into the camp, used the timber and brass of such ships as were most seriously damaged for repairing the rest [...] //
-	\endgl
-\xe
-\vspace{10pt}
-
-In this example, \textit{naves} is the antecedent to the relative pronoun \textit{quae}. Its integration into the relative clause is recognizable by its morphological congruency (case, number, gender) with the relative pronoun. In a textbook setting, the sentence would rather look like this: \textit{[...] conferebat et earum navium, quae gravissime adflictae erant, materia atque [...]}. Such syntactic variations are probably related to the relatively free word order in the Latin language. Therefore, a language model for Latin should be flexible enough to analyze a given textual sequence by looking at either the left or right context, according to the circumstances of the case \parencite[8]{devlinBERTPretrainingDeep2019}. While this strictly bidirectional, attention-based approach \parencite{vaswaniAttentionAllYou2017} enhances the ability to explain word meanings from their larger surrounding contexts, it does not address the problem of inference, e.g. relevant external text passages. To analyze this problem empirically, we will set up a toy language model in order to inspect difficult cases. 
+%\input{chapters/introduction}
+%\input{chapters/polysemy}
+%\input{chapters/nouns}
+%\input{chapters/hyponymy}
 
 \chapter{Method}
 \section{Experimental Setup}
@@ -202,6 +108,7 @@ The second step can be formalized by providing character indices referring to th
 
 Since there are no semantically annotated authentic text corpora for Latin, the next best thing to use are grammar books and dictionaries: They often distinguish between various word senses and offer exemplary contexts for each one \parencites{georgesAusfuhrlichesLateinischDeutschesHandworterbuch1913}{niederauNavigiumLateinDeutschWorterbuch2012}. Some of them cite entire text passages \parencites{shortLatinDictionary1879}{kuhnerAusfuhrlicheGrammatikLateinischen1914}{mengeLehrbuchLateinischenSyntax2009} to support their classifications. Such references can be seen as annotations: If a dictionary lists various text passages as containing a specific word in the same sense, this is roughly equivalent to semantically annotated datasets where sense identifiers from static sense inventories are assigned to tokens in a text corpus. Now, we could proceed by looking at the largest entries in a dictionary, assuming that they contain the largest number of different word senses. This, however, would amount to accepting the dictionary editor's intuition, which is not a usage-based approach. Instead, we will find the most polysemous words in a corpus inductively, by looking at their usage contexts. In this view, the most polysemous word will be that which is used in the most diverse contexts.
 
+\label{functionWordsZipfDistribution}
 A naive formalization of diverse contexts is to count the number of types that occur in the same sentence as a target type in the corpus. This disregards the absolute frequencies of the types in a corpus and will lead to a Zipfian distribution \parencite[VI]{zipfPsychobiologyLanguageIntroduction1936} of target types. Thus, function words like \textit{et, in, ut, est, non, cum} `and, in, as, is, not, with' will dominate the ranking just because of their immense absolute frequency in the corpus. We can limit their impact by randomly down-sampling their occurrences using an arbitrary upper bound of 100.
 \label{high_frequency_hyponyms_for_language_learning}
 Since our goal is to produce exercises for language learning, the potential hyponyms should be rather frequent in a given corpus \parencites[27]{ellisUsagebasedLanguageInvestigating2013}[2]{robillardMonolingualBilingualChildren2014}. It is therefore reasonable to establish a minimum threshold for word frequency. This criterion interacts with Latin being a highly inflectional language, thus producing many morphologically different forms for the same lexeme (see Table \ref{tableTypesPerLemma}).
@@ -457,7 +364,7 @@ Besides, we may note that most of the replaced tokens seem to exhibit some kind 
 		\item \textit{sicut} `so as' and \textit{tamquam} `as much as' both belong to the same synset: `(often followed by \"as\") to the same degree' (\url{https://latinwordnet.exeter.ac.uk/api/synsets/r/00020994/lemmas/}).
 	\end{itemize}
 \end{itemize}
-We may conclude that lexical substitution without syntactic alteration often correlates with semantic relations between the two interchangeable lexemes. In contrast, the remaining two examples from Table \ref{tableCosSimWordSubstitution} exhibit multiple inflections of the same lemma (\textit{venire} `to come'), and a coreference pointing to the figure of Jesus (\textit{me} `me' and \textit{Filium} `Son') in the New Testament. In those cases, none of the traditional semantic relations is present. However, this approach in general is just an expert's intuition and has not been verified through arguments from actual language use. We therefore need to look for further evidence in the text corpus.
+We may conclude that lexical substitution without syntactic alteration often correlates with semantic relations between the two interchangeable lexemes. In contrast, the remaining two examples from Table \ref{tableCosSimWordSubstitution} exhibit multiple inflections of the same lemma (\textit{venire} `to come'), and a coreference pointing to the figure of Jesus (\textit{me} `me' and \textit{Filium} `Son') in the New Testament. In those cases, none of the traditional semantic relations is present. However, this approach in general is just an expert's intuition and has not been verified empirically by observing actual language use. We therefore need to look for further evidence in the text corpus.
 
 Finding empirical evidence for co-hyponymy is rather difficult in small text corpora, especially when adhering to the Distributional Inclusion Hypothesis \hyperref[distributionalInclusionHypothesis]{mentioned above}, which demands that the hyponyms and their hypernym share a large portion of their usage contexts \parencite[110]{geffetDistributionalInclusionHypotheses2005}. This ambitious requirement is often approximated using more readily available measures, such as graph density in distributional thesauri \parencites[2]{janaNetworkFeaturesBased2018}[4]{janaUsingDistributionalThesaurus2020}.
 
@@ -465,19 +372,18 @@ Building on our heuristic approach from above, we may fine-tune the procedure by
 
 \begin{table}[ht]
 	\begin{tabular}{p{\linewidth}}
-  		Context \\ \hline
-        \ex[exno=PROIEL 60041]
-            	\begingl
-            		\gla sext-a \textbf{feri-a} in Syon //
-            		\glb sixth-{\sc f.sg.nom} holiday-{\sc f.sg.nom} in Syon //
-            		\glft the sixth holiday [is celebrated] in Syon //
-            	\endgl
-    	\xe \\
+    \ex[exno=PROIEL 60041]
+            \begingl
+                \gla sext-a \textbf{feri-a} in Syon //
+                \glb sixth-{\sc f.sg.nom} holiday-{\sc f.sg.nom} to Syon //
+                \glft on the sixth holiday [they move] to Syon //
+            \endgl
+    \xe \\
 	\ex[exno=PROIEL 64252]
             	\begingl
-            		\gla sext-a \textbf{feri-a} in Syon //
-            		\glb sixth-{\sc f.sg.nom} holiday-{\sc f.sg.nom} in Syon //
-            		\glft the sixth holiday [is celebrated] in Syon //
+            		\gla sext-a \textbf{di-e} in Syon //
+            		\glb sixth-{\sc f.sg.abl} day-{\sc f.sg.abl} to Syon //
+            		\glft on the sixth day [they move] to Syon //
             	\endgl
     \xe \\ \hline
 	\ex[exno=PROIEL 12797]
@@ -549,7 +455,7 @@ Building on our heuristic approach from above, we may fine-tune the procedure by
         	\glb fox-{\sc pl} pit-{\sc pl.acc} have-{\sc 3pl} and bird-{\sc pl} sky-{\sc gen} nest-{\sc pl.acc} //
           	\glft the foxes have pits and the birds in the sky have nests //	
         \endgl
-    \xe \\ \hline
+    \xe
 	\end{tabular}
 	\caption{Nouns in almost identical sentences from PROIEL. Target tokens are highlighted in bold.}
 	\label{tableCosSimWordSubstitutionNouns}
@@ -557,10 +463,231 @@ Building on our heuristic approach from above, we may fine-tune the procedure by
 
 From these examples, we can see how the constraints lead to a higher precision, i.e. out of all results found, more and more tend to be instances of hyponymy or co-hyponymy. However, the recall (How many instances of hyponymy did we miss?) is unknown and can only be determined using gold-standard annotations. We will investigate that problem later in chapter XXX. 
 %TODO: determine recall for hyponymy detection
-Meanwhile, there are other problems to address. The first example in table \ref{tableCosSimWordSubstitutionNouns} can be regarded at least as co-hyponymous: \textit{feria} `holiday' and \textit{dies} `day' both share a common transitive relation to the same WordNet synset (`a day reckoned from midnight to midnight', \url{https://latinwordnet.exeter.ac.uk/api/synsets/n/10878116/}). In our case, this interpretation is questionable and should be more strict: The hypernymy chain leads from \textit{feria} (a holiday) to \textit{dies} (any day from sunrise to sunset) and from there to the higher-level synset of `a day reckoned from midnight to midnight'.
+Meanwhile, there are other problems to address. The first example in table \ref{tableCosSimWordSubstitutionNouns} can be regarded as co-hyponymous: \textit{feria} `holiday' and \textit{dies} `day' both share a common transitive relation to the same WordNet synset (`a day reckoned from midnight to midnight'\footnote{\url{https://latinwordnet.exeter.ac.uk/api/synsets/n/10878116/}.}). In our case, this interpretation is questionable and should be more strict: The hypernymy chain leads from \textit{feria} (a holiday) to \textit{dies} (any day from sunrise to sunset) and from there to the higher-level synset of `a day reckoned from midnight to midnight'.
 
 The second example is an instance of metonymy or, more specifically, \textit{pars pro toto} \parencite[44]{gardenforsSemanticTransformations2015}: \textit{nubes} `cloud' and \textit{caelum} `sky' are both meant to refer to the same phenomenon, namely the sky above from where a voice is ringing out. In that sense, the two words are synonymous rather than co-hyponymous, let alone strictly hyponymous. There is no simple way for separating their relation from that in the first example, but neural networks may still be able to grasp various cues that, when considered in combination \parencite[1]{hintonImprovingNeuralNetworks2012}, enable us to clearly distinguish the two cases.
-%TODO_: continue here...
+
+The \textit{publicani} `tax gatherers' and \textit{ethnici} `pagans' in the third example lead us to an important decision that we have not made yet: Since hyponymy is a transitive relation (see \hyperref[transitivity]{above}), we may consider a common hypernym for both, such as \textit{homo} `human being`. From that perspective, they would act as co-hyponyms. However, the semantic distance from \textit{publicani} `tax gatherers' to \textit{homo} `human being' is much larger than to more closely related hypernyms such as \textit{magistratus} `public functionary'. For \textit{ethnici} `pagans', on the other side, there does not exist a closer hypernym than \textit{homo} `human being' in the Latin WordNet. While the latter aspect remains to be examined empirically, the conceptual point made here, i.e. the difference in semantic distance to a certain common hypernym, reveals a general problem in applied linguistic research on semantic relations: Does the common hypernym need to be at the same semantic distance for both co-hyponyms? In other words: Many semantic relations are highly underspecified when it comes to their operationalization \parencite[5]{baroniHowWeBLESSed2011}. Therefore, we need to establish both a precise definition of semantic distance and a general threshold for that distance when detecting co-hyponymy.
+
+Since we follow, in this work, a distributional semantic approach, the distance in hyponymy relations can only refer to the distributional similarity of the considered words, i.e. hyponymy pairs with a more similar distribution of typical context words will have less semantic distance than those with rather different contexts. Regarding a threshold, there is no obvious intuition where to put it, not even on a discrete scale like the distinct WordNet synsets. There, the two extremes would be 1 (hypernyms must be directly related) or 0 (any amount of steps along the transitivity chain is allowed). Applying that simple binary choice to our continuous distributional perspective, there is no obvious numeric value (such as cosine distance in a \gls{CVS}) that would correspond to the extreme of 1 in WordNet because a cosine distance of 0 corresponds to proportional vectors, which is generally only the case if all usage contexts of two words in a corpus are exactly similar. Therefore, as an initial working hypothesis, we adopt the other extreme and argue that all words with a common hypernym, independent of the respective semantic distance, can be regarded as co-hyponyms. In that sense, \textit{Iesus} `Jesus' and \textit{scriba} `scribe' from the fourth example are distantly related co-hyponyms, their relation being somewhat similar to that in the third example.
+
+Operating at the interface of semantics and syntax, we also need to consider coreference and its resolution. While a token like \textit{eis} `them' could, in other contexts, be read as a neuter form indicating an antecedent like \textit{verba} `words'\footnote{\url{https://cts.perseids.org/api/cts/?request=GetPassage&urn=urn:cts:latinLit:phi0474.phi040.perseus-lat1:21-40}. For ancient text passages that are not present in any of the treebanks, but do exist in the Perseus Digital Library \parencite{cranePerseusDigitalLibrary2023}, we shall use persistent identifiers according to the Canonical Text Services \parencite{clericePerseidsCanonicalText} protocol as part of the CITE architecture \parencite{blackwellCanonicalTextServices2015}.}, it does point to the animate collective of \textit{mater} `mother' and \textit{fratres} `brothers' (PROIEL 10470) in the present case, thus drawing a possible parallel to \textit{centurio} `commander' (PROIEL 13055), which designates an animate entity as well. Insofar, coreference resolution can help us identify potential further semantic relations between nouns. However, the syntactical (indirect object vs. nominal subject) and morphological (dative plural vs. nominative singular) differences between the two considered instances are important contraindications of a close semantic relation. Thus, we need to add syntactic constraints to our model of hyponymy, where a simple and strict starting point might be syntactic equivalence on the token level. Again, this will probably increase the precision of our method, at the expense of recall.
+
+Finally, example six from Table \ref{tableCosSimWordSubstitutionNouns} leads us to the paradigmatic relation between \textit{tabernacula} `tents' and \textit{nidos} `nests'. While a tent seems like a far-fetched analogy to a bird's nest and, consequently, has motivated various textual critics to assume an interpolation in the manuscript tradition, it is not our mission to solve such problems here. Instead, we rely on the text edition used in PROIEL and consider \textit{tabernacula} `tents' to be somewhat synonymous to \textit{nidos} `nests' in this very specific context. The underlying process is that of a metaphor with a source and target domain \parencite[275]{pantherMetaphorMetonymyLanguage2017}, probably much in the way as \textit{tabernaculum} `tent' is used to describe some people's commitment to philosophy\footnote{\url{https://cts.perseids.org/api/cts?request=GetPassage&urn=urn:cts:latinLit:phi0474.phi037.perseus-lat1:1.1-1.20}.}. If our intuition is correct and the analogy is restricted to a limited semantic use case, to be recognized by the limited range of words that can appear in the same sentence, then we should expect the two related target words to share barely any other contexts (or none at all). This hypothesis can be operationalized and tested using distributional measures like cosine distance in a \gls{CVS}.
+
+Using the additional syntactic constraint of functional equivalence, we obtain, in addition to the results showed in Table \ref{tableCosSimWordSubstitutionNouns}, a list of further potential co-hyponyms (see Table \ref{tableAlmostIdenticalPROIELsentencesEquivalentSyntax}). From that new collection of results, we can quickly identify three cases (examples 1, 4 and 5) of near-synonymy. There is but a very narrow difference between the respective terms for bed, speech and inscription in these specific contexts. In example 4, we may note that, in the Latin WordNet, \textit{sermo} `talk' and \textit{verbum} `word' share a common hypernym synset\footnote{\url{https://latinwordnet.exeter.ac.uk/api/synsets/n/00019671/}.} at the third and fourth layer, respectively, of their hypernymy chain. Intuitively, we may think that their semantic distance (as indicated by their theoretical hypernymy chains) is rather moderate. However, as these text passages show us, the two can be almost indistinguishable in very specific contexts, such as being used in variations of a \textit{figura etymologica} where a major function of the accusative object is to intensify the verbal semantics \parencite[438]{mengeLehrbuchLateinischenSyntax2009}. Besides, we need to keep in mind that WordNet is a largely intuitive and theoretical resource, which may very well be contradictory to what we actually find in Latin language use. 
+
+\begin{table}[ht]
+	\begin{tabular}{p{\linewidth}}
+    \ex[exno=PROIEL 62941]
+        \begingl
+            \gla toll-e \textbf{lect-um} tu-um et vad-e in dom-um tu-am //
+            \glb lift-{\sc imp.sg} bed-{\sc n.sg.acc} your-{\sc n.sg.acc} and go-{\sc imp.sg} to house-{\sc f.sg.acc} your-{\sc f.sg.acc} //
+            \glft take your bed and go to your house //
+        \endgl
+        \xe \\
+	\ex[exno=PROIEL 47413]
+        \begingl
+            \gla toll-e \textbf{grabatt-um} tu-um et vad-e in dom-um tu-am //
+            \glb lift-{\sc imp.sg} mattress-{\sc n.sg.acc} your-{\sc n.sg.acc} and go-{\sc imp.sg.} to house-{\sc f.sg.acc} your-{\sc f.sg.acc} //
+            \glft take your mattress and go to your house //
+        \endgl
+    \xe \\ \hline
+	\ex[exno=PROIEL 13284]
+        \begingl
+            \gla qui autem minor e-st in regn-o \textbf{cael-orum} maior e-st ill-o //
+            \glb who but lesser be-{\sc 3sg} in kingdom-{\sc abl} heaven-{\sc gen.pl} greater be-{\sc 3sg} he-{\sc m.sg.abl} //
+            \glft but who is lesser in the kingdom of heavens is greater than him //
+        \endgl
+    \xe \\
+	\ex[exno=PROIEL 16820]
+        \begingl
+            \gla qui autem minor e-st in regn-o \textbf{De-i} maior e-st ill-o //
+            \glb who but lesser be-{\sc 3sg} in kingdom-{\sc abl} god-{\sc gen} greater be-{\sc 3sg} he-{\sc m.sg.abl} //
+            \glft but who is lesser in the kingdom of God is greater than him //
+        \endgl
+    \xe \\ \hline
+    \ex[exno=PROIEL 13515]
+        \begingl
+            \gla et ai-t \textbf{puer-is} su-is //
+            \glb and say-{\sc pf.3sg} servant-{\sc dat.pl} his-{\sc dat.pl} //
+            \glft and he told his servants //
+        \endgl
+    \xe \\
+	\ex[exno=PROIEL 11363]
+        \begingl
+            \gla et ai-t \textbf{discipul-is} su-is //
+            \glb and say-{\sc pf.3sg} disciple-{\sc dat.pl} his-{\sc dat.pl} //
+            \glft and he told his disciples //
+        \endgl
+    \xe \\ \hline
+    \ex[exno=PROIEL 14018]
+        \begingl
+            \gla interroga-bo vos et ego un-um \textbf{sermo-nem} //
+            \glb ask-{\sc fut.1sg} you also I one-{\sc m.sg.acc} talk-{\sc m.sg.acc} //
+            \glft I also will ask you one thing //
+        \endgl
+    \xe \\
+	\ex[exno=PROIEL 11133]
+        \begingl
+            \gla interroga-bo vos et ego un-um \textbf{verb-um} //
+            \glb ask-{\sc fut.1sg} you also I one-{\sc n.sg.acc} phrase-{\sc n.sg.acc} //
+            \glft I also will ask you one thing //
+        \endgl
+    \xe \\ \hline
+    \ex[exno=PROIEL 14106]
+        \begingl
+            \gla cu-ius e-st imago h-aec et \textbf{suprascripti-o} //
+            \glb who-{\sc m.sg.gen} be-{\sc 3sg} image this-{\sc f.sg.nom} and inscription-{\sc f.sg.nom} //
+            \glft whose image and inscription is this? //
+        \endgl
+    \xe \\
+	\ex[exno=PROIEL 11183]
+    	\begingl
+            \gla cu-ius e-st imago h-aec et \textbf{inscripti-o} //
+            \glb who-{\sc m.sg.gen} be-{\sc 3sg} image this-{\sc f.sg.nom} and inscription-{\sc f.sg.nom} //
+            \glft whose image and inscription is this? //
+        \endgl
+    \xe \\ \hline
+    \ex[exno=PROIEL 14124]
+    	\begingl
+        	\gla responde-ns autem \textbf{Iesus} ai-t ill-is //
+        	\glb answer-{\sc part.pres} but Jesus say-{\sc perf.3sg} he-{\sc m.dat.pl} //
+          	\glft but Jesus told them in response //
+        \endgl
+    \xe \\
+    \ex[exno=PROIEL 14548]
+    	\begingl
+        	\gla responde-ns autem \textbf{praeses} ai-t ill-is //
+        	\glb answer-{\sc part.pres} but governor say-{\sc perf.3sg} he-{\sc m.dat.pl} //
+          	\glft but the governer told them in response //
+        \endgl
+    \xe
+	\end{tabular}
+	\caption{Nouns in almost identical sentences from PROIEL, with equivalent syntactical structure. Target tokens are highlighted in bold.}
+	\label{tableAlmostIdenticalPROIELsentencesEquivalentSyntax}
+\end{table}
+
+Generally, our choice of temporarily neglecting semantic distance for the consideration of co-hyponymy forces us to regard many (near-)synonyms, antonyms, etc., also as co-hyponyms. Consequently, we have to allow multiple relationships between two entities of our framework, namely multiple semantic relations between two entities (i.e., lexemes or, more empirically, tokens). Such a complexity is problematic in applied linguistics \parencite[2]{hendrickxSemeval2010TaskMultiway2019} and machine learning \parencite[5836]{zellersNeuralMotifsScene2018} because it leads to a more ambitious classification target for computational models. One way to avoid and reduce that complexity is to consider each relation separately in a graph setting and combine all relation graphs into a large multigraph in the end \parencites{krauseSargraphsLanguageResource2016}{pinterPredictingSemanticRelations2018}, which is compatible with our abstract requirement of having multiple semantic relations between two entities.
+
+Examples three and six from Table \ref{tableAlmostIdenticalPROIELsentencesEquivalentSyntax} are similar to the \textit{Iesus - scriba} `Jesus - scribe' case from Table \ref{tableCosSimWordSubstitutionNouns}: Both entities are animate and (at least somewhat) human, which is sufficient as a precondition to act as speakers in dialogical contexts. The second example, on the other hand, is a bit harder to tackle: Both \textit{caelorum} `of heavens' and \textit{Dei} `of god' are nominal modifiers to \textit{regno} `kingdom'. Since, in the New Testament, the Christian god is imagined as a ruler of heaven, we may conclude that the first instance points to the sphere or region of his rule, while the second one emphasizes the ruler himself. In contrast to most other examples shown here, they share a syntagmatic rather than a paradigmatic relation. We can observe this in the distribution of types on the sentence level:
+
+\begin{itemize}
+    \item \textit{caelorum}: ('\textbf{regnum}', 25), ('est', 21), ('in', 20), ('et', 19), ('qui', 14), ('simile', 9), ('\textbf{regno}', 7), ('autem', 7), ('homini', 6), ('enim', 5), ('vobis', 5), ('de', 4), ('quia', 4), ('non', 4), ('suo', 4), ('adpropinquavit', 3), ('dico', 3), ('nisi', 3), ('\textbf{intrabit}', 3), ('quod', 3), ('maior', 3), ('a', 3), ('agro', 3)
+    \item \textit{Dei}: ('et', 537), ('in', 460), ('qui', 214), ('est', 208), ('non', 120), ('ut', 90), ('per', 86), ('fuit', 83), ('ad', 79), ('quae', 79), ('autem', 76), ('sunt', 70), ('quia', 67), ('cum', 65), ('\textbf{Dei}', 64), ('enim', 64), ('sed', 59), ('\textbf{Iesu}', 59), ('vobis', 56), ('\textbf{regnum}', 55), ('vos', 53), ('ne', 51), ('quod', 50), ('\textbf{Christi}', 50), ('de', 45), ('que', 42), ('quoniam', 39), ('si', 39), ('a', 38), ('ex', 33), ('ergo', 31), ('omnibus', 31), ('nos', 31), ('\textbf{Filius}', 31), ('\textbf{verbum}', 31), ('secundum', 31)
+\end{itemize}
+
+Both distributions are sorted by type frequency in descending order and cut off at a frequency of 2 and 30, respectively, for better legibility. In general, the frequencies are higher for \textit{Dei} `of god' because it occurs more often in the PROIEL corpus. This also affects the ranking of types (see \hyperref[functionWordsZipfDistribution]{above}), which is dominated in both cases by function words such as \textit{est} `he/she/it is', \textit{in} `in' or \textit{et} `and'. The case of \textit{caelorum} `of heavens' is a bit special, though, because the distribution ranking is lead by \textit{regnum} `kingdom', a noun that it typically modifies (`kingdom of heavens'). This prominent position in the ranking can be seen as an indication of idiomatization, i.e., the metaphor of the Christian god as a ruler and of heaven as the land which he rules has become the primary understanding and purpose of the type \textit{caelorum} `of heavens'. This is supported by the fact that morphological variants of the modified noun (such as \textit{regn-o} `kingdom-{\sc sg.abl}') follow not far behind in the ranking. While \textit{regnum} `kingdom' is also a frequent collocate for \textit{Dei} `of god', it does not lead the ranking and is accompanied by other equally frequent types like \textit{Iesu} `of Jesus', \textit{Christi} `of Christ' or \textit{Filius} `son'. Thus, the term's meaning is broader and more flexible, which correlates with its higher overall frequency in the corpus (see \hyperref[highFrequencyhighPolysemy]{below}).
+
+Besides those general considerations, we may also note that both terms have strikingly distinctive collocates like \textit{intrabit} `he/she/it will enter' (sc. heaven) and \textit{verbum} `word' (sc. of god), which cannot be easily combined with the respective other term. Finally, \textit{Dei} `of god' collocates significantly with itself (burstiness), which can be a hint of ongoing definitional processes \parencite[361]{brookesCorrelationCollocationCohesion2020} and a theocentric perspective on religion \parencite[11]{callisterKeynessCollocationDistinctions2021}, both of which are plausible explanations in the case of the New Testament. Considering our focus on hyponymy, there is no intuitive way of discarding such examples from the search without sacrificing a lot of true positives. For the time being, it is worthwhile to accept a few hard negatives in exchange for increased precision and recall.
+
+\section{Measuring Semantic Distance}
+While we decided to consider, in principle, any semantic distance as eligible for hyponymy relations, we will nevertheless try to leverage measurements of such distance to improve our detection heuristics. One way of operationalizing semantic distance in a distributional framework lies in the comparison of lexical contexts in a syntactically confined space, such as segment-level token co-occurrences in a text corpus. This kind of approach will typically leave us with thousands of pairwise distributions to be assessed. To do so in a systematic manner, we need a suitable statistical methodology, in the form of \gls{DSM}s. One highly relevant \gls{NLP} task in that regard is language modeling. Traditional approaches have been around since at least 1980 \parencite[1270]{rosenfeldTwoDecadesStatistical2000} and, more recently, include combinations of pre-training and fine-tuning \parencite[1547]{hintonFastLearningAlgorithm2006}, which have been overwhelmingly popular since the emergence of ever larger language models \parencites{devlinBERTPretrainingDeep2019}{lewisBartDenoisingSequencetosequence2019}{songMassMaskedSequence2019}{ben-davidPERLPivotbasedDomain2020}{chungRethinkingEmbeddingCoupling2020}{joshiSpanBERTImprovingPretraining2020}{kaleNmT5ParallelData2021}{luKELMKnowledgeEnhanced2021}{wangERNIETitanExploring2021}{zouControllableGenerationPretrained2021}{cuiPERTPretrainingBERT2022}{zhangOPTOpenPretrained2022}. However, reusing pre-trained models is not always an option in corpus linguistics. Since we are interested in semantics as evident from the PROIEL corpus, we must not use models with external information because it would contaminate (and possibly override) the distributional information contained in our relatively small text collection. Thus, we proceed by reusing the existing OPT model architecture \parencite{zhangOPTOpenPretrained2022}, but training from scratch instead of reusing random readily available parameters. 
+
+Following recent standard practice, we provide a model card \parencite[222]{mitchellModelCardsModel2019} for our trained model, based on the official information provided by Meta for OPT and Llama\footnote{\url{https://huggingface.co/facebook/opt-350m}; \url{https://github.com/facebookresearch/llama/blob/main/MODEL_CARD.md}}:
+\subsection{Model Card: Latin OPT}
+\subsubsection{Model Details}
+\begin{itemize}[font=\bfseries]
+    \item[Model Developer] Konstantin Schulz
+    \item[Variations] Latin OPT is a single model with 41 million parameters.
+    \item[Input] Models input text only.
+    \item[Output] Models generate text only. 
+    \item[Model Architecture] Latin OPT is an auto-regressive language model that uses an optimized transformer architecture. \\
+    \begin{table}[H]
+        \centering
+        \begin{tabular}{c|c|c|c|c}
+        Training Data & Params & Content Length & Tokens & LR \\ \hline
+        PROIEL treebank & 41M & 512 & 220k & 3.0 x $10^{-4}$
+        \end{tabular}
+        \caption{Model Architecture for Latin OPT, where `Params' is short for the overall number of model parameters and `LR' represents the initial learning rate.}
+        \label{tab:latin_opt_architecture}
+    \end{table}
+    \item[Model Dates] Latin OPT was trained in August 2023.
+    \item[Status] This is a static model trained on an offline dataset. No future versions are planned at the moment.
+    \item[License] MIT license, available at: \url{https://github.com/facebookresearch/metaseq/blob/main/LICENSE}
+    \item[Research Paper] More information can be found in the paper "OPT: Open Pre-trained Transformer Language Models", available at \url{https://arxiv.org/abs/2205.01068}.
+    \item[Questions or comments] Instructions on how to provide feedback or comments on the model can be found in the \href{https://github.com/facebookresearch/metaseq#support}{support} section. 
+\end{itemize}
+\subsubsection{Intended Use}
+Latin OPT can be used for prompting for evaluation of downstream tasks as well as text generation. In addition, the model can be fine-tuned on a downstream task.
+\subsubsection{Hardware and Software}
+\begin{itemize}[font=\bfseries]
+    \item[Training Factors] We used Google Colab\footnote{\url{https://colab.research.google.com/}} for pretraining. Application and evaluation were performed on private hardware.
+    \item[Carbon Footprint] Pretraining utilized a cumulative 4 GPU hours of computation on hardware of type T4-16GB (TDP of 70W). Estimated total emissions were 140 gCO2eq. 
+\end{itemize}
+\subsubsection{Training Data}
+\begin{itemize}[font=\bfseries]
+    \item[Overview] Latin OPT was trained on 220,000 tokens of data from the PROIEL treebank.
+    \item[Data Freshness] The training data originates from the 2018 release of the PROIEL treebank. 
+\end{itemize}
+\subsubsection{Evaluation Results}
+We did not perform any evaluation on public benchmarks because Latin OPT is too specialized for generic datasets.
+\subsubsection{Ethical Considerations and Limitations}
+Latin OPT is a new technology that carries risks with use. Testing conducted to date has been in Latin, and has not covered, nor could it cover all scenarios. For these reasons, as with all LMs, Latin OPT’s potential outputs cannot be predicted in advance, and the model may in some instances produce inaccurate, biased or other objectionable responses to user prompts. Therefore, before deploying any applications of Latin OPT, developers should perform safety testing and tuning tailored to their specific applications of the model.
+
+\subsection{Cosine Similarity between Segment Pairs}
+Using the newly trained model, we can compute the cosine distance between vector embeddings. Ideally, these embeddings should be calculated per token, not per segment. Unfortunately, our first approach at tokenization uses a vocabulary that is derived from Byte Pair Encoding \parencite[1716]{sennrichNeuralMachineTranslation2016}, i.e., an inventory of 10,000 byte sequences. This inventory starts out with a collection of all distinct bytes ($\sim$ characters) in the corpus and then continues to fill empty slots by merging the most frequent byte combinations into longer units. Since a vocabulary of 10,000 is rather large for a small text corpus like PROIEL (31,504 types), the tokenizer is able to represent most tokens using a single entry from the inventory. In some cases, frequent combinations of types (collocations etc.) get merged as well, leading to single representations for groups of tokens. As a consequence, the vectors that we receive as output by the model cannot be mapped consistently to single tokens anymore. Two possible countermeasures are 
+\begin{enumerate}
+    \item prohibiting merges of byte sequences, i.e., operating with a tiny vocabulary that only covers single characters, but not character sequences, or
+    \item tokenizing only on the basis of entire types instead of bytes.
+\end{enumerate}
+
+Option 2 would work nicely in our confined setup, but fails to generalize to unseen data (out-of-vocabulary types; see \cite[57]{paradaSpokenTermDetection2010}). Besides, the vocabulary would have to grow infinitely corresponding to the size of training data, which is impractical as it would lead to much larger models, thereby increasing the time and cost of the calculations. Option 1, on the other hand, generalizes quite nicely at first glance: any text can be represented by the universal inventory of bytes. However, this also makes the model less expressive: Types in agglutinative languages such as Latin can become rather lengthy, like \textit{honorificentissimam} `most honorable-{\sc f.sg.acc}' (PROIEL 225208). Representing them byte by byte means that the final global representations for each byte will be informed by all occurrences of said byte, which probably amounts to many rather different types. Thus, the linguistic information contained in the byte representation will be far away from our traditional notions of characters, types or lemmata \parencite[1718]{sennrichNeuralMachineTranslation2016}. Ultimately, since we really want a stable deterministic detokenization, we need to retrain the (model and) tokenizer, forcing them to respect token boundaries (such as whitespace) in their merging rules.
+
+Using the updated model and tokenizer, we obtain the cosine similarities for the text pairs provided in tables \ref{tableCosSimWordSubstitutionNouns} and \ref{tableAlmostIdenticalPROIELsentencesEquivalentSyntax} (see Table \ref{tab:cosSim1TokChangedProiel}). By sorting the similarity values in descending order, we get the direct visual impression of an inverted pyramid shape, which indicates a correlation of cosine similarity with text length, a well-known problem in research on semantic comparisons of longer texts \parencite[40]{singhalModernInformationRetrieval2001}. A quick statistical analysis reveals Pearson's correlation coefficient to be 0.57 for the cosine values and the pairwise mean character count, which can be interpreted as a solid positive correlation. Conceptually, this is not necessarily what we want: longer texts can be semantically more precise than shorter ones, thus not suggesting disregard for the purpose of hyponymy detection solely based on their length per se.
+
+\begin{table}[ht]
+    \centering
+    % move entire table to the left, so all texts are displayed correctly
+    \hspace*{-3cm}
+    \begin{tabular}{c|c|c}
+    Cosine Similarity & Sentence 1 & Sentence 2 \\ \hline
+    0.99913 & vulpes foveas habent et volucres caeli \textbf{tabernacula} & vulpes foveas habent et volucres caeli \textbf{nidos} \\
+    0.99909 & cuius est imago haec et \textbf{suprascriptio} & cuius est imago haec et \textbf{inscriptio} \\
+    0.9967 & et ecce vox de \textbf{caelis} dicens & et ecce vox de \textbf{nube} dicens \\
+    0.97526 & tolle \textbf{lectum} tuum et vade in domum tuam & tolle \textbf{grabattum} tuum et vade in domum tuam \\
+    0.96394 & qui autem minor est in regno \textbf{caelorum} maior est illo & qui autem minor est in regno \textbf{Dei} maior est illo \\
+    0.95523 & interrogabo vos et ego unum \textbf{sermonem} & interrogabo vos et ego unum \textbf{verbum} \\
+    0.92421 & nonne et \textbf{publicani} hoc faciunt & nonne et \textbf{ethnici} hoc faciunt \\
+    0.91422 & et ait \textbf{pueris} suis & et ait \textbf{discipulis} suis \\
+    0.8273 & sexta \textbf{feria} in Syon & sexta \textbf{die} in Syon \\
+    0.72061 & respondens autem \textbf{Iesus} ait illis & respondens autem \textbf{praeses} ait illis \\
+    0.59476 & et ait illi \textbf{Iesus} & et ait illi \textbf{scriba} \\
+    0.52413 & et respondens \textbf{centurio} ait & et respondens \textbf{eis} ait \\
+    \end{tabular}
+    \caption{Cosine similarities for selected sentence pairs from PROIEL, with target tokens highlighted in bold}
+    \label{tab:cosSim1TokChangedProiel}
+\end{table}
+
+To verify this problematic correlation systematically at the corpus level, i.e., beyond the inspection of singular examples, we
+\begin{enumerate}
+    \item take the $\sim$ 30,000 types in the PROIEL corpus,
+    \item discard all Hapax Legomena because we need at least two instances for comparison,
+    \item for each type, extract all segments where this type occurs and order them by text length,
+    \item calculate cosine similarity for neighboring segment pairs and specify their common text length to be the average of their individual text lengths,
+    \item calculate the average cosine similarity for each text length (combined for all types; see Fig. \ref{figure:cosineSimilarityVsTextLength}),
+\end{enumerate}
+
+\begin{figure}[ht]
+	\includegraphics[width=\linewidth]{cosine_similarity_vs_text_length.pdf}
+	\caption{Correlation of cosine similarity and mean pairwise average text length. Each blue dot represents the average pairwise cosine similarity between segment pairs with a given average text length in characters. The red line indicates a linear regression of average cosine similarity and text length.}
+	\label{figure:cosineSimilarityVsTextLength}
+\end{figure}
+
+Using this approach, we may observe at least two things:
+\begin{enumerate}
+    \item Cosine similarity tends to exhibit higher variance for longer texts. The dispersion of blue dots in the graph from left to right resembles that of a shotgun blast. This is possibly true for very short texts as well, but cannot be reasonably discerned from this mode of presentation, especially with regard to the scale of the x-axis.
+    \item There is a positive correlation of cosine similarity and text length, even at the corpus level. $\sim$ 800 characters of additional text length seem to lead to an increase of 0.2 in cosine similarity. By definition, this correlation is limited to the point where all examples get a value of 1. An accumulation of this trend can be seen in the range of texts with length 400-800, where relatively many instances attain that highest value, making comparisons based on cosine similarity rather ineffective. Since the mean segment length (in characters) is 71 for the entire PROIEL corpus and we find relatively few segments of length >200 (see Fig. \ref{figure:SegmentLengthsProiel}), we may assume that this extreme manifestation is negligible for our purposes.
+\end{enumerate}
+
+\begin{figure}[ht]
+	\includegraphics[width=\linewidth]{segment_lengths_proiel.pdf}
+	\caption{Number of segments for various amount of text lengths. Text length is presented using a log scale to optimize the view of the distribution for the most frequent cases in PROIEL.}
+	\label{figure:SegmentLengthsProiel}
+\end{figure}
+
+%TODO: distance between closest common hypernym for some of the examples, from Python "wordnet.py"
+% TODO: continue here...
 
 \section{High Variance in Low-Frequency Types: A Case Study on Dis Legomena}
 In a first attempt to analyze possible confounding variables in our approach to Latin polysemy, we look at the occurrence frequencies for every lemma and make two important observations (see Fig. \ref{figure:cosineDistanceVsFrequency}):
@@ -579,16 +706,19 @@ The second observation may serve as a reminder that we have to be particularly c
 	\item Hapax Legomena have been discarded from the inspection because they only have one vector and cosine distance is not easily applicable to anything but pairs of vectors.
 	\item The vectors are computed using distributional information (i.e. which other words appear in the sentence) and positional encoding. If a lemma appears twice in a sentence, the vectors for the two instances will differ mainly in their positional encoding, but not so much in the distributional information. This leads to very similar vectors with a low cosine distance.
 \end{itemize}
-Therefore, lemmata with 2 occurrences that both stem from the same sentence (e.g. \textit{Augustofratensis, Constantinopolis} or \textit{Sychem}, found in PROIEL 57662, 57780 and 23738, respectively) are prime examples for a low degree of polysemy. The phenomenon of low-frequency words tending to appear multiple times in quick succession (instead of a smooth distribution over the whole corpus) is referrd to as burstiness. It often results from a topical focus, which in turn influences lexis \parencite[99]{pierrehumbertBurstinessVerbsDerived2012}. This is also true for PROIEL, as we can quickly determine from a simple calculation: 1,271 lemmata are Dis Legomena, i.e. they occur exactly twice in the corpus. 37 of them occur only within a single sentence. Thus, the observed probability of encountering both instances of a Dis Legomenon in a specific sentence is 37 / 19,335 = 0.002 , where 19,335 is the total number of sentences in the corpus. If, on the other hand, we take up a theoretical position and naively expect an equal probability of occurrence for Dis Legomena in each sentence, our expectation would look like this:
+Therefore, lemmata with 2 occurrences that both stem from the same sentence (e.g. \textit{Augustofratensis, Constantinopolis} or \textit{Sychem}, found in PROIEL 57662, 57780 and 23738, respectively) are prime examples for a low degree of polysemy. The phenomenon of low-frequency words tending to appear multiple times in quick succession (instead of a smooth distribution over the whole corpus) is referrd to as burstiness. Borrowing terminology from formal semantics, we may state that this burstiness is associated with a certain degree of logicality \parencite[178f.]{vonfintelFormalSemanticsGrammaticalization1995} or permutability \parencite[2]{altmannWordFrequencyBursts2009}: Words with a strong tendency towards burstiness are more logical and less permutable, i.e., more stable in their meaning even if the discourse context changes. \textit{Augustofratensis, Constantinopolis} and \textit{Sychem} are geographical references to ancient cities or provinces. Their meaning does not change, regardless of whether the respective entity is being founded, conquered, destroyed or acts as the birthplace of some famous person.
+
+Besides, it is worth noting that burstiness often results from a topical focus, which in turn influences lexis \parencite[99]{pierrehumbertBurstinessVerbsDerived2012}. This topical focus also exists in PROIEL to some extent, as we can quickly determine from a simple calculation: 1,271 lemmata are Dis Legomena, i.e. they occur exactly twice in the corpus. 37 of them occur only within a single sentence. Thus, the observed probability of encountering both instances of a Dis Legomenon in a specific sentence is 37 / 19,335 = 0.002 , where 19,335 is the total number of sentences in the corpus. If, on the other hand, we follow the open-choice principle \parencite[109f.]{sinclairCorpusConcordanceCollocation1991} and naively assume an equal probability of occurrence for Dis Legomena in each sentence and token, our expectation would look like this:
 \begin{itemize}
 	\item In the whole corpus, there are 19,335 sentences with 217,797 tokens, which in turn derive from 8,872 lemmata.
-	\item On average, each sentence contains about 11 tokens. Each of them could belong to any lemma. The probability of meeting an instance of a specific lemma at a specific place in the sentence is 1 / 8,872 = 0.0001 . An average sentence could be modeled as a sequence of Bernoulli trials, where the chance of success (i.e. meeting a specific lemma) at each token is 0.0001 . The chance of meeting that same lemma exactly twice in a sentence is then \( P(k) = \binom{n}{k} \times p^k \times q^{n-k} \), where \textit{n} is the number of trials, \textit{k} is the desired number of successes, \textit{p} is the probability of success and \textit{q} the one of failure.
-	\item Thus, \( P(k) = \binom{11}{2} \times 0.0001^2 \times 0.9999^{11-2} = 55 \times 0.00000001 \times  0.9991 = 0.0000005 \). Since we want to exclude any lemmata that are not Dis Legomena, we have to divide that result by a factor that corresponds to the fraction of Dis Legomena compared to all lemmata, i.e. 1,271 / 8,872 = 0.14 . As a consequence, our theoretical chance of encountering both instances of a Dis Legomenon in the same sentence becomes even smaller (0.00000007).
+	\item On average, each sentence contains about 11 tokens. Each of them could belong to any lemma. The probability of meeting an instance of a specific lemma at a specific place in the sentence is 1 / 8,872 = 0.0001 . An average sentence could be modeled as a sequence of Bernoulli trials, where the chance of success (i.e. meeting a specific lemma) at each token is 0.0001 . The chance of meeting that same lemma exactly twice in a sentence is then \( P(k) = \binom{n}{k} \times p^k \times q^{n-k} \), where \textit{n} is the number of trials, \textit{k} is the desired number of successes, \textit{p} is the probability of success and \textit{q} the probability of failure.
+	\item Thus, we can calculate \( P(k) = \binom{11}{2} \times 0.0001^2 \times 0.9999^{11-2} = 55 \times 0.00000001 \times  0.9991 = 0.0000005 \). Since we want to exclude any lemmata that are not Dis Legomena, we have to divide that result by a factor that corresponds to the fraction of Dis Legomena compared to all lemmata, i.e. 1,271 / 8,872 = 0.14 . As a consequence, our theoretical chance of encountering both instances of a Dis Legomenon in the same sentence becomes even smaller (0.00000007).
 \end{itemize}
 
-Now, we can compare that theoretical value (0.00000007) to the actually observed probability of encountering both instances of a Dis Legomenon within the same sentence (0.002), which is almost 30,000 times higher. This immense deviation from our expectations leads to the conclusion that Bernoulli Trials are not a good model for lexis in sentences of this Latin corpus. We may even go further and argue that many statistical measures cannot be reasonably applied to language corpora because their mathematical preconditions are not met by the data \parencite[110]{shadrovaMeasuringCoselectionalConstraint2020}. In particular, the words in a corpus are not distributed equally and their relative frequencies do not converge after a certain amount of time \parencite[5]{debowskiNaturalLanguagePerigraphic2018}.
+Now, we can compare that theoretical value (0.00000007) to the actually observed probability of encountering both instances of a Dis Legomenon within the same sentence (0.002), which is almost 30,000 times higher. This immense deviation from our expectations leads to the conclusion that Bernoulli Trials are not a good model for lexis in sentences of this Latin corpus. We may even go further and argue that many statistical measures cannot be reasonably applied to language corpora because their mathematical preconditions are not met by the data \parencite[110]{shadrovaMeasuringCoselectionalConstraint2020}. In particular, the words in a corpus are not distributed equally and their relative frequencies do not converge after a certain amount of text or time \parencite[5]{debowskiNaturalLanguagePerigraphic2018}.
 
 %TODO: Alternativen zu TTR für lexikalische Dichte?
+\label{highFrequencyhighPolysemy}
 The \hyperref[firstObservation]{first observation}, on the other hand, suggests a positive correlation between polysemy and usage frequency: Words that we use more frequently tend to be more flexible in their meaning from a distributional point of view \parencite[576]{crossleyDevelopmentPolysemyFrequency2010}. We can verify that claim by subsampling a specific amount of usage contexts for every type in the corpus and calculating the \gls{TTR} \parencites[229]{kettunenCanTypetokenRatio2014}[1]{hamiltonDiachronicWordEmbeddings2016} for them:
 
 \begin{enumerate}
@@ -677,9 +807,6 @@ Correspondingly, the second letter shows two potential outcomes that Cicero wish
 	\item Atticus should get the officials on Cicero's side (if he gets the chance)
 \end{enumerate}
 
-
-
-%TODO: FIX THIS
 The distribution of cluster size seems to follow a Zipfian distribution (see Fig. \ref{figure:cluster_size_distribution}). 
 
 \begin{figure}[ht]
@@ -690,6 +817,7 @@ The distribution of cluster size seems to follow a Zipfian distribution (see Fig
 
 All merged clusters consist of usage contexts for the same lemma, i.e., there are no cross-lexeme clusters. This does not change if we lower the similarity threshold to 0.8, 
 
+%TODO: finish this sentence/paragraph
 %TODO: mbert demo, document-level domain embeddings, glossing; explain custom glosses?
 
 %As for the gold standard on hyponymy, the Latin part of the WordNet was used. In a very basic approach, we will extract from it the explicit hyponym and hypernym pairs only for nouns, converting both to the notation of "hyponym,hypernym". This ignores additional properties like transitivity in order to create an explicit empirical baseline for later comparison. Besides, since there is no previous empirical knowledge from applying machine learning to hyponymy detection in Latin, we shall transform the complex problem to a much simpler one and then, gradually, reintroduce the complexity: At the very beginning, the machine's task will be to detect whether there are instances of hyponymy in a given sentence or not, which is called binary classification because there are only two options (either there are some instances or there are none). Eventually, the most complex question may look something like this: Given a Latin text passage, which words in it are hyponyms of which other ones and which word sense do they express in that specific context? Notably, the main dimensions of complexity are the following:

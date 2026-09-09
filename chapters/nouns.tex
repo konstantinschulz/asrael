@@ -1,0 +1,12 @@
+\chapter{Nouns}
+Our choice of nouns as the target for hyponymy detection is motivated by evidence from language learning. It suggests that nouns are usually easier to acquire, especially in most modern languages, where this class of words is particularly important in everyday language use \parencite[9]{garcia-gamezLearningNounsVerbs2019}. This is relevant for our research because, nowadays, many learners of Latin have acquired as L1 one of the `noun-dependent' languages, e.g. German or French \parencite[51-52]{baidakKeyDataTeaching2017}. Therefore, it makes sense to build on their individual preconditions and focus, at least initially, on those word classes that are also important in their L1. However, Latin has often been described as verb-heavy language \parencite[41]{mengeLehrbuchLateinischenSyntax2009}. This claim is supported by comparing the noun-to-verb ratio \parencite[300]{stollNounsVerbsChintang2012} of the PROIEL corpus to the Hamburg Dependency Treebank \parencite{borgesvolkerHDTUDVeryLarge2019} and the French Treebank (\cite{seddahCheatingParserDeath2018}; see Table \ref{tableNounToVerbRatio}).
+\begin{table}[ht]
+	\begin{tabular}{ c | c | c | c }
+  		 & PROIEL & French Treebank & Hamburg Dependency Treebank \\ \hline
+  		Noun-to-Verb Ratio & 0.50 & 0.71 & 0.73 \\
+	\end{tabular}
+	\caption{Noun-to-verb ratio for different treebanks in the Universal Dependencies corpus (Latin, French, German; \cite{nivreUniversalDependenciesV12016}).}
+	\label{tableNounToVerbRatio}
+\end{table}
+
+The lower ratio indicates that Latin authors use fewer nouns, relative to their usage of verbs and compared to authors of modern European languages. This typological difference seems to demand a stronger focus on verbs instead of nouns, at least for Latin. Nonetheless, it has been shown that nouns play a substantial role in the early stages of language acquisition, especially in the understanding of subcategorization frames for verbs \parencite[1383]{yuanCountingNounsSimple2012}. If this is applicable to historical languages as well, we should rather rely on finding suitable combinations, provided that there is a useful formalization of hyponymy for the different parts of speech. The focus on a single word class (in our case: nouns) is one initial step in that direction.
