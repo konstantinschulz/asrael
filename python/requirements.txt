@@ -65,7 +65,7 @@ packaging==23.2
 Pillow==10.1.0
 pip==23.3
 promise==2.3
-protobuf==3.12.4
+protobuf==3.18.3
 pyasn1==0.4.8
 pyasn1-modules==0.2.8
 pycparser==2.20
