@@ -1,0 +1,195 @@
+\relax 
+\providecommand\hyper@newdestlabel[2]{}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Method}{13}{chapter.5}\protected@file@percent }
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}Experimental Setup}{13}{section.5.1}\protected@file@percent }
+\newlabel{functionWordsZipfDistribution}{{5.1}{14}{Experimental Setup}{Item.18}{}}
+\newlabel{high_frequency_hyponyms_for_language_learning}{{5.1}{15}{Experimental Setup}{Item.18}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Average number of types per lemma for Latin, French and German.}}{15}{table.caption.7}\protected@file@percent }
+\providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
+\newlabel{tableTypesPerLemma}{{2}{15}{Average number of types per lemma for Latin, French and German}{table.caption.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Sensitivity to Lexical and Syntactic Variation}{15}{section.5.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Measuring Semantic Distance}{22}{section.5.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Model Card: Latin OPT}{22}{subsection.5.3.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Model Details}{22}{section*.12}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {7}{\ignorespaces Model Architecture for Latin OPT, where `Params' is short for the overall number of model parameters and `LR' represents the initial learning rate.}}{23}{table.caption.13}\protected@file@percent }
+\newlabel{tab:latin_opt_architecture}{{7}{23}{Model Architecture for Latin OPT, where `Params' is short for the overall number of model parameters and `LR' represents the initial learning rate}{table.caption.13}{}}
+\@writefile{toc}{\contentsline {subsubsection}{Intended Use}{23}{section*.14}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Hardware and Software}{23}{section*.15}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Training Data}{24}{section*.16}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Evaluation Results}{24}{section*.17}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{Ethical Considerations and Limitations}{24}{section*.18}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}Cosine Similarity between Segment Pairs}{24}{subsection.5.3.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces Correlation of cosine similarity and mean pairwise average text length. Each blue dot represents the average pairwise cosine similarity between segment pairs with a given average text length in characters. The red line indicates a linear regression of average cosine similarity and text length.}}{26}{figure.caption.20}\protected@file@percent }
+\newlabel{figure:cosineSimilarityVsTextLength}{{1}{26}{Correlation of cosine similarity and mean pairwise average text length. Each blue dot represents the average pairwise cosine similarity between segment pairs with a given average text length in characters. The red line indicates a linear regression of average cosine similarity and text length}{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.4}High Variance in Low-Frequency Types: A Case Study on Dis Legomena}{26}{section.5.4}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces Number of segments for various amount of text lengths. Text length is presented using a log scale to optimize the view of the distribution for the most frequent cases in PROIEL.}}{27}{figure.caption.21}\protected@file@percent }
+\newlabel{figure:SegmentLengthsProiel}{{2}{27}{Number of segments for various amount of text lengths. Text length is presented using a log scale to optimize the view of the distribution for the most frequent cases in PROIEL}{figure.caption.21}{}}
+\newlabel{firstObservation}{{5.4}{27}{High Variance in Low-Frequency Types: A Case Study on Dis Legomena}{section.5.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency.}}{28}{figure.caption.22}\protected@file@percent }
+\newlabel{figure:cosineDistanceVsFrequency}{{3}{28}{Correlation of average cosine distance and frequency of occurrence. Each blue dot represents the average cosine distance between all vectors for one lemma. Each vector was computed from one usage context of the lemma in the corpus. The red line indicates a linear regression of average cosine distance and usage frequency}{figure.caption.22}{}}
+\newlabel{highFrequencyhighPolysemy}{{5.4}{30}{High Variance in Low-Frequency Types: A Case Study on Dis Legomena}{figure.caption.22}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.5}Clustering of Contextual Embeddings}{30}{section.5.5}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression.}}{31}{figure.caption.23}\protected@file@percent }
+\newlabel{figure:ttr_vs_frequency}{{4}{31}{Correlation of \gls {TTR} and frequency of occurrence. Each blue dot represents a specific type. \gls {TTR}s were calculated only for types that occur at least 10 times in the corpus and have at least 100 tokens in their aggregated usage contexts, i.e., sentences. For the chosen types, a random sample of 100 tokens was selected for the calculation of \gls {TTR} to avoid text length effects. The red line represents a linear regression}{figure.caption.23}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility.}}{34}{figure.caption.24}\protected@file@percent }
+\newlabel{figure:cluster_size_distribution}{{5}{34}{Distribution of cluster size for merged clusters at a similarity threshold of 0.9 . The largest cluster (128 usage contexts) was excluded for better legibility}{figure.caption.24}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Cosine similarity for tokens in almost identical sentences from PROIEL. Target tokens are highlighted in bold.}}{35}{table.caption.8}\protected@file@percent }
+\newlabel{tableCosSimWordOrder}{{3}{35}{Cosine similarity for tokens in almost identical sentences from PROIEL. Target tokens are highlighted in bold}{table.caption.8}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Cosine similarity for sentences from PROIEL in which exactly one token was replaced. Replacements and their translations are highlighted in bold.}}{36}{table.caption.9}\protected@file@percent }
+\newlabel{tableCosSimWordSubstitution}{{4}{36}{Cosine similarity for sentences from PROIEL in which exactly one token was replaced. Replacements and their translations are highlighted in bold}{table.caption.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {5}{\ignorespaces Nouns in almost identical sentences from PROIEL. Target tokens are highlighted in bold.}}{37}{table.caption.10}\protected@file@percent }
+\newlabel{tableCosSimWordSubstitutionNouns}{{5}{37}{Nouns in almost identical sentences from PROIEL. Target tokens are highlighted in bold}{table.caption.10}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {6}{\ignorespaces Nouns in almost identical sentences from PROIEL, with equivalent syntactical structure. Target tokens are highlighted in bold.}}{38}{table.caption.11}\protected@file@percent }
+\newlabel{tableAlmostIdenticalPROIELsentencesEquivalentSyntax}{{6}{38}{Nouns in almost identical sentences from PROIEL, with equivalent syntactical structure. Target tokens are highlighted in bold}{table.caption.11}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {8}{\ignorespaces Cosine similarities for selected sentence pairs from PROIEL, with target tokens highlighted in bold}}{39}{table.caption.19}\protected@file@percent }
+\newlabel{tab:cosSim1TokChangedProiel}{{8}{39}{Cosine similarities for selected sentence pairs from PROIEL, with target tokens highlighted in bold}{table.caption.19}{}}
+\@setckpt{chapters/05_method}{
+\setcounter{page}{40}
+\setcounter{equation}{0}
+\setcounter{enumi}{2}
+\setcounter{enumii}{2}
+\setcounter{enumiii}{2}
+\setcounter{enumiv}{0}
+\setcounter{footnote}{8}
+\setcounter{mpfootnote}{0}
+\setcounter{part}{0}
+\setcounter{chapter}{5}
+\setcounter{section}{5}
+\setcounter{subsection}{0}
+\setcounter{subsubsection}{0}
+\setcounter{paragraph}{0}
+\setcounter{subparagraph}{0}
+\setcounter{figure}{5}
+\setcounter{table}{8}
+\setcounter{parentequation}{0}
+\setcounter{Maxaffil}{2}
+\setcounter{authors}{1}
+\setcounter{affil}{1}
+\setcounter{tabx@nest}{0}
+\setcounter{listtotal}{0}
+\setcounter{listcount}{0}
+\setcounter{liststart}{0}
+\setcounter{liststop}{0}
+\setcounter{citecount}{0}
+\setcounter{citetotal}{0}
+\setcounter{multicitecount}{0}
+\setcounter{multicitetotal}{0}
+\setcounter{instcount}{157}
+\setcounter{maxnames}{1}
+\setcounter{minnames}{1}
+\setcounter{maxitems}{3}
+\setcounter{minitems}{1}
+\setcounter{citecounter}{0}
+\setcounter{maxcitecounter}{0}
+\setcounter{savedcitecounter}{0}
+\setcounter{uniquelist}{0}
+\setcounter{uniquename}{0}
+\setcounter{refsection}{0}
+\setcounter{refsegment}{0}
+\setcounter{maxextratitle}{0}
+\setcounter{maxextratitleyear}{0}
+\setcounter{maxextraname}{0}
+\setcounter{maxextradate}{0}
+\setcounter{maxextraalpha}{0}
+\setcounter{abbrvpenalty}{50}
+\setcounter{highnamepenalty}{50}
+\setcounter{lownamepenalty}{25}
+\setcounter{maxparens}{3}
+\setcounter{parenlevel}{0}
+\setcounter{blx@maxsection}{0}
+\setcounter{mincomprange}{10}
+\setcounter{maxcomprange}{100000}
+\setcounter{mincompwidth}{1}
+\setcounter{afterword}{0}
+\setcounter{savedafterword}{0}
+\setcounter{annotator}{0}
+\setcounter{savedannotator}{0}
+\setcounter{author}{0}
+\setcounter{savedauthor}{0}
+\setcounter{bookauthor}{0}
+\setcounter{savedbookauthor}{0}
+\setcounter{commentator}{0}
+\setcounter{savedcommentator}{0}
+\setcounter{editor}{0}
+\setcounter{savededitor}{0}
+\setcounter{editora}{0}
+\setcounter{savededitora}{0}
+\setcounter{editorb}{0}
+\setcounter{savededitorb}{0}
+\setcounter{editorc}{0}
+\setcounter{savededitorc}{0}
+\setcounter{foreword}{0}
+\setcounter{savedforeword}{0}
+\setcounter{holder}{0}
+\setcounter{savedholder}{0}
+\setcounter{introduction}{0}
+\setcounter{savedintroduction}{0}
+\setcounter{namea}{0}
+\setcounter{savednamea}{0}
+\setcounter{nameb}{0}
+\setcounter{savednameb}{0}
+\setcounter{namec}{0}
+\setcounter{savednamec}{0}
+\setcounter{translator}{0}
+\setcounter{savedtranslator}{0}
+\setcounter{shortauthor}{0}
+\setcounter{savedshortauthor}{0}
+\setcounter{shorteditor}{0}
+\setcounter{savedshorteditor}{0}
+\setcounter{labelname}{0}
+\setcounter{savedlabelname}{0}
+\setcounter{institution}{0}
+\setcounter{savedinstitution}{0}
+\setcounter{lista}{0}
+\setcounter{savedlista}{0}
+\setcounter{listb}{0}
+\setcounter{savedlistb}{0}
+\setcounter{listc}{0}
+\setcounter{savedlistc}{0}
+\setcounter{listd}{0}
+\setcounter{savedlistd}{0}
+\setcounter{liste}{0}
+\setcounter{savedliste}{0}
+\setcounter{listf}{0}
+\setcounter{savedlistf}{0}
+\setcounter{location}{0}
+\setcounter{savedlocation}{0}
+\setcounter{organization}{0}
+\setcounter{savedorganization}{0}
+\setcounter{origlocation}{0}
+\setcounter{savedoriglocation}{0}
+\setcounter{origpublisher}{0}
+\setcounter{savedorigpublisher}{0}
+\setcounter{publisher}{0}
+\setcounter{savedpublisher}{0}
+\setcounter{language}{0}
+\setcounter{savedlanguage}{0}
+\setcounter{origlanguage}{0}
+\setcounter{savedoriglanguage}{0}
+\setcounter{pageref}{0}
+\setcounter{savedpageref}{0}
+\setcounter{textcitecount}{0}
+\setcounter{textcitetotal}{1}
+\setcounter{textcitemaxnames}{0}
+\setcounter{biburlbigbreakpenalty}{100}
+\setcounter{biburlbreakpenalty}{200}
+\setcounter{biburlnumpenalty}{0}
+\setcounter{biburlucpenalty}{0}
+\setcounter{biburllcpenalty}{0}
+\setcounter{smartand}{1}
+\setcounter{bbx:relatedcount}{0}
+\setcounter{bbx:relatedtotal}{0}
+\setcounter{caption@flags}{2}
+\setcounter{continuedfloat}{0}
+\excnt=1
+\setcounter{float@type}{4}
+\setcounter{section@level}{1}
+\setcounter{Item}{41}
+\setcounter{Hfootnote}{10}
+\setcounter{Hy@AnnotLevel}{0}
+\setcounter{bookmark@seq@number}{16}
+\setcounter{LT@tables}{0}
+\setcounter{LT@chunks}{0}
+}

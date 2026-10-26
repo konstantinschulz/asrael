@@ -11,15 +11,16 @@
 \contentsline {section}{\numberline {5.2}Sensitivity to Lexical and Syntactic Variation}{15}{section.5.2}%
 \contentsline {section}{\numberline {5.3}Measuring Semantic Distance}{22}{section.5.3}%
 \contentsline {subsection}{\numberline {5.3.1}Model Card: Latin OPT}{22}{subsection.5.3.1}%
-\contentsline {subsubsection}{Model Details}{22}{section*.13}%
-\contentsline {subsubsection}{Intended Use}{23}{section*.15}%
-\contentsline {subsubsection}{Hardware and Software}{23}{section*.16}%
-\contentsline {subsubsection}{Training Data}{24}{section*.17}%
-\contentsline {subsubsection}{Evaluation Results}{24}{section*.18}%
-\contentsline {subsubsection}{Ethical Considerations and Limitations}{24}{section*.19}%
+\contentsline {subsubsection}{Model Details}{22}{section*.12}%
+\contentsline {subsubsection}{Intended Use}{23}{section*.14}%
+\contentsline {subsubsection}{Hardware and Software}{23}{section*.15}%
+\contentsline {subsubsection}{Training Data}{24}{section*.16}%
+\contentsline {subsubsection}{Evaluation Results}{24}{section*.17}%
+\contentsline {subsubsection}{Ethical Considerations and Limitations}{24}{section*.18}%
 \contentsline {subsection}{\numberline {5.3.2}Cosine Similarity between Segment Pairs}{24}{subsection.5.3.2}%
 \contentsline {section}{\numberline {5.4}High Variance in Low-Frequency Types: A Case Study on Dis Legomena}{26}{section.5.4}%
 \contentsline {section}{\numberline {5.5}Clustering of Contextual Embeddings}{30}{section.5.5}%
 \contentsline {chapter}{\numberline {6}Appendix}{40}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Appendix A: Agile and Open Methodology}{40}{section.6.1}%
-\contentsline {chapter}{Bibliography}{41}{chapter*.26}%
+\contentsline {section}{\numberline {6.2}Appendix B: AI Usage}{41}{section.6.2}%
+\contentsline {chapter}{Bibliography}{42}{chapter*.25}%
